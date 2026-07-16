@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="APEX FITNESS Member Portal. Login to access your customized biometric dashboard, streak records, and training programs.">
+    <title>Client Login | APEX FITNESS</title>
+    
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- ==========================================
+       PRELOADER (HEART PULSE LOAD)
+       ========================================== -->
+    <div class="preloader">
+        <div class="preloader-circle-wrap">
+            <div class="preloader-circle"></div>
+            <i class="fa-solid fa-heart-pulse preloader-icon"></i>
+        </div>
+        <div class="preloader-logo"><img src="images/logo.webp" alt="Stackly Logo" class="logo-img" style="height: 48px;"></div>
+        <div class="preloader-percentage">0%</div>
+    </div>
+
+    <!-- ==========================================
+       SCROLL PROGRESS & CUSTOM CURSOR
+       ========================================== -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar"></div>
+    </div>
+    
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+
+    <!-- Floating Back to Home button -->
+    <a href="index.html" class="btn btn-secondary btn-sm floating-back-home-btn">
+        <i class="fa-solid fa-house"></i> Back to Home
+    </a>
+
+    <!-- ==========================================
+       PORTAL CONTENT CARD
+       ========================================== -->
+    <section class="portal-section">
+        <div class="container portal-container">
+            <div class="login-card-outer glass-card" style="max-width: 450px; margin: 0 auto;">
+                <div class="login-form-side" style="width: 100%; padding: 3rem 2.5rem;">
+                    <!-- Logo at top of card -->
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <img src="images/logo.webp" alt="Stackly Logo" class="logo-img" style="height: 38px; margin-bottom: 1rem;">
+                        <h2 style="font-size: 1.8rem; text-transform: none; font-weight: 700; color: var(--text-light); margin-bottom: 0.5rem;">Welcome Back</h2>
+                        <p style="color: var(--text-muted); font-size: 0.85rem;">Access your client portal or design dashboard.</p>
+                    </div>
+                    
+                    <form id="login-form">
+                        <!-- Email Address with Icon -->
+                        <div class="form-group">
+                            <label for="login-email">Email Address</label>
+                            <div class="input-with-icon">
+                                <i class="fa-solid fa-envelope input-icon"></i>
+                                <input type="email" id="login-email" placeholder="John@example.com" required>
+                            </div>
+                        </div>
+                        
+                        <!-- Password with Lock and Eye Icon -->
+                        <div class="form-group">
+                            <label for="login-password">Password</label>
+                            <div class="input-with-icon" style="position: relative;">
+                                <i class="fa-solid fa-lock input-icon"></i>
+                                <input type="password" id="login-password" placeholder="••••••••" required style="padding-right: 3rem;">
+                                <button type="button" class="pass-toggle-btn" onclick="window.togglePasswordVisibility('login-password', this)" aria-label="Toggle Password Visibility">
+                                    <i class="fa-solid fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Select Role with User Icon -->
+                        <div class="form-group">
+                            <label for="login-role">Select Role</label>
+                            <div class="input-with-icon">
+                                <i class="fa-solid fa-user input-icon"></i>
+                                <select id="login-role" required>
+                                    <option value="" disabled selected>Select Role</option>
+                                    <option value="member">Apex Member</option>
+                                    <option value="trainer">Apex Trainer</option>
+                                    <option value="admin">Administrator</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- Remember me & forgot password row -->
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; font-size: 0.8rem;">
+                            <label class="checkbox-container" style="padding-left: 1.6rem; margin-bottom: 0;">
+                                <input type="checkbox" id="login-remember">
+                                <span class="checkmark"></span> Remember Me
+                            </label>
+                            <a href="404.html" style="color: var(--primary); font-weight: 700;">Forgot Password?</a>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 2rem; border-radius: var(--radius-sm);">Access Portal</button>
+                        
+                        <p style="text-align: center; font-size: 0.85rem; color: var(--text-muted);">
+                            Don't have a design account? <a href="register.html" style="color: var(--primary); font-weight: 700;">Register Here</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       FOOTER
+       ========================================== -->
+    
+
+    
+
+    <!-- JavaScript Script -->
+    <script src="js/main.js"></script>
+</body>
+</html>

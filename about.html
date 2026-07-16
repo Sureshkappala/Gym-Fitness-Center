@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About APEX FITNESS - Meet our elite coaches, explore our history, and understand our result-driven gym culture.">
+    <title>About Us | APEX FITNESS</title>
+    
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- ==========================================
+       PRELOADER (HEART PULSE LOAD)
+       ========================================== -->
+    <div class="preloader">
+        <div class="preloader-circle-wrap">
+            <div class="preloader-circle"></div>
+            <i class="fa-solid fa-heart-pulse preloader-icon"></i>
+        </div>
+        <div class="preloader-logo"><img src="images/logo.webp" alt="Stackly Logo" class="logo-img" style="height: 48px;"></div>
+        <div class="preloader-percentage">0%</div>
+    </div>
+
+    <!-- ==========================================
+       SCROLL PROGRESS & CUSTOM CURSOR
+       ========================================== -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar"></div>
+    </div>
+    
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+
+    <!-- ==========================================
+       HEADER & NAVBAR
+       ========================================== -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo"><img src="images/logo.webp" alt="Stackly Logo" class="logo-img"></a>
+            
+            <nav class="navbar">
+                <div class="drawer-header">
+                    <a href="index.html" class="logo"><img src="images/logo.webp" alt="Stackly Logo" class="logo-img"></a>
+                    <button class="drawer-close" aria-label="Close Menu"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                
+                <div class="drawer-search">
+                    <div style="position: relative; width: 100%;">
+                        <input type="text" placeholder="Search workouts...">
+                        <i class="fa-solid fa-magnifying-glass" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none;"></i>
+                    </div>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="services.html">Classes</a></li>
+                    <li><a href="workflow.html">Journey</a></li>
+                    <li><a href="portfolio.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                
+                <div class="nav-mobile-cta">
+                    <a href="login.html" class="btn btn-secondary"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+                    <a href="contact.html" class="btn btn-primary">Book Consultation</a>
+                </div>
+            </nav>
+            
+            <div class="nav-controls">
+                <button class="theme-switch" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+                <a href="login.html" class="btn btn-secondary btn-sm"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+                <a href="contact.html" class="btn btn-primary btn-sm">Book Consultation</a>
+                <button class="menu-toggle" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================
+       PAGE HEADER
+       ========================================== -->
+    <section class="page-banner">
+        <div class="container" style="text-align: center;">
+            <span class="section-tag">Since 2020</span>
+            <h1 class="page-banner-title">Our Story & <span>Elite Team</span></h1>
+            <p class="page-banner-desc">Learn about the philosophy, milestones, and certified master coaches that drive our results.</p>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       FOUNDING PHILOSOPHY
+       ========================================== -->
+    <section class="section-padding bg-alternate">
+        <div class="container philosophy-grid">
+            <div class="philosophy-visual">
+                <div class="glass-card hover-glow-card philosophy-badge-card float-anim">
+                    <i class="fa-solid fa-quote-left" style="font-size: 3rem; color: var(--primary); display: block; margin-bottom: 1.5rem;"></i>
+                    <p style="font-size: 1.25rem; font-weight: 600; line-height: 1.6; color: var(--text-light); margin-bottom: 1rem;">"Sweat is simply body fat crying. Consistency is the only architect of transformation."</p>
+                    <span style="font-family: var(--font-display); font-weight: 700; color: var(--accent); text-transform: uppercase;">- Coach Marcus, Head Trainer</span>
+                </div>
+            </div>
+            
+            <div class="philosophy-content">
+                <span class="section-tag">Apex Vision</span>
+                <h2 class="section-title" style="text-align: left;">Engineered <span>For Athletes</span></h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Founded in 2020, Apex Fitness was built to disrupt standard, repetitive gym experiences. We believed that members deserved more than keycard entry and unguided setups. They deserved scientific performance frameworks.</p>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">We combine high-performance biomechanics with personalized biometric tracking inside a premium dark aesthetic space. Here, we eliminate distractions so you can focus entirely on your limits.</p>
+                
+                <div style="display: flex; gap: 2rem;">
+                    <div style="flex: 1;">
+                        <h4 style="text-transform: uppercase; margin-bottom: 0.5rem; color: var(--primary); font-size: 1.1rem;"><i class="fa-solid fa-microchip"></i> Science-Driven</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Every training block matches proven heart rate and recovery metrics.</p>
+                    </div>
+                    <div style="flex: 1;">
+                        <h4 style="text-transform: uppercase; margin-bottom: 0.5rem; color: var(--accent); font-size: 1.1rem;"><i class="fa-solid fa-users"></i> Elite Community</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">A support network of focused athletes driving mutual breakthroughs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       CHRONOLOGICAL TIMELINE
+       ========================================== -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Milestones</span>
+                <h2 class="section-title">The Apex <span>Timeline</span></h2>
+                <p class="section-desc">Trace our growth and development from a boutique weightroom into an integrated digital fitness club.</p>
+            </div>
+            
+            <div class="timeline-container">
+                <!-- Year 1 -->
+                <div class="timeline-item left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-year font-display">2020</span>
+                        <h3>Apex Foundation</h3>
+                        <p>Opened our doors in Sector 7 with a 4,000 sq ft performance turf and 5 coaches. Focused purely on custom strength curation.</p>
+                    </div>
+                </div>
+                <!-- Year 2 -->
+                <div class="timeline-item right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-year font-display">2022</span>
+                        <h3>Equipment Expansion</h3>
+                        <p>Tripled our footprint. Fitted custom plate loaded biomechanical weight benches and added high-velocity cardio tracks.</p>
+                    </div>
+                </div>
+                <!-- Year 3 -->
+                <div class="timeline-item left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-year font-display">2024</span>
+                        <h3>Portal Ecosystem</h3>
+                        <p>Launched the member dashboard system, syncing wearable heart trackers with customized client fitness progress screens.</p>
+                    </div>
+                </div>
+                <!-- Year 4 -->
+                <div class="timeline-item right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-year font-display">2026</span>
+                        <h3>Apex 2.0 Recovery</h3>
+                        <p>Inaugurated our cryotherapy saunas, infrared recovery zones, and juice fueling systems for modern, premium post-workout support.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       ELITE COACHING STAFF (FLIP CARDS)
+       ========================================== -->
+    <section class="section-padding bg-alternate">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Apex Mentors</span>
+                <h2 class="section-title">Meet Our <span>Elite Coaches</span></h2>
+                <p class="section-desc">Our coaches hold advanced academic and physical training certifications. They don't just instruct; they program for results.</p>
+            </div>
+            
+            <div class="coaches-grid">
+                <!-- Coach 1 -->
+                <div class="coach-flip-card">
+                    <div class="coach-card-inner">
+                        <!-- Front -->
+                        <div class="coach-card-front glass-card">
+                            <div class="coach-avatar">MC</div>
+                            <h3>Marcus Vance</h3>
+                            <span class="coach-role">Head of Strength Curation</span>
+                            <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">12+ years experience. Specializes in olympic barbell lifting and power mechanics.</p>
+                            <span class="flip-hint"><i class="fa-solid fa-rotate"></i> Hover to see credentials</span>
+                        </div>
+                        <!-- Back -->
+                        <div class="coach-card-back glass-card">
+                            <h4>Marcus Vance</h4>
+                            <span class="coach-accent-line"></span>
+                            <ul class="coach-credentials-list">
+                                <li><strong>Cert:</strong> CSCS, USAW Level 2</li>
+                                <li><strong>Specialty:</strong> Heavy Barbell Dynamics</li>
+                                <li><strong>Peak Lift:</strong> 585 lb Squat</li>
+                            </ul>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">"I believe biomechanics dictate results. Master the physics of weight, master the muscle."</p>
+                            <div class="coach-socials">
+                                <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
+                                <a href="404.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coach 2 -->
+                <div class="coach-flip-card">
+                    <div class="coach-card-inner">
+                        <!-- Front -->
+                        <div class="coach-card-front glass-card">
+                            <div class="coach-avatar accent">EK</div>
+                            <h3>Elena Rostova</h3>
+                            <span class="coach-role">Director of HIIT & Conditioning</span>
+                            <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">Former sprinter. Program designer for cardiorespiratory fitness and fat reduction.</p>
+                            <span class="flip-hint"><i class="fa-solid fa-rotate"></i> Hover to see credentials</span>
+                        </div>
+                        <!-- Back -->
+                        <div class="coach-card-back glass-card">
+                            <h4>Elena Rostova</h4>
+                            <span class="coach-accent-line"></span>
+                            <ul class="coach-credentials-list">
+                                <li><strong>Cert:</strong> NASM-PES, Kettlebell Level 2</li>
+                                <li><strong>Specialty:</strong> Cardiovascular VO2 Max</li>
+                                <li><strong>Philosophy:</strong> High Intensity Intervals</li>
+                            </ul>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">"Work is done when intensity meets focus. Your heart is an engine; tune it."</p>
+                            <div class="coach-socials">
+                                <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
+                                <a href="404.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coach 3 -->
+                <div class="coach-flip-card">
+                    <div class="coach-card-inner">
+                        <!-- Front -->
+                        <div class="coach-card-front glass-card">
+                            <div class="coach-avatar">SH</div>
+                            <h3>Sean Hughes</h3>
+                            <span class="coach-role">Mobility & Posture Recovery</span>
+                            <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">Physiotherapy degrees. Customizing joint mechanics, yoga flow, and recovery cycles.</p>
+                            <span class="flip-hint"><i class="fa-solid fa-rotate"></i> Hover to see credentials</span>
+                        </div>
+                        <!-- Back -->
+                        <div class="coach-card-back glass-card">
+                            <h4>Sean Hughes</h4>
+                            <span class="coach-accent-line"></span>
+                            <ul class="coach-credentials-list">
+                                <li><strong>Cert:</strong> B.Sc. Physiotherapy, FMS</li>
+                                <li><strong>Specialty:</strong> Joint Durability & Yoga</li>
+                                <li><strong>Focus:</strong> Post-Workout Decompression</li>
+                            </ul>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">"Strength without mobility is a trap. Durable joints ensure lifetime progress."</p>
+                            <div class="coach-socials">
+                                <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
+                                <a href="404.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       FOOTER
+       ========================================== -->
+        <footer class="footer">
+        <div class="container footer-grid">
+            <!-- Col 1 -->
+            <div class="footer-col-about">
+                <a href="index.html" class="logo" style="margin-bottom: 1.5rem;">
+                    <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+                </a>
+                <p>We are a high-performance training ground. We build resilient bodies, focused minds, and supportive athletic environments built for progress.</p>
+                <div class="footer-social-row">
+                    <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="404.html" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <!-- Col 2 -->
+            <div>
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="workflow.html">Design Workflow</a></li>
+                    <li><a href="portfolio.html">Design Portfolio</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <!-- Col 3 -->
+            <div>
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="services.html">Power Lifting</a></li>
+                    <li><a href="services.html">Apex HIIT Blast</a></li>
+                    <li><a href="services.html">Vinyasa Yoga Flow</a></li>
+                    <li><a href="services.html">MMA Striking</a></li>
+                    <li><a href="services.html">Cryo & Recovery</a></li>
+                    <li><a href="services.html">Refuel Juicery</a></li>
+                </ul>
+            </div>
+            
+            <!-- Col 4 -->
+            <div>
+                <h4>Newsletter</h4>
+                <p style="margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6;">Subscribe to receive style forecasts, custom wood-shop updates, and interior design trend reports from our team.</p>
+                <form class="footer-newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container footer-bottom-flex">
+                <p>&copy; 2026 Stackly. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="404.html">Privacy Policy</a>
+                    <a href="404.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" aria-label="Back to Top"><i class="fa-solid fa-chevron-up"></i></button>
+
+    <!-- JavaScript Script -->
+    <script src="js/main.js"></script>
+</body>
+</html>

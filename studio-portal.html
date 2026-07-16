@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="APEX FITNESS Athlete Dashboard. Track your calorie burns, check off workouts, and update profile settings.">
+    <title>Athlete Dashboard | APEX FITNESS</title>
+    
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- ==========================================
+       PRELOADER (HEART PULSE LOAD)
+       ========================================== -->
+    <div class="preloader">
+        <div class="preloader-circle-wrap">
+            <div class="preloader-circle"></div>
+            <i class="fa-solid fa-heart-pulse preloader-icon"></i>
+        </div>
+        <div class="preloader-logo"><img src="images/logo.webp" alt="Stackly Logo" class="logo-img" style="height: 48px;"></div>
+        <div class="preloader-percentage">0%</div>
+    </div>
+
+    <!-- ==========================================
+       SCROLL PROGRESS & CUSTOM CURSOR
+       ========================================== -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar"></div>
+    </div>
+    
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+
+    <!-- ==========================================
+       HEADER & NAVBAR
+       ========================================== -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo"><img src="images/logo.webp" alt="Stackly Logo" class="logo-img"></a>
+            
+            <nav class="navbar">
+                <div class="drawer-header">
+                    <a href="index.html" class="logo"><img src="images/logo.webp" alt="Stackly Logo" class="logo-img"></a>
+                    <button class="drawer-close" aria-label="Close Menu"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Classes</a></li>
+                    <li><a href="workflow.html">Journey</a></li>
+                    <li><a href="portfolio.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                
+                <div class="nav-mobile-cta">
+                    <a href="#" class="btn btn-secondary" id="dashboard-logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+                </div>
+            </nav>
+            
+            <div class="nav-controls">
+                <button class="theme-switch" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+                <a href="#" class="btn btn-secondary btn-sm" id="dashboard-logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+                <button class="menu-toggle" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================
+       PORTAL MAIN CONTENT
+       ========================================== -->
+    <section class="portal-section" id="portal-dashboard" style="padding-top: 11rem;">
+        <div class="container">
+            <!-- Welcome Header Banner -->
+            <div class="dashboard-banner glass-card" style="margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+                <div>
+                    <span class="section-tag" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-circle-check"></i> Athlete Portal Active</span>
+                    <h1 style="font-size: 2.2rem; text-transform: uppercase;">Welcome back, <span class="dashboard-user-name" style="color: var(--primary);">Athlete</span>!</h1>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Registered Email: <span class="dashboard-user-email">athlete@apexfitness.com</span></p>
+                </div>
+                <div style="display: flex; gap: 1.5rem; text-align: center;">
+                    <div class="dashboard-banner-stat">
+                        <span style="font-size: 0.75rem; color: var(--text-muted); display: block; text-transform: uppercase; font-weight: 700;">Streak</span>
+                        <strong style="font-size: 1.8rem; color: var(--accent); font-family: var(--font-display);" id="streak-count-val">1</strong>
+                        <span style="font-size: 0.75rem; color: var(--text-muted); display: block;">DAYS ACTIVE</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Columns Grid -->
+            <div class="dashboard-grid">
+                <!-- Main Metrics Column (Left) -->
+                <div class="dashboard-main-col">
+                    <!-- Calorie Chart Card -->
+                    <div class="glass-card hover-glow-card dashboard-chart-card" style="margin-bottom: 2rem;">
+                        <div class="dashboard-card-title">
+                            <h3><i class="fa-solid fa-fire" style="color: var(--accent);"></i> Weekly Energy Burned</h3>
+                            <span style="font-size: 0.8rem; color: var(--text-muted);">Calorie burn goals tracker (Target: 500 kcal/day)</span>
+                        </div>
+                        
+                        <div class="svg-chart-container" style="margin-top: 2rem; position: relative;">
+                            <!-- SVG Bar Chart -->
+                            <svg width="100%" height="150" viewBox="0 0 400 150" class="calories-bar-chart">
+                                <!-- Horizontal Grid Lines -->
+                                <line x1="30" y1="20" x2="390" y2="20" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+                                <line x1="30" y1="70" x2="390" y2="70" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+                                <line x1="30" y1="120" x2="390" y2="120" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+                                
+                                <!-- Bar charts - Monday through Sunday -->
+                                <g class="chart-bar" data-val="480 KCAL">
+                                    <rect x="50" y="44" width="24" height="76" rx="4" fill="var(--primary)" />
+                                    <text x="62" y="140" fill="var(--text-muted)" font-size="9" text-anchor="middle" font-weight="700">MON</text>
+                                </g>
+                                <g class="chart-bar" data-val="650 KCAL">
+                                    <rect x="100" y="20" width="24" height="100" rx="4" fill="var(--accent)" />
+                                    <text x="112" y="140" fill="var(--text-muted)" font-size="9" text-anchor="middle" font-weight="700">TUE</text>
+                                </g>
+                                <g class="chart-bar" data-val="350 KCAL">
+                                    <rect x="150" y="64" width="24" height="56" rx="4" fill="var(--primary)" />
+                                    <text x="162" y="140" fill="var(--text-muted)" font-size="9" text-anchor="middle" font-weight="700">WED</text>
+                                </g>
+                                <g class="chart-bar" data-val="520 KCAL">
+                                    <rect x="200" y="38" width="24" height="82" rx="4" fill="var(--primary)" />
+                                    <text x="212" y="140" fill="var(--text-muted)" font-size="9" text-anchor="middle" font-weight="700">THU</text>
+                                </g>
+                                <g class="chart-bar" data-val="710 KCAL">
+                                    <rect x="250" y="10" width="24" height="110" rx="4" fill="var(--accent)" />
+                                    <text x="262" y="140" fill="var(--text-muted)" font-size="9" text-anchor="middle" font-weight="700">FRI</text>
+                                </g>
+                                <g class="chart-bar" data-val="450 KCAL">
+                                    <rect x="300" y="48" width="24" height="72" rx="4" fill="var(--primary)" />
+                                    <text x="312" y="140" fill="var(--text-muted)" font-size="9" text-anchor="middle" font-weight="700">SAT</text>
+                                </g>
+                                <g class="chart-bar" data-val="200 KCAL">
+                                    <rect x="350" y="88" width="24" height="32" rx="4" fill="var(--primary)" />
+                                    <text x="362" y="140" fill="var(--text-muted)" font-size="9" text-anchor="middle" font-weight="700">SUN</text>
+                                </g>
+                            </svg>
+                            <div class="chart-tooltip" style="position: absolute; display: none; background: var(--bg-tertiary); border: 1px solid var(--primary); padding: 0.25rem 0.5rem; font-size: 0.75rem; border-radius: var(--radius-sm); font-weight: 700; pointer-events: none;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Row of Streaks and Water Tracker -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;" class="sub-dashboard-grid">
+                        <!-- Streak tracker -->
+                        <div class="glass-card hover-glow-card">
+                            <h3><i class="fa-solid fa-calendar-check" style="color: var(--primary);"></i> Workout Streak</h3>
+                            <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">Click active days to log completed workouts and increase streak count.</p>
+                            
+                            <div class="dashboard-streak-calendar">
+                                <div class="dashboard-streak-day completed" data-day="Mon">M</div>
+                                <div class="dashboard-streak-day" data-day="Tue"><i class="fa-solid fa-plus"></i></div>
+                                <div class="dashboard-streak-day" data-day="Wed"><i class="fa-solid fa-plus"></i></div>
+                                <div class="dashboard-streak-day" data-day="Thu"><i class="fa-solid fa-plus"></i></div>
+                                <div class="dashboard-streak-day" data-day="Fri"><i class="fa-solid fa-plus"></i></div>
+                                <div class="dashboard-streak-day" data-day="Sat"><i class="fa-solid fa-plus"></i></div>
+                                <div class="dashboard-streak-day" data-day="Sun"><i class="fa-solid fa-plus"></i></div>
+                            </div>
+                        </div>
+
+                        <!-- Water intake tracker -->
+                        <div class="glass-card hover-glow-card" style="display: flex; flex-direction: column;">
+                            <h3><i class="fa-solid fa-glass-water" style="color: #3b82f6;"></i> Water Tracker</h3>
+                            <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">Log hydration level (Goal: 120 oz/day)</p>
+                            
+                            <div style="display: flex; align-items: center; gap: 2rem; margin-top: auto;">
+                                <div class="water-glass-visual">
+                                    <div class="water-glass-cup">
+                                        <div id="water-progress-fill" style="height: 26.6%;"></div>
+                                    </div>
+                                </div>
+                                <div style="flex: 1;">
+                                    <span style="font-size: 0.8rem; color: var(--text-muted); display: block; margin-bottom: 0.25rem;">Intake:</span>
+                                    <strong style="font-size: 1.25rem; font-family: var(--font-display);" id="water-count">32 oz / 120 oz</strong>
+                                    <button class="btn btn-primary btn-sm" id="log-water-btn" style="width: 100%; margin-top: 1rem; padding: 0.4rem 0.8rem; font-size: 0.75rem;"><i class="fa-solid fa-plus"></i> Log 16 oz</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings / Info Column (Right) -->
+                <div class="dashboard-side-col">
+                    <!-- Booked Class Status -->
+                    <div class="glass-card hover-glow-card" style="margin-bottom: 2rem;">
+                        <h3><i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> Next Class Schedule</h3>
+                        <span class="class-category-tag" style="margin-top: 1rem; display: inline-flex;"><i class="fa-solid fa-heart-circle-bolt"></i> Cardio HIIT</span>
+                        <h4 style="margin-top: 0.5rem; text-transform: uppercase;">HIIT Blast Session</h4>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0.5rem 0 1.5rem 0;"><i class="fa-solid fa-clock"></i> Today at 6:00 PM with Coach Elena</p>
+                        
+                        <div style="display: flex; gap: 1rem;">
+                            <button class="btn btn-secondary btn-sm" style="flex: 1; padding: 0.4rem 0.8rem; font-size: 0.75rem;" onclick="alert('Reschedule request sent!')">Reschedule</button>
+                            <button class="btn btn-secondary btn-sm" style="flex: 1; padding: 0.4rem 0.8rem; font-size: 0.75rem; color: var(--accent); border-color: var(--border-glass);" onclick="alert('Class booking cancelled.')">Cancel</button>
+                        </div>
+                    </div>
+
+                    <!-- Profile Account Settings Form -->
+                    <div class="glass-card hover-glow-card">
+                        <h3><i class="fa-solid fa-user-gear" style="color: var(--accent);"></i> Account Settings</h3>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">Modify credentials stored in your biometric cache.</p>
+                        
+                        <form id="dashboard-settings-form">
+                            <div class="form-group">
+                                <label for="set-name">Display Name</label>
+                                <input type="text" id="set-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="set-email">Email Address</label>
+                                <input type="email" id="set-email" required>
+                            </div>
+                            <div class="form-group" style="margin-bottom: 2rem;">
+                                <label for="set-weight">Target Weight (lbs)</label>
+                                <input type="number" id="set-weight" value="175">
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       FOOTER
+       ========================================== -->
+        <footer class="footer">
+        <div class="container footer-grid">
+            <!-- Col 1 -->
+            <div class="footer-col-about">
+                <a href="index.html" class="logo" style="margin-bottom: 1.5rem;">
+                    <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+                </a>
+                <p>We are a high-performance training ground. We build resilient bodies, focused minds, and supportive athletic environments built for progress.</p>
+                <div class="footer-social-row">
+                    <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="404.html" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <!-- Col 2 -->
+            <div>
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="workflow.html">Design Workflow</a></li>
+                    <li><a href="portfolio.html">Design Portfolio</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <!-- Col 3 -->
+            <div>
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="services.html">Power Lifting</a></li>
+                    <li><a href="services.html">Apex HIIT Blast</a></li>
+                    <li><a href="services.html">Vinyasa Yoga Flow</a></li>
+                    <li><a href="services.html">MMA Striking</a></li>
+                    <li><a href="services.html">Cryo & Recovery</a></li>
+                    <li><a href="services.html">Refuel Juicery</a></li>
+                </ul>
+            </div>
+            
+            <!-- Col 4 -->
+            <div>
+                <h4>Newsletter</h4>
+                <p style="margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6;">Subscribe to receive style forecasts, custom wood-shop updates, and interior design trend reports from our team.</p>
+                <form class="footer-newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container footer-bottom-flex">
+                <p>&copy; 2026 Stackly. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="404.html">Privacy Policy</a>
+                    <a href="404.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" aria-label="Back to Top"><i class="fa-solid fa-chevron-up"></i></button>
+
+    <!-- JavaScript Script -->
+    <script src="js/main.js"></script>
+    
+    <!-- Local Page Tooltip and Interaction Script for Weekly Chart -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Interactive Weekly Chart Tooltips
+            const bars = document.querySelectorAll('.chart-bar');
+            const tooltip = document.querySelector('.chart-tooltip');
+            const chartContainer = document.querySelector('.svg-chart-container');
+            
+            if (bars.length > 0 && tooltip && chartContainer) {
+                bars.forEach(bar => {
+                    const rect = bar.querySelector('rect');
+                    
+                    bar.addEventListener('mouseenter', (e) => {
+                        const val = bar.getAttribute('data-val');
+                        tooltip.textContent = val;
+                        tooltip.style.display = 'block';
+                        rect.style.opacity = '0.85';
+                    });
+                    
+                    bar.addEventListener('mousemove', (e) => {
+                        const containerRect = chartContainer.getBoundingClientRect();
+                        const x = e.clientX - containerRect.left + 10;
+                        const y = e.clientY - containerRect.top - 35;
+                        tooltip.style.left = `${x}px`;
+                        tooltip.style.top = `${y}px`;
+                    });
+                    
+                    bar.addEventListener('mouseleave', () => {
+                        tooltip.style.display = 'none';
+                        rect.style.opacity = '1';
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
