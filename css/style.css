@@ -994,3 +994,278 @@ body.menu-open::before {
         margin: 0.5rem 0.75rem;
     }
 }
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT SYSTEM OVERRIDES
+   ========================================================================== */
+.grid-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.grid-1-2col {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.grid-3col {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+@media (max-width: 991px) {
+    .grid-2col, .grid-1-2col {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+    section {
+        padding: 4rem 0 !important;
+    }
+    
+    .grid-2col, .grid-1-2col {
+        gap: 2rem;
+    }
+    
+    /* Hero section adjustments for mobile */
+    .hero-section {
+        padding-top: 7rem !important;
+        text-align: center;
+    }
+    
+    /* Subpage hero adjustments */
+    .subpage-hero {
+        padding: 8rem 0 4rem 0 !important;
+    }
+}
+
+/* ==========================================================================
+   GYM ATHLETE DASHBOARD CORE SHELL LAYOUT
+   ========================================================================== */
+.db-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--bg-primary);
+}
+
+.db-sidebar {
+    width: 280px;
+    background-color: var(--bg-secondary);
+    border-right: 1px solid var(--border-glass);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 2rem 1.5rem;
+    box-sizing: border-box;
+}
+
+.db-sidebar-close {
+    display: none;
+}
+
+.sidebar-logo {
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.sidebar-section-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.8rem 1.2rem;
+    color: var(--text-muted);
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    transition: all var(--transition-fast);
+    text-decoration: none;
+    border: 1px solid transparent;
+}
+
+.sidebar-link i {
+    font-size: 1rem;
+    width: 20px;
+    text-align: center;
+}
+
+.sidebar-link:hover, .sidebar-link.active {
+    color: var(--primary);
+    background: rgba(225, 29, 72, 0.1);
+    border-color: rgba(225, 29, 72, 0.15);
+}
+
+body.light .sidebar-link:hover, body.light .sidebar-link.active {
+    color: var(--primary);
+    background: rgba(225, 29, 72, 0.05);
+}
+
+.db-main {
+    flex-grow: 1;
+    padding: 3rem;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.db-mobile-header {
+    display: none;
+}
+
+/* Stats Row Grid */
+.db-stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.panel-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-sm);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.panel-box-header {
+    border-bottom: 1px solid var(--border-glass);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.panel-box-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+.db-sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+    z-index: 9998;
+}
+
+.db-sidebar-overlay.active {
+    display: block;
+}
+
+/* Responsive Overrides for Sidebar Dashboard on Desktop & Mobile */
+@media (max-width: 1024px) {
+    .db-main {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .db-mobile-header {
+        display: flex !important;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.2rem 1.5rem;
+        background-color: var(--bg-secondary) !important;
+        border-bottom: 1px solid var(--border-glass);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 60px;
+        box-sizing: border-box;
+        z-index: 999;
+    }
+    
+    .db-hamburger {
+        background: transparent;
+        border: none;
+        color: var(--text-light);
+        font-size: 1.4rem;
+        cursor: pointer;
+    }
+    
+    .db-mobile-avatar {
+        width: 32px;
+        height: 32px;
+        background: var(--gradient-primary);
+        color: var(--text-dark);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 0.85rem;
+    }
+
+    .db-container {
+        flex-direction: column;
+        padding-top: 60px;
+    }
+
+    .db-sidebar {
+        position: fixed !important;
+        top: 0 !important;
+        left: -280px !important;
+        width: 280px !important;
+        height: 100vh !important;
+        z-index: 10000 !important;
+        background: var(--bg-secondary) !important;
+        border-right: 1px solid var(--border-glass) !important;
+        transition: left 0.3s ease-in-out !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .db-sidebar.active {
+        left: 0 !important;
+    }
+
+    .db-sidebar-close {
+        display: flex !important;
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        background: transparent;
+        border: none;
+        color: var(--text-muted);
+        font-size: 1.4rem;
+        cursor: pointer;
+    }
+
+    .db-main {
+        padding: 1.5rem !important;
+    }
+    
+    .db-stats-row {
+        grid-template-columns: 1fr !important;
+        gap: 1.2rem !important;
+    }
+}
