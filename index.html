@@ -380,88 +380,16 @@
     </section>
 
     <!-- ==========================================
-       10. ACCORDION FAQs
+       10. CALL TO ACTION (CTA) SECTION
        ========================================== -->
-    <section style="background-color: var(--bg-secondary);">
-        <div class="container" style="text-align: center; margin-bottom: 4rem;">
-            <span class="section-tag"><i class="fa-solid fa-question"></i> Help Desk</span>
-            <h2 style="font-size: 2.5rem;">Frequently Asked Questions</h2>
-        </div>
-        <div class="container" style="max-width: 800px; display: flex; flex-direction: column; gap: 1rem;">
-            <!-- FAQ 1 -->
-            <div class="glass-card" style="padding: 1.5rem 2rem; cursor: pointer;" onclick="window.showCustomAlert('Yes, standard and premium memberships include CSCS trainer sessions.', 'success')">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <h4 style="font-size: 1.05rem; text-transform: none;">Are personal trainer hours included in plans?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-            </div>
-            <!-- FAQ 2 -->
-            <div class="glass-card" style="padding: 1.5rem 2rem; cursor: pointer;" onclick="window.showCustomAlert('Absolutely! You can upgrade or downgrade membership plans in settings.', 'success')">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <h4 style="font-size: 1.05rem; text-transform: none;">Can I change my membership tier later?</h4>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-       11. CONTACT & RADAR MAP
-       ========================================== -->
-    <section id="contact">
-        <div class="container" style="text-align: center; margin-bottom: 4rem;">
-            <span class="section-tag"><i class="fa-solid fa-envelope"></i> Contact Us</span>
-            <h2 style="font-size: 2.5rem;">Book Free Training Assessment</h2>
-        </div>
-        <div class="container" style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: start;">
-            <div class="glass-card" style="padding: 3rem 2.5rem;">
-                <form id="booking-form">
-                    <div class="form-group">
-                        <label for="booking-name">Full Name</label>
-                        <div class="input-with-icon">
-                            <i class="fa-solid fa-user input-icon"></i>
-                            <input type="text" id="booking-name" placeholder="John Doe" required>
-                        </div>
-                    </div>
-                    <div class="form-row-two" style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
-                        <div class="form-group" style="flex: 1; margin-bottom: 0;">
-                            <label for="booking-email">Email Address</label>
-                            <div class="input-with-icon">
-                                <i class="fa-solid fa-envelope input-icon"></i>
-                                <input type="email" id="booking-email" placeholder="john@example.com" required>
-                            </div>
-                        </div>
-                        <div class="form-group" style="flex: 1; margin-bottom: 0;">
-                            <label for="booking-phone">Phone Number</label>
-                            <div class="input-with-icon">
-                                <i class="fa-solid fa-phone input-icon"></i>
-                                <input type="tel" id="booking-phone" placeholder="1234567890" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="booking-date">Assessment Date</label>
-                        <input type="date" id="booking-date" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Book Session</button>
-                </form>
-            </div>
-            <div>
-                <h4 style="font-size: 1.2rem; margin-bottom: 1.5rem;">Apex HQ Location</h4>
-                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;"><i class="fa-solid fa-location-dot" style="color: var(--primary); margin-right: 0.5rem;"></i> 500 Performance Blvd, Sector 7</p>
-                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem;"><i class="fa-solid fa-clock" style="color: var(--primary); margin-right: 0.5rem;"></i> Open 24 Hours, Mon - Sun</p>
-                <!-- Live Google Map bottom-right -->
-                <div style="width: 100%; height: 200px; border: 1px solid var(--border-glass); border-radius: var(--radius-sm); overflow: hidden;">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0132338084534!2d-122.4013756846819!3d37.78917297975713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580665f807f6b%3A0x2bd03c3933c09b6e!2s500%20Howard%20St%2C%20San%20Francisco%2C%20CA%2094105!5e0!3m2!1sen!2sus!4v1622567990422!5m2!1sen!2sus" 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0; filter: invert(90%) hue-rotate(180deg) grayscale(100%) contrast(90%);" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
+    <section id="cta" style="background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.9)), url('images/turf.webp') no-repeat center center/cover; text-align: center; padding: 7rem 0;">
+        <div class="container" style="max-width: 800px;">
+            <span class="section-tag" style="background: rgba(225, 29, 72, 0.1); border-color: rgba(225, 29, 72, 0.2); color: var(--primary);"><i class="fa-solid fa-fire"></i> Join the Elite</span>
+            <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 1.5rem; text-transform: uppercase;">Are You Ready to Unleash Your Peak Strength?</h2>
+            <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 2.5rem;">Join APEX FITNESS today. Get unlimited access to state-of-the-art barbell zones, certified strength coaches, and our cryotherapy recovery suite. First 50 members get 25% off their first month.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="register.html" class="btn btn-primary">Start Your Journey <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="contact.html" class="btn btn-secondary">Talk to a Coach</a>
             </div>
         </div>
     </section>
