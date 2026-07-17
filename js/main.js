@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initFormInputsValidation()
     initDashboardMobileSidebar();
     initDashboardUserCredentials();
+    initGymDashboard();
 ;
 });
 
@@ -957,6 +958,17 @@ function initFormInputsValidation() {
         });
     }
 
+    const loginPass = document.getElementById('login-password');
+    if (loginPass) {
+        loginPass.addEventListener('input', () => {
+            if (checkPasswordStrength(loginPass.value)) {
+                loginPass.setCustomValidity("");
+            } else {
+                loginPass.setCustomValidity("Password must be at least 8 characters and contain a mix of uppercase, lowercase, digits, and symbols.");
+            }
+        });
+    }
+
     if (regConfirmPass && regPass) {
         regConfirmPass.addEventListener('input', () => {
             if (regConfirmPass.value === regPass.value) {
@@ -1083,6 +1095,119 @@ function initDashboardUserCredentials() {
         const emailInputs = document.querySelectorAll('#profile-email, input[type="email"].db-input');
         emailInputs.forEach(input => {
             input.value = storedEmail;
+        });
+    }
+}
+
+/* ==========================================================================
+   GYM ATHLETE DASHBOARD INTERACTIVE HANDLERS
+   ========================================================================== */
+function initGymDashboard() {
+    // 1. Water Cup click toggling
+    const waterBtns = document.querySelectorAll('.water-cup-btn');
+    const waterCountElem = document.getElementById('water-count');
+    if (waterBtns.length > 0 && waterCountElem) {
+        waterBtns.forEach((btn, index) => {
+            btn.addEventListener('click', () => {
+                waterBtns.forEach((b, idx) => {
+                    if (idx <= index) {
+                        b.classList.add('active');
+                    } else {
+                        b.classList.remove('active');
+                    }
+                });
+                waterCountElem.textContent = index + 1;
+                showCustomAlert(`Water logged: ${index + 1} cup(s)!`, 'success');
+            });
+        });
+    }
+
+    // 2. Checklist checking (re-calculating calories)
+    const checkItems = document.querySelectorAll('.workout-check-item');
+    const calBurnedElem = document.getElementById('cal-burned-value');
+    const calGoalElem = document.getElementById('cal-goal-value');
+    const calFill = document.getElementById('cal-progress-fill');
+    
+    function updateCalorieProgress() {
+        if (!calBurnedElem || !calGoalElem) return;
+        let totalBurned = 0;
+        checkItems.forEach(item => {
+            if (item.checked) {
+                totalBurned += parseInt(item.getAttribute('data-cal')) || 0;
+            }
+        });
+        calBurnedElem.textContent = totalBurned;
+        
+        const goal = parseInt(calGoalElem.textContent) || 2000;
+        const percent = Math.min(100, (totalBurned / goal) * 100);
+        if (calFill) {
+            calFill.style.width = percent + '%';
+        }
+    }
+
+    if (checkItems.length > 0) {
+        checkItems.forEach(item => {
+            item.addEventListener('change', () => {
+                updateCalorieProgress();
+                if (item.checked) {
+                    showCustomAlert("Exercise marked as completed!", "success");
+                }
+            });
+        });
+        updateCalorieProgress(); // init progress on load
+    }
+
+    // 3. Real-time Heart Rate Heartbeat simulator
+    const pulseBpm = document.getElementById('pulse-bpm');
+    if (pulseBpm) {
+        setInterval(() => {
+            const variation = Math.floor(Math.random() * 6) - 3; // -3 to +2
+            let currentBpm = parseInt(pulseBpm.textContent) || 72;
+            currentBpm += variation;
+            if (currentBpm < 60) currentBpm = 60;
+            if (currentBpm > 100) currentBpm = 100;
+            pulseBpm.textContent = currentBpm;
+        }, 3000);
+    }
+
+    // 4. Settings Form Submissions
+    const settingsForm = document.getElementById('settings-form');
+    if (settingsForm) {
+        settingsForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const nameInput = document.getElementById('set-name');
+            const weightInput = document.getElementById('set-weight');
+            const calInput = document.getElementById('set-calories');
+            
+            if (nameInput) {
+                localStorage.setItem('loggedInUserName', nameInput.value.trim());
+                const names = document.querySelectorAll('.user-name');
+                names.forEach(n => {
+                    if (n.tagName !== 'INPUT') {
+                        n.textContent = nameInput.value.trim();
+                    }
+                });
+                const avatar = document.querySelector('.user-avatar');
+                if (avatar && avatar.tagName !== 'IMG') {
+                    let initials = '';
+                    const parts = nameInput.value.trim().split(' ');
+                    if (parts[0]) initials += parts[0].charAt(0);
+                    if (parts.length > 1 && parts[1]) initials += parts[1].charAt(0);
+                    avatar.textContent = initials.toUpperCase();
+                }
+            }
+            
+            if (weightInput) {
+                const weightVal = document.getElementById('current-weight-val');
+                if (weightVal) weightVal.textContent = weightInput.value;
+            }
+            
+            if (calInput && calGoalElem) {
+                calGoalElem.textContent = calInput.value;
+                updateCalorieProgress();
+            }
+            
+            showCustomAlert("Profile settings updated successfully!", "success");
         });
     }
 }
