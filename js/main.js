@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initHeroConsole();
     initDashboard();
     init404Game();
+    initFormInputsValidation();
 });
 
 /* ==========================================================================
@@ -433,7 +434,7 @@ function initForms() {
     });
 
     function validateEmail(email) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.value = email; // Basic regex match
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
 
     function highlightInputError(input) {
@@ -694,6 +695,9 @@ function initDashboard() {
 
     // Handle Register Submit
     if (registerForm) {
+        const regPass = document.getElementById('reg-password');
+        const regConfirmPass = document.getElementById('reg-confirm-password');
+
         registerForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const name = document.getElementById('reg-name').value.trim();
@@ -701,6 +705,17 @@ function initDashboard() {
             const pass = document.getElementById('reg-password').value;
             
             if (name && email && pass) {
+                if (!checkPasswordStrength(pass)) {
+                    regPass.setCustomValidity("Password must be at least 8 characters and contain a mix of uppercase, lowercase, digits, and symbols.");
+                    regPass.reportValidity();
+                    return;
+                }
+                if (regConfirmPass && regConfirmPass.value !== pass) {
+                    regConfirmPass.setCustomValidity("Passwords do not match.");
+                    regConfirmPass.reportValidity();
+                    return;
+                }
+                
                 localStorage.setItem('loggedInUserName', name);
                 localStorage.setItem('loggedInUserEmail', email);
                 localStorage.setItem('workoutStreak', '1');
@@ -879,4 +894,58 @@ function init404Game() {
         if (height < 0) height = 0;
         barbell.style.transform = `translateY(-${height}px)`;
     }, 400);
+}
+
+/* ==========================================================================
+   FORM INPUTS VALIDATION (LETTERS ONLY, DIGITS ONLY, PASSWORD STRENGTH)
+   ========================================================================== */
+function checkPasswordStrength(pass) {
+    const hasUpper = /[A-Z]/.test(pass);
+    const hasLower = /[a-z]/.test(pass);
+    const hasDigit = /\d/.test(pass);
+    const hasSymbol = /[^a-zA-Z\d]/.test(pass);
+    const isMinLen = pass.length >= 8;
+    return hasUpper && hasLower && hasDigit && hasSymbol && isMinLen;
+}
+
+function initFormInputsValidation() {
+    // 1. Name inputs: allow letters and spaces only
+    const nameInputs = document.querySelectorAll('#booking-name, #reg-name, #set-name');
+    nameInputs.forEach(input => {
+        input.addEventListener('input', (e) => {
+            e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, '');
+        });
+    });
+
+    // 2. Mobile inputs: allow digits only
+    const phoneInputs = document.querySelectorAll('#booking-phone, #reg-phone');
+    phoneInputs.forEach(input => {
+        input.addEventListener('input', (e) => {
+            e.target.value = e.target.value.replace(/\D/g, '');
+        });
+    });
+
+    // 3. Register Password Strength Validation
+    const regPass = document.getElementById('reg-password');
+    const regConfirmPass = document.getElementById('reg-confirm-password');
+
+    if (regPass) {
+        regPass.addEventListener('input', () => {
+            if (checkPasswordStrength(regPass.value)) {
+                regPass.setCustomValidity("");
+            } else {
+                regPass.setCustomValidity("Password must be at least 8 characters and contain a mix of uppercase, lowercase, digits, and symbols.");
+            }
+        });
+    }
+
+    if (regConfirmPass && regPass) {
+        regConfirmPass.addEventListener('input', () => {
+            if (regConfirmPass.value === regPass.value) {
+                regConfirmPass.setCustomValidity("");
+            } else {
+                regConfirmPass.setCustomValidity("Passwords do not match.");
+            }
+        });
+    }
 }

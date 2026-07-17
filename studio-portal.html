@@ -48,9 +48,16 @@
                     <a href="index.html" class="logo"><img src="images/logo.webp" alt="Stackly Logo" class="logo-img"></a>
                     <button class="drawer-close" aria-label="Close Menu"><i class="fa-solid fa-xmark"></i></button>
                 </div>
+                
+                <div class="drawer-search">
+                    <div style="position: relative; width: 100%;">
+                        <input type="text" placeholder="Search workouts...">
+                        <i class="fa-solid fa-magnifying-glass" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none;"></i>
+                    </div>
+                </div>
 
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Classes</a></li>
                     <li><a href="workflow.html">Journey</a></li>
@@ -61,10 +68,16 @@
                 <div class="nav-mobile-cta">
                     <a href="#" class="btn btn-secondary" id="dashboard-logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
                 </div>
+                
+                <div class="drawer-contact-info">
+                    <h5>Apex HQ</h5>
+                    <p><i class="fa-solid fa-phone"></i> +1 (800) 555-APEX</p>
+                    <p><i class="fa-solid fa-envelope"></i> elite@apexfitness.com</p>
+                    <p><i class="fa-solid fa-location-dot"></i> 500 Performance Blvd, Sector 7</p>
+                </div>
             </nav>
             
             <div class="nav-controls">
-                
                 <a href="#" class="btn btn-secondary btn-sm" id="dashboard-logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
                 <button class="menu-toggle" aria-label="Toggle Menu">
                     <i class="fa-solid fa-bars"></i>
