@@ -473,26 +473,20 @@ function initFormValidations() {
    8. PORTAL SIDEBARS & USER CREDENTIALS CONTROLLERS
    ========================================================================== */
 function initDashboardMobileSidebar() {
-    const topNav = document.querySelector('.db-top-nav');
+    const mobileHeader = document.querySelector('.db-mobile-header');
     const sidebar = document.querySelector('.db-sidebar');
     const overlay = document.querySelector('.db-sidebar-overlay');
 
-    if (topNav && sidebar) {
-        let hamburger = topNav.querySelector('.db-hamburger');
-        if (!hamburger) {
-            hamburger = document.createElement('button');
-            hamburger.className = 'db-hamburger';
-            hamburger.setAttribute('aria-label', 'Toggle Menu');
-            hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
-            topNav.insertBefore(hamburger, topNav.firstChild);
+    if (mobileHeader && sidebar) {
+        const hamburger = mobileHeader.querySelector('.db-hamburger');
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                sidebar.classList.add('active');
+                if (overlay) overlay.classList.add('active');
+                document.documentElement.classList.add('menu-open');
+                document.body.classList.add('menu-open');
+            });
         }
-
-        hamburger.addEventListener('click', () => {
-            sidebar.classList.add('active');
-            if (overlay) overlay.classList.add('active');
-            document.documentElement.classList.add('menu-open');
-            document.body.classList.add('menu-open');
-        });
     }
 
     const closeSidebar = () => {
