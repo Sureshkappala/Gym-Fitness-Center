@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="APEX FITNESS Operations Control Board. Manage your workout programs, log exercise milestones, and monitor fitness standards.">
+    <title>Trainer Booking | APEX FITNESS</title>
+    
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body style="overflow-y: auto;">
+
+    <!-- ==========================================
+       PRELOADER (HEART PULSE LOAD)
+       ========================================== -->
+    <div class="preloader">
+        <div class="preloader-circle-wrap">
+            <div class="preloader-circle"></div>
+            <i class="fa-solid fa-heart-pulse preloader-icon"></i>
+        </div>
+        <div class="preloader-logo"><img src="images/logo.webp" alt="Stackly Logo" class="logo-img" style="height: 48px;"></div>
+        <div class="preloader-percentage">0%</div>
+    </div>
+
+    <!-- ==========================================
+       SCROLL PROGRESS & CUSTOM CURSOR
+       ========================================== -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar"></div>
+    </div>
+    
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+
+    <!-- ==========================================
+       MOBILE TOGGLE HEADER
+       ========================================== -->
+    <div class="db-mobile-header">
+        <button class="db-hamburger" aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <a href="index.html" class="db-mobile-logo">
+            <img src="images/logo.webp" alt="Stackly Logo" class="logo-img" style="height: 28px;">
+        </a>
+        <div class="db-mobile-avatar user-avatar">EA</div>
+    </div>
+    
+    <!-- Sidebar Overlay -->
+    <div class="db-sidebar-overlay"></div>
+
+    <div class="db-container">
+        <!-- ==========================================
+           COLLAPSIBLE SIDEBAR (15 GYM MODULES)
+           ========================================== -->
+        <aside class="db-sidebar">
+            <!-- Close Button -->
+            <button class="db-sidebar-close" aria-label="Close Menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div style="overflow-y: auto; height: calc(100% - 60px); padding-right: 5px;">
+                <a href="studio-portal.html" class="sidebar-logo" style="display: inline-flex; background: white; padding: 0.5rem 0.8rem; border-radius: var(--radius-sm); width: 100%; box-sizing: border-box; justify-content: center; margin-bottom: 1.5rem;">
+                    <img src="images/logo.webp" alt="Stackly Logo" style="height: 24px; width: auto; object-fit: contain;">
+                </a>
+                
+                <!-- Group 1: Main -->
+                <div class="sidebar-section-title" style="margin-top: 1rem;">Main</div>
+                <nav class="sidebar-menu">
+                    <a href="studio-portal.html" class="sidebar-link"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+                    <a href="workouts.html" class="sidebar-link"><i class="fa-solid fa-dumbbell"></i> My Workouts</a>
+                    <a href="workout-plans.html" class="sidebar-link"><i class="fa-solid fa-list-check"></i> Workout Plans</a>
+                    <a href="schedule.html" class="sidebar-link"><i class="fa-solid fa-calendar-days"></i> Class Schedule</a>
+                </nav>
+
+                <!-- Group 2: Personal Trainer -->
+                <div class="sidebar-section-title" style="margin-top: 1rem;">Personal Trainer</div>
+                <nav class="sidebar-menu">
+                    <a href="trainer-booking.html" class="sidebar-link active"><i class="fa-solid fa-user-doctor"></i> Trainer Booking</a>
+                </nav>
+
+                <!-- Group 3: Health & Metrics -->
+                <div class="sidebar-section-title" style="margin-top: 1rem;">Health & Metrics</div>
+                <nav class="sidebar-menu">
+                    <a href="bmi-tracker.html" class="sidebar-link"><i class="fa-solid fa-calculator"></i> BMI Tracker</a>
+                    <a href="nutrition.html" class="sidebar-link"><i class="fa-solid fa-utensils"></i> Nutrition Plans</a>
+                </nav>
+            </div>
+            
+            <a href="#" class="signout-btn" id="dashboard-logout-btn" style="margin-top: 10px;"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a>
+        </aside>
+
+        <!-- ==========================================
+           MAIN PANEL
+           ========================================== -->
+        <main class="db-main">
+
+             <!-- Welcome Hero -->
+             <div class="db-welcome-hero" data-aos="fade-right" data-aos-duration="1000">
+                 <h1>Trainer Booking Desk</h1>
+                 <p>Book 1-on-1 private sessions with certified strength and conditioning experts.</p>
+             </div>
+
+             <div class="panel-box" style="max-width: 600px; margin: 0 auto;" data-aos="fade-up" data-aos-duration="800">
+                 <div class="panel-box-header">
+                     <h3 class="panel-box-title">Schedule 1-on-1 PT Session</h3>
+                 </div>
+                 <form id="pt-booking-form" onsubmit="event.preventDefault(); window.showCustomAlert('Trainer Booking requested! Check notifications for approval.', 'success'); this.reset();">
+                     <div class="form-group" style="margin-bottom: 1.5rem;">
+                         <label for="select-coach">Choose Certified Coach</label>
+                         <select id="select-coach" style="width: 100%; padding: 0.85rem; background: rgba(0,0,0,0.25); border: 1px solid var(--border-glass); border-radius: var(--radius-sm); color: var(--text-light); outline: none;" required>
+                             <option value="marcus">Coach Marcus (Strength / CSCS)</option>
+                             <option value="sarah">Coach Sarah (Functional / L2)</option>
+                             <option value="dave">Coach Dave (Metcon / Olympic)</option>
+                         </select>
+                     </div>
+                     <div class="form-group" style="margin-bottom: 1.5rem;">
+                         <label for="booking-date">Date Selection</label>
+                         <input type="date" id="booking-date" style="width: 100%; padding: 0.85rem; background: rgba(0,0,0,0.25); border: 1px solid var(--border-glass); border-radius: var(--radius-sm); color: var(--text-light); outline: none;" required>
+                     </div>
+                     <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Booking Request</button>
+                 </form>
+             </div>
+            </main>
+    </div>
+
+    <!-- Theme Switch Button fixed in bottom right -->
+    <div style="position: fixed; bottom: 2rem; right: 2rem; z-index: 100;">
+        <button class="theme-switch" aria-label="Toggle Theme" style="width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--bg-tertiary); border: 1px solid var(--border-glass); color: var(--text-light); cursor: pointer; box-shadow: var(--shadow-sm);">
+            <i class="fa-solid fa-moon"></i>
+            <i class="fa-solid fa-sun"></i>
+        </button>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 800, easing: 'ease-out-cubic' });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>
