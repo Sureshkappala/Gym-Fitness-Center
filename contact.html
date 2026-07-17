@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="APEX FITNESS Contacts. Book your free fitness assessment, call us, or find directions to our facility.">
-    <title>Contact Us | APEX FITNESS</title>
+    <title>Contact & Booking | APEX FITNESS</title>
     
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
@@ -59,8 +59,8 @@
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Classes</a></li>
-                    <li><a href="workflow.html">Journey</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="classes.html">Classes</a></li>
                     <li><a href="portfolio.html">Gallery</a></li>
                     <li><a href="contact.html" class="active">Contact</a></li>
                 </ul>
@@ -89,71 +89,131 @@
     </header>
 
     <!-- ==========================================
-       SUBPAGE HERO
+       SUBPAGE HERO (MATCHING SCREENSHOT LAYOUT)
        ========================================== -->
-    <section class="subpage-hero" style="padding: 10rem 0 5rem 0; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.95)), url('images/yoga.webp') no-repeat center center/cover; text-align: center;">
+    <section class="subpage-hero" style="padding: 11rem 0 5rem 0; background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.98)), url('images/yoga.webp') no-repeat center center/cover; text-align: center;">
         <div class="container">
-            <span class="section-tag"><i class="fa-solid fa-phone"></i> Contact</span>
-            <h1 style="font-size: 3rem; margin-top: 0.5rem;">Get in Touch</h1>
-            <p style="color: var(--text-muted); max-width: 600px; margin: 1rem auto 0 auto;">Connect with our admissions desk, request trial passes, or locate the gym grid map.</p>
+            <span class="section-tag" style="background: rgba(225, 29, 72, 0.1); border-color: rgba(225, 29, 72, 0.2); color: var(--primary); font-size: 0.75rem;"><i class="fa-solid fa-bookmark"></i> Booking</span>
+            <h1 style="font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 800; margin-top: 1rem; text-transform: uppercase;">Let's Onboard Your Fitness Journey</h1>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 1rem auto 0 auto; font-size: 0.95rem;">Select your target training category and book a consultation date directly inside our system.</p>
         </div>
     </section>
 
     <!-- ==========================================
-       CONTACT DETAIL PANELS & FORM
+       CONTACT DETAIL PANELS & FORM (SCREENSHOT MATCH)
        ========================================== -->
-    <section>
-        <div class="container" style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: start;">
-            <div class="glass-card" style="padding: 3rem 2.5rem;">
+    <section style="background-color: var(--bg-primary); padding-top: 2rem;">
+        <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
+            
+            <!-- Left Column: Inquiries Desk -->
+            <div style="display: flex; flex-direction: column; gap: 2rem;">
+                <div>
+                    <span class="section-tag" style="background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.2); color: #f59e0b; font-size: 0.75rem;"><i class="fa-solid fa-headset"></i> Inquiries Desk</span>
+                    <h2 style="font-size: 2.2rem; margin-top: 1rem; margin-bottom: 1rem; text-transform: none; font-weight: 700; color: var(--text-light);">Connect With Us. We're Here to Listen.</h2>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 2rem;">Get in touch for custom biometric audits, workout planning, or general membership inquiries.</p>
+                </div>
+
+                <!-- Contact items with square icon wrappers styled like the reference -->
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <!-- Location -->
+                    <div style="display: flex; gap: 1.25rem; align-items: center;">
+                        <div style="width: 44px; height: 44px; background-color: rgba(225, 29, 72, 0.1); border: 1px solid rgba(225, 29, 72, 0.2); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.2rem; flex-shrink: 0;">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; display: block;">Gym Location</span>
+                            <span style="font-size: 0.95rem; color: var(--text-light); font-weight: 500;">500 Performance Blvd, Sector 7</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Email -->
+                    <div style="display: flex; gap: 1.25rem; align-items: center;">
+                        <div style="width: 44px; height: 44px; background-color: rgba(225, 29, 72, 0.1); border: 1px solid rgba(225, 29, 72, 0.2); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.2rem; flex-shrink: 0;">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; display: block;">Email Communication</span>
+                            <span style="font-size: 0.95rem; color: var(--text-light); font-weight: 500;">elite@apexfitness.com</span>
+                        </div>
+                    </div>
+
+                    <!-- Hours -->
+                    <div style="display: flex; gap: 1.25rem; align-items: center;">
+                        <div style="width: 44px; height: 44px; background-color: rgba(225, 29, 72, 0.1); border: 1px solid rgba(225, 29, 72, 0.2); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.2rem; flex-shrink: 0;">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div>
+                            <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; display: block;">Working Hours</span>
+                            <span style="font-size: 0.95rem; color: var(--text-light); font-weight: 500;">Mon - Sun: 24 Hours Open</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Google Map bottom-left -->
+                <div style="width: 100%; height: 260px; border: 1px solid var(--border-glass); border-radius: var(--radius-sm); margin-top: 1rem; overflow: hidden;">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0132338084534!2d-122.4013756846819!3d37.78917297975713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580665f807f6b%3A0x2bd03c3933c09b6e!2s500%20Howard%20St%2C%20San%20Francisco%2C%20CA%2094105!5e0!3m2!1sen!2sus!4v1622567990422!5m2!1sen!2sus" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; filter: invert(90%) hue-rotate(180deg) grayscale(100%) contrast(90%);" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Right Column: Leave a Message form -->
+            <div class="glass-card" style="padding: 3rem 2.5rem; background: rgba(17, 22, 34, 0.6);">
+                <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-light); margin-bottom: 2rem; text-transform: none;">Leave a Message</h3>
+                
                 <form id="booking-form">
+                    <!-- Full Name -->
                     <div class="form-group">
-                        <label for="booking-name">Full Name</label>
+                        <label for="booking-name" style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700;">Full Name</label>
                         <div class="input-with-icon">
                             <i class="fa-solid fa-user input-icon"></i>
-                            <input type="text" id="booking-name" placeholder="John Doe" required>
+                            <input type="text" id="booking-name" placeholder="John Doe" required style="background-color: rgba(0,0,0,0.35);">
                         </div>
                     </div>
                     
-                    <div class="form-row-two" style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
-                        <div class="form-group" style="flex: 1; margin-bottom: 0;">
-                            <label for="booking-email">Email Address</label>
-                            <div class="input-with-icon">
-                                <i class="fa-solid fa-envelope input-icon"></i>
-                                <input type="email" id="booking-email" placeholder="john@example.com" required>
-                            </div>
-                        </div>
-                        <div class="form-group" style="flex: 1; margin-bottom: 0;">
-                            <label for="booking-phone">Phone Number</label>
-                            <div class="input-with-icon">
-                                <i class="fa-solid fa-phone input-icon"></i>
-                                <input type="tel" id="booking-phone" placeholder="1234567890" required>
-                            </div>
-                        </div>
-                    </div>
-                    
+                    <!-- Email Address -->
                     <div class="form-group">
-                        <label for="booking-date">Assessment Date</label>
-                        <input type="date" id="booking-date" required>
+                        <label for="booking-email" style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700;">Email Address</label>
+                        <div class="input-with-icon">
+                            <i class="fa-solid fa-envelope input-icon"></i>
+                            <input type="email" id="booking-email" placeholder="john@example.com" required style="background-color: rgba(0,0,0,0.35);">
+                        </div>
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div class="form-group">
+                        <label for="booking-phone" style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700;">Phone Number</label>
+                        <div class="input-with-icon">
+                            <i class="fa-solid fa-phone input-icon"></i>
+                            <input type="tel" id="booking-phone" placeholder="1234567890" required style="background-color: rgba(0,0,0,0.35);">
+                        </div>
+                    </div>
+
+                    <!-- Message Subject -->
+                    <div class="form-group">
+                        <label for="booking-subject" style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700;">Message Subject</label>
+                        <div class="input-with-icon">
+                            <i class="fa-solid fa-message input-icon"></i>
+                            <input type="text" id="booking-subject" placeholder="Feedback / Audit Inquiry" required style="background-color: rgba(0,0,0,0.35);">
+                        </div>
+                    </div>
+
+                    <!-- Message Details -->
+                    <div class="form-group">
+                        <label for="booking-details" style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700;">Message Details</label>
+                        <textarea id="booking-details" rows="5" placeholder="Type your message here..." required style="background-color: rgba(0,0,0,0.35); width: 100%; border: 1px solid var(--border-glass); border-radius: var(--radius-sm); padding: 0.85rem 1.25rem; color: var(--text-light); outline: none; transition: border var(--transition-fast);"></textarea>
                     </div>
                     
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Inquiry</button>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem; border-radius: var(--radius-sm);">Send Message <i class="fa-solid fa-paper-plane" style="margin-left: 0.5rem;"></i></button>
                 </form>
             </div>
             
-            <div>
-                <h4 style="font-size: 1.25rem; margin-bottom: 1.5rem;">Apex HQ Details</h4>
-                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;"><i class="fa-solid fa-location-dot" style="color: var(--primary); margin-right: 0.5rem;"></i> 500 Performance Blvd, Sector 7</p>
-                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;"><i class="fa-solid fa-phone" style="color: var(--primary); margin-right: 0.5rem;"></i> +1 (800) 555-APEX</p>
-                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem;"><i class="fa-solid fa-clock" style="color: var(--primary); margin-right: 0.5rem;"></i> Open 24 Hours, Mon - Sun</p>
-                
-                <!-- Embedded SVG map mock -->
-                <div style="width: 100%; height: 220px; background-color: var(--bg-secondary); border: 1px solid var(--border-glass); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; color: var(--text-muted);">
-                    <div style="text-align: center;">
-                        <i class="fa-solid fa-map-location-dot" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 0.5rem;"></i>
-                        <p style="font-size: 0.85rem; font-weight: 700;">Interactive Radar Grid HQ</p>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -180,8 +240,8 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="workflow.html">Design Workflow</a></li>
-                    <li><a href="portfolio.html">Design Portfolio</a></li>
+                    <li><a href="classes.html">Classes</a></li>
+                    <li><a href="portfolio.html">Gallery</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="APEX FITNESS Legacy. Learn about our mission, certified coaches, and premium training gear.">
+    <meta name="description" content="APEX FITNESS Legacy. Learn about our core values, certified coaches, and premium training gear.">
     <title>About Us | APEX FITNESS</title>
     
     <!-- CSS Stylesheet -->
@@ -59,8 +59,8 @@
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html" class="active">About</a></li>
-                    <li><a href="services.html">Classes</a></li>
-                    <li><a href="workflow.html">Journey</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="classes.html">Classes</a></li>
                     <li><a href="portfolio.html">Gallery</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -94,8 +94,8 @@
     <section class="subpage-hero" style="padding: 10rem 0 5rem 0; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.95)), url('images/weightroom.webp') no-repeat center center/cover; text-align: center;">
         <div class="container">
             <span class="section-tag"><i class="fa-solid fa-dumbbell"></i> Discover Apex</span>
-            <h1 style="font-size: 3rem; margin-top: 0.5rem;">Certified Legacy</h1>
-            <p style="color: var(--text-muted); max-width: 600px; margin: 1rem auto 0 auto;">Meet our certified coaching crew, read our mission statement, and discover high-performance gear.</p>
+            <h1 style="font-size: 3rem; margin-top: 0.5rem;">About Our Gym</h1>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 1rem auto 0 auto;">Meet our certified coaching crew, read our core values, and review member FAQs.</p>
         </div>
     </section>
 
@@ -115,20 +115,62 @@
             </div>
         </div>
 
-        <!-- Co-founders block -->
+        <!-- Core Values Section -->
+        <div class="container" style="margin-bottom: 6rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <span class="section-tag"><i class="fa-solid fa-scale-balanced"></i> Core Beliefs</span>
+                <h2 style="font-size: 2.2rem;">Our Founding Values</h2>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem;">
+                <div class="glass-card" style="padding: 2rem;">
+                    <h3 style="font-size: 1.15rem; color: var(--primary); margin-bottom: 0.75rem;"><i class="fa-solid fa-shield-halved"></i> Integrity</h3>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.6;">We deliver honest fitness assessments, transparent pricing plans, and scientifically verified programming guides.</p>
+                </div>
+                <div class="glass-card" style="padding: 2rem;">
+                    <h3 style="font-size: 1.15rem; color: var(--primary); margin-bottom: 0.75rem;"><i class="fa-solid fa-gauge-high"></i> Performance</h3>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.6;">We structure every deadlift, press, and recovery plunge to safely optimize muscular strength and cardiovascular velocity.</p>
+                </div>
+                <div class="glass-card" style="padding: 2rem;">
+                    <h3 style="font-size: 1.15rem; color: var(--primary); margin-bottom: 0.75rem;"><i class="fa-solid fa-vial"></i> Scientific Method</h3>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.6;">No gimmicks or trends. We build programs using proven exercise science, biomechanics, and dietetics templates.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQs Accordion Section -->
+        <div class="container" style="max-width: 800px; margin-bottom: 6rem;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <span class="section-tag"><i class="fa-solid fa-circle-question"></i> Help Desk</span>
+                <h2 style="font-size: 2rem;">Frequently Asked Questions</h2>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <div class="glass-card" style="padding: 1.5rem 2rem; cursor: pointer;" onclick="window.showCustomAlert('Yes, standard and premium memberships include personal trainer hours.', 'success')">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h4 style="font-size: 1.05rem; text-transform: none;">Are personal trainer hours included?</h4>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="glass-card" style="padding: 1.5rem 2rem; cursor: pointer;" onclick="window.showCustomAlert('Absolutely! You can modify or change your membership tier inside the profile portal.', 'success')">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h4 style="font-size: 1.05rem; text-transform: none;">Can I change my membership tier?</h4>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certified co-founders details -->
         <div class="container" style="text-align: center; margin-bottom: 4rem;">
             <span class="section-tag"><i class="fa-solid fa-award"></i> Leadership</span>
             <h2 style="font-size: 2.2rem;">Certified Directors</h2>
         </div>
         <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem;">
-            <!-- Director 1 -->
             <div class="glass-card" style="text-align: center;">
                 <div style="width: 100px; height: 100px; border-radius: 50%; background-color: var(--bg-secondary); border: 1px solid var(--border-glass); margin: 0 auto 1.5rem auto; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: var(--primary);"><i class="fa-solid fa-user-ninja"></i></div>
                 <h3 style="font-size: 1.2rem; text-transform: none;">Marcus Vance</h3>
                 <p style="color: var(--accent); font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5rem;">Co-Founder & Head Coach</p>
                 <p style="color: var(--text-muted); font-size: 0.85rem;">MS Exercise Science, CSCS</p>
             </div>
-            <!-- Director 2 -->
             <div class="glass-card" style="text-align: center;">
                 <div style="width: 100px; height: 100px; border-radius: 50%; background-color: var(--bg-secondary); border: 1px solid var(--border-glass); margin: 0 auto 1.5rem auto; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: var(--primary);"><i class="fa-solid fa-user-tie"></i></div>
                 <h3 style="font-size: 1.2rem; text-transform: none;">Sarah Jenkins</h3>
@@ -161,8 +203,8 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="workflow.html">Design Workflow</a></li>
-                    <li><a href="portfolio.html">Design Portfolio</a></li>
+                    <li><a href="classes.html">Classes</a></li>
+                    <li><a href="portfolio.html">Gallery</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
