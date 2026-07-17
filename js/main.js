@@ -138,12 +138,14 @@ function initNavbarDrawer() {
         menuToggle.addEventListener('click', () => {
             navbar.classList.add('active');
             document.body.classList.add('menu-open');
+            document.documentElement.classList.add('menu-open');
         });
     }
 
     const closeMenu = () => {
         if (navbar) navbar.classList.remove('active');
         document.body.classList.remove('menu-open');
+        document.documentElement.classList.remove('menu-open');
     };
 
     if (drawerClose) {
@@ -534,9 +536,13 @@ function initDashboardUserCredentials() {
     
     // Generate user initials for avatar block
     let initials = '';
-    const nameParts = storedName.split(' ');
-    if (nameParts[0]) initials += nameParts[0].charAt(0);
-    if (nameParts.length > 1 && nameParts[1]) initials += nameParts[1].charAt(0);
+    const nameParts = storedName.trim().split(/\s+/);
+    if (nameParts.length === 1 && nameParts[0].length >= 2) {
+        initials = nameParts[0].substring(0, 2);
+    } else {
+        if (nameParts[0]) initials += nameParts[0].charAt(0);
+        if (nameParts.length > 1 && nameParts[1]) initials += nameParts[1].charAt(0);
+    }
     initials = initials.toUpperCase();
     if (!initials) initials = "EA";
     

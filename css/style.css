@@ -814,7 +814,12 @@ body.light .footer-newsletter-form button {
         display: block;
     }
     
-/* Drawer Open Backdrop Overlay */
+/* Drawer Open Backdrop Overlay & Scroll Lock */
+html.menu-open, body.menu-open {
+    overflow: hidden !important;
+    height: 100vh !important;
+}
+
 body.menu-open::before {
     content: '';
     position: fixed;
@@ -1028,6 +1033,10 @@ body.menu-open::before {
 
 
 @media (max-width: 768px) {
+    h2 {
+        font-size: 1.8rem !important;
+    }
+
     section {
         padding: 4rem 0 !important;
     }
@@ -1277,6 +1286,10 @@ body.light .sidebar-link:hover, body.light .sidebar-link.active {
     .db-inputs-grid {
         grid-template-columns: 1fr !important;
         gap: 1rem !important;
+    }
+
+    .db-welcome-hero h1 {
+        font-size: 1.5rem !important;
     }
 }
 
