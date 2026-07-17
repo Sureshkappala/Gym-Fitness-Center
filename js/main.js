@@ -516,7 +516,7 @@ function initDashboardMobileSidebar() {
             localStorage.removeItem('loggedInUserRole');
             showCustomAlert("You have signed out successfully.", "success");
             setTimeout(() => {
-                window.location.href = 'index.html';
+                window.location.href = 'login.html';
             }, 1500);
         });
     }
