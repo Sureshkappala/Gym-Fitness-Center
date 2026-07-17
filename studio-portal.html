@@ -3,16 +3,374 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="APEX FITNESS Athlete Dashboard. Track your calorie burns, check off workouts, and update profile settings.">
-    <title>Athlete Dashboard | APEX FITNESS</title>
-    
-    <!-- CSS Stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
-    
-    <!-- FontAwesome for Icons -->
+    <meta name="description" content="Aurelia Operations Dashboard - Live telemetry overview for SEO volume, Paid Bid ROAS, and custom conversion paths.">
+    <title>Telemetry Dashboard | Aurelia Portal</title>
+    <link rel="stylesheet" href="css/style.css?v=2.7">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <style>
+        /* Custom Dashboard Styling to Match Reference */
+        body {
+            background-color: #0b0f17;
+            color: #f3f4f6;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .db-container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 100vh;
+        }
+        
+        /* Sidebar Styling */
+        .db-sidebar {
+            background-color: #0e1320;
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2.5rem 1.8rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .sidebar-logo {
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        .sidebar-logo img {
+            height: 38px;
+            
+        }
+        .sidebar-section-title {
+            color: #4b5563;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin: 1.5rem 0 0.5rem 0;
+        }
+        .sidebar-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem 1rem;
+            color: #9ca3af;
+            text-decoration: none;
+            border-radius: var(--radius-sm);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        .sidebar-link:hover, .sidebar-link.active {
+            background: rgba(16, 185, 129, 0.08);
+            color: #10b981;
+        }
+        .sidebar-link.active {
+            border-left: 3px solid #10b981;
+            padding-left: calc(1rem - 3px);
+        }
+        .signout-btn {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem 1rem;
+            color: #ef4444;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: var(--radius-sm);
+            transition: background 0.2s;
+        }
+        .signout-btn:hover {
+            background: rgba(239, 68, 68, 0.08);
+        }
+
+        /* Main Content Styling */
+        .db-main {
+            padding: 2.5rem 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-height: 100vh;
+            overflow-y: auto;
+        }
+        
+        /* Top Navigation Header */
+        .db-top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .top-nav-title {
+            color: #9ca3af;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0;
+        }
+        .user-profile-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .user-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #10b981;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #fff;
+        }
+        .user-info {
+            text-align: right;
+        }
+        .user-name {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #f3f4f6;
+            margin: 0;
+        }
+        .user-role {
+            font-size: 0.75rem;
+            color: #6b7280;
+            margin: 0;
+        }
+
+        /* Hero Text block */
+        .db-welcome-hero h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 0 0 0.5rem 0;
+        }
+        .db-welcome-hero p {
+            color: #9ca3af;
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* Stats Cards Row */
+        .db-stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+        .stat-card {
+            background-color: #121824;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .stat-label {
+            font-size: 0.75rem;
+            color: #9ca3af;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        .stat-value {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 0;
+        }
+        .stat-icon-wrapper {
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        .icon-spend { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+        .icon-conv { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+        .icon-items { background: rgba(6, 182, 212, 0.1); color: #06b6d4; }
+        .icon-symmetry { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+
+        /* Dashboard Grid Layout (Left tables, right widgets) */
+        .db-grid {
+            display: grid;
+            grid-template-columns: 1.8fr 1fr;
+            gap: 1.8rem;
+        }
+        .grid-left {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+        
+        /* Dashboard Cards / Boxes */
+        .panel-box {
+            background-color: #121824;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            padding: 1.8rem;
+        }
+        .panel-box-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        .panel-box-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 0;
+        }
+        .panel-box-link {
+            font-size: 0.85rem;
+            color: #10b981;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Clean Dashboard Tables */
+        .db-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        .db-table th {
+            color: #4b5563;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+        .db-table td {
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+            font-size: 0.9rem;
+            color: #9ca3af;
+        }
+        .db-table tr:last-child td {
+            border-bottom: none;
+        }
+        .text-light-value {
+            color: #f3f4f6;
+            font-weight: 600;
+        }
+        
+        /* Status Badges */
+        .badge-status {
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+        .status-active {
+            background: rgba(16, 185, 129, 0.08);
+            color: #10b981;
+        }
+        .status-pending {
+            background: rgba(245, 158, 11, 0.08);
+            color: #f59e0b;
+        }
+        .status-completed {
+            background: rgba(59, 130, 246, 0.08);
+            color: #3b82f6;
+        }
+
+        /* Right Panel Widgets */
+        .right-widget {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .widget-metric-row {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .widget-metric-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #9ca3af;
+        }
+        .widget-progress-bar {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .widget-progress-fill {
+            height: 100%;
+            background: #10b981;
+            border-radius: 3px;
+        }
+        
+        .keyword-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            font-size: 0.9rem;
+        }
+        .keyword-item:last-child {
+            border-bottom: none;
+        }
+        .keyword-name {
+            color: #f3f4f6;
+            font-weight: 500;
+        }
+        .keyword-stats {
+            color: #9ca3af;
+        }
+
+        /* Responsive Layouts */
+        @media (max-width: 1200px) {
+            .db-stats-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .db-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 768px) {
+            .db-container {
+                grid-template-columns: 1fr;
+            }
+            .db-sidebar {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                padding: 1.5rem;
+            }
+            .sidebar-logo {
+                margin-bottom: 0.5rem;
+            }
+            .sidebar-section-title {
+                display: none;
+            }
+            .sidebar-menu {
+                flex-direction: row;
+                flex-wrap: wrap;
+                margin-top: 1rem;
+            }
+            .db-main {
+                padding: 1.5rem;
+            }
+            .db-stats-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-<body>
+<body style="overflow-y: auto;">
 
     <!-- ==========================================
        PRELOADER (HEART PULSE LOAD)
@@ -25,328 +383,247 @@
         <div class="preloader-logo"><img src="images/logo.webp" alt="Stackly Logo" class="logo-img" style="height: 48px;"></div>
         <div class="preloader-percentage">0%</div>
     </div>
-
-    <!-- ==========================================
-       SCROLL PROGRESS & CUSTOM CURSOR
-       ========================================== -->
-    <div class="scroll-progress-container">
-        <div class="scroll-progress-bar"></div>
-    </div>
     
     <div class="custom-cursor"></div>
     <div class="custom-cursor-dot"></div>
 
-    <!-- ==========================================
-       HEADER & NAVBAR
-       ========================================== -->
-    <header class="header">
-        <div class="container header-container">
-            <a href="index.html" class="logo"><img src="images/logo.webp" alt="Stackly Logo" class="logo-img"></a>
-            
-            <nav class="navbar">
-                <div class="drawer-header">
-                    <a href="index.html" class="logo"><img src="images/logo.webp" alt="Stackly Logo" class="logo-img"></a>
-                    <button class="drawer-close" aria-label="Close Menu"><i class="fa-solid fa-xmark"></i></button>
-                </div>
-                
-                <div class="drawer-search">
-                    <div style="position: relative; width: 100%;">
-                        <input type="text" placeholder="Search workouts...">
-                        <i class="fa-solid fa-magnifying-glass" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none;"></i>
-                    </div>
-                </div>
-
-                <ul class="nav-links">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Classes</a></li>
-                    <li><a href="workflow.html">Journey</a></li>
-                    <li><a href="portfolio.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-                
-                <div class="nav-mobile-cta">
-                    <a href="#" class="btn btn-secondary" id="dashboard-logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
-                </div>
-                
-                <div class="drawer-contact-info">
-                    <h5>Apex HQ</h5>
-                    <p><i class="fa-solid fa-phone"></i> +1 (800) 555-APEX</p>
-                    <p><i class="fa-solid fa-envelope"></i> elite@apexfitness.com</p>
-                    <p><i class="fa-solid fa-location-dot"></i> 500 Performance Blvd, Sector 7</p>
-                </div>
-            </nav>
-            
-            <div class="nav-controls">
-                <a href="#" class="btn btn-secondary btn-sm" id="dashboard-logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
-                <button class="menu-toggle" aria-label="Toggle Menu">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-            </div>
+        <!-- Mobile Toggle Header -->
+    <div class="db-mobile-header">
+        <button class="db-hamburger" aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <a href="index.html" class="db-mobile-logo">
+            <img src="images/logo.webp" alt="Stackly Logo" style="filter: brightness(0) invert(1);">
+        </a>
+        <div class="db-mobile-avatar">
+            <i class="fa-solid fa-circle-user"></i>
         </div>
-    </header>
-
-    <!-- ==========================================
-       PORTAL MAIN CONTENT
-       ========================================== -->
-    <section class="portal-section" id="portal-dashboard" style="padding-top: 11rem;">
-        <div class="container">
-            <!-- Welcome Header Banner -->
-            <div class="dashboard-banner glass-card" style="margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
-                <div>
-                    <span class="section-tag" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-circle-check"></i> Athlete Portal Active</span>
-                    <h1 style="font-size: 2.2rem; text-transform: uppercase;">Welcome back, <span class="dashboard-user-name" style="color: var(--primary);">Athlete</span>!</h1>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;">Registered Email: <span class="dashboard-user-email">athlete@apexfitness.com</span></p>
-                </div>
-                <div style="display: flex; gap: 1.5rem; text-align: center;">
-                    <div class="dashboard-banner-stat">
-                        <span style="font-size: 0.75rem; color: var(--text-muted); display: block; text-transform: uppercase; font-weight: 700;">Streak</span>
-                        <strong style="font-size: 1.8rem; color: var(--accent); font-family: var(--font-display);" id="streak-count-val">1</strong>
-                        <span style="font-size: 0.75rem; color: var(--text-muted); display: block;">DAYS ACTIVE</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Dashboard Columns Grid -->
-            <div class="dashboard-grid">
-                <!-- Main Metrics Column (Left) -->
-                <div class="dashboard-main-col">
-                    <!-- Calorie Chart Card -->
-                    <div class="glass-card hover-glow-card dashboard-chart-card" style="margin-bottom: 2rem;">
-                        <div class="dashboard-card-title">
-                            <h3><i class="fa-solid fa-fire" style="color: var(--accent);"></i> Weekly Energy Burned</h3>
-                            <span style="font-size: 0.8rem; color: var(--text-muted);">Calorie burn goals tracker (Target: 500 kcal/day)</span>
-                        </div>
-                        
-                        <div class="svg-chart-container" style="margin-top: 2rem; position: relative;">
-                            <!-- SVG Bar Chart -->
-                            <svg width="100%" height="150" viewBox="0 0 400 150" class="calories-bar-chart">
-                                <!-- Horizontal Grid Lines -->
-                                <line x1="30" y1="20" x2="390" y2="20" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
-                                <line x1="30" y1="70" x2="390" y2="70" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
-                                <line x1="30" y1="120" x2="390" y2="120" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
-                                
-                                <!-- Bar charts - Monday through Sunday -->
-                                <g class="chart-bar" data-val="480 KCAL">
-                                    <rect x="50" y="44" width="24" height="76" rx="4" fill="var(--primary)" />
-                                    <text x="62" y="140" fill="var(--text-muted)" font-size="9" text-anchor="middle" font-weight="700">MON</text>
-                                </g>
-                                <g class="chart-bar" data-val="650 KCAL">
-                                    <rect x="100" y="20" width="24" height="100" rx="4" fill="var(--accent)" />
-                                    <text x="112" y="140" fill="var(--text-muted)" font-size="9" text-anchor="middle" font-weight="700">TUE</text>
-                                </g>
-                                <g class="chart-bar" data-val="350 KCAL">
-                                    <rect x="150" y="64" width="24" height="56" rx="4" fill="var(--primary)" />
-                                    <text x="162" y="140" fill="var(--text-muted)" font-size="9" text-anchor="middle" font-weight="700">WED</text>
-                                </g>
-                                <g class="chart-bar" data-val="520 KCAL">
-                                    <rect x="200" y="38" width="24" height="82" rx="4" fill="var(--primary)" />
-                                    <text x="212" y="140" fill="var(--text-muted)" font-size="9" text-anchor="middle" font-weight="700">THU</text>
-                                </g>
-                                <g class="chart-bar" data-val="710 KCAL">
-                                    <rect x="250" y="10" width="24" height="110" rx="4" fill="var(--accent)" />
-                                    <text x="262" y="140" fill="var(--text-muted)" font-size="9" text-anchor="middle" font-weight="700">FRI</text>
-                                </g>
-                                <g class="chart-bar" data-val="450 KCAL">
-                                    <rect x="300" y="48" width="24" height="72" rx="4" fill="var(--primary)" />
-                                    <text x="312" y="140" fill="var(--text-muted)" font-size="9" text-anchor="middle" font-weight="700">SAT</text>
-                                </g>
-                                <g class="chart-bar" data-val="200 KCAL">
-                                    <rect x="350" y="88" width="24" height="32" rx="4" fill="var(--primary)" />
-                                    <text x="362" y="140" fill="var(--text-muted)" font-size="9" text-anchor="middle" font-weight="700">SUN</text>
-                                </g>
-                            </svg>
-                            <div class="chart-tooltip" style="position: absolute; display: none; background: var(--bg-tertiary); border: 1px solid var(--primary); padding: 0.25rem 0.5rem; font-size: 0.75rem; border-radius: var(--radius-sm); font-weight: 700; pointer-events: none;"></div>
-                        </div>
-                    </div>
-
-                    <!-- Row of Streaks and Water Tracker -->
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;" class="sub-dashboard-grid">
-                        <!-- Streak tracker -->
-                        <div class="glass-card hover-glow-card">
-                            <h3><i class="fa-solid fa-calendar-check" style="color: var(--primary);"></i> Workout Streak</h3>
-                            <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">Click active days to log completed workouts and increase streak count.</p>
-                            
-                            <div class="dashboard-streak-calendar">
-                                <div class="dashboard-streak-day completed" data-day="Mon">M</div>
-                                <div class="dashboard-streak-day" data-day="Tue"><i class="fa-solid fa-plus"></i></div>
-                                <div class="dashboard-streak-day" data-day="Wed"><i class="fa-solid fa-plus"></i></div>
-                                <div class="dashboard-streak-day" data-day="Thu"><i class="fa-solid fa-plus"></i></div>
-                                <div class="dashboard-streak-day" data-day="Fri"><i class="fa-solid fa-plus"></i></div>
-                                <div class="dashboard-streak-day" data-day="Sat"><i class="fa-solid fa-plus"></i></div>
-                                <div class="dashboard-streak-day" data-day="Sun"><i class="fa-solid fa-plus"></i></div>
-                            </div>
-                        </div>
-
-                        <!-- Water intake tracker -->
-                        <div class="glass-card hover-glow-card" style="display: flex; flex-direction: column;">
-                            <h3><i class="fa-solid fa-glass-water" style="color: #3b82f6;"></i> Water Tracker</h3>
-                            <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">Log hydration level (Goal: 120 oz/day)</p>
-                            
-                            <div style="display: flex; align-items: center; gap: 2rem; margin-top: auto;">
-                                <div class="water-glass-visual">
-                                    <div class="water-glass-cup">
-                                        <div id="water-progress-fill" style="height: 26.6%;"></div>
-                                    </div>
-                                </div>
-                                <div style="flex: 1;">
-                                    <span style="font-size: 0.8rem; color: var(--text-muted); display: block; margin-bottom: 0.25rem;">Intake:</span>
-                                    <strong style="font-size: 1.25rem; font-family: var(--font-display);" id="water-count">32 oz / 120 oz</strong>
-                                    <button class="btn btn-primary btn-sm" id="log-water-btn" style="width: 100%; margin-top: 1rem; padding: 0.4rem 0.8rem; font-size: 0.75rem;"><i class="fa-solid fa-plus"></i> Log 16 oz</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Settings / Info Column (Right) -->
-                <div class="dashboard-side-col">
-                    <!-- Booked Class Status -->
-                    <div class="glass-card hover-glow-card" style="margin-bottom: 2rem;">
-                        <h3><i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> Next Class Schedule</h3>
-                        <span class="class-category-tag" style="margin-top: 1rem; display: inline-flex;"><i class="fa-solid fa-heart-circle-bolt"></i> Cardio HIIT</span>
-                        <h4 style="margin-top: 0.5rem; text-transform: uppercase;">HIIT Blast Session</h4>
-                        <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0.5rem 0 1.5rem 0;"><i class="fa-solid fa-clock"></i> Today at 6:00 PM with Coach Elena</p>
-                        
-                        <div style="display: flex; gap: 1rem;">
-                            <button class="btn btn-secondary btn-sm" style="flex: 1; padding: 0.4rem 0.8rem; font-size: 0.75rem;" onclick="alert('Reschedule request sent!')">Reschedule</button>
-                            <button class="btn btn-secondary btn-sm" style="flex: 1; padding: 0.4rem 0.8rem; font-size: 0.75rem; color: var(--accent); border-color: var(--border-glass);" onclick="alert('Class booking cancelled.')">Cancel</button>
-                        </div>
-                    </div>
-
-                    <!-- Profile Account Settings Form -->
-                    <div class="glass-card hover-glow-card">
-                        <h3><i class="fa-solid fa-user-gear" style="color: var(--accent);"></i> Account Settings</h3>
-                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">Modify credentials stored in your biometric cache.</p>
-                        
-                        <form id="dashboard-settings-form">
-                            <div class="form-group">
-                                <label for="set-name">Display Name</label>
-                                <input type="text" id="set-name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="set-email">Email Address</label>
-                                <input type="email" id="set-email" required>
-                            </div>
-                            <div class="form-group" style="margin-bottom: 2rem;">
-                                <label for="set-weight">Target Weight (lbs)</label>
-                                <input type="number" id="set-weight" value="175">
-                            </div>
-                            
-                            <button type="submit" class="btn btn-primary" style="width: 100%;">Save Changes</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-       FOOTER
-       ========================================== -->
-        <footer class="footer">
-        <div class="container footer-grid">
-            <!-- Col 1 -->
-            <div class="footer-col-about">
-                <a href="index.html" class="logo" style="margin-bottom: 1.5rem;">
-                    <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
-                </a>
-                <p>We are a high-performance training ground. We build resilient bodies, focused minds, and supportive athletic environments built for progress.</p>
-                <div class="footer-social-row">
-                    <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="404.html" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                </div>
-            </div>
-            
-            <!-- Col 2 -->
-            <div>
-                <h4>Quick Links</h4>
-                <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="workflow.html">Design Workflow</a></li>
-                    <li><a href="portfolio.html">Design Portfolio</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-            
-            <!-- Col 3 -->
-            <div>
-                <h4>Services</h4>
-                <ul class="footer-links">
-                    <li><a href="services.html">Power Lifting</a></li>
-                    <li><a href="services.html">Apex HIIT Blast</a></li>
-                    <li><a href="services.html">Vinyasa Yoga Flow</a></li>
-                    <li><a href="services.html">MMA Striking</a></li>
-                    <li><a href="services.html">Cryo & Recovery</a></li>
-                    <li><a href="services.html">Refuel Juicery</a></li>
-                </ul>
-            </div>
-            
-            <!-- Col 4 -->
-            <div>
-                <h4>Newsletter</h4>
-                <p style="margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6;">Subscribe to receive style forecasts, custom wood-shop updates, and interior design trend reports from our team.</p>
-                <form class="footer-newsletter-form">
-                    <input type="email" placeholder="Your email address" required>
-                    <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
-                </form>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <div class="container footer-bottom-flex">
-                <p>&copy; 2026 Stackly. All Rights Reserved.</p>
-                <div class="footer-bottom-links">
-                    <a href="404.html">Privacy Policy</a>
-                    <a href="404.html">Terms of Service</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <button class="back-to-top" aria-label="Back to Top"><i class="fa-solid fa-chevron-up"></i></button>
-
-    <!-- JavaScript Script -->
-    <script src="js/main.js"></script>
+    </div>
     
-    <!-- Local Page Tooltip and Interaction Script for Weekly Chart -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Interactive Weekly Chart Tooltips
-            const bars = document.querySelectorAll('.chart-bar');
-            const tooltip = document.querySelector('.chart-tooltip');
-            const chartContainer = document.querySelector('.svg-chart-container');
+    <!-- Sidebar Overlay -->
+    <div class="db-sidebar-overlay"></div>
+
+    <div class="db-container">
+        <!-- SIDEBAR -->
+                <aside class="db-sidebar">
+            <!-- Close Button -->
+            <button class="db-sidebar-close" aria-label="Close Menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div>
+                <a href="studio-portal.html" class="sidebar-logo" style="display: inline-flex; background: white; padding: 0.5rem 0.8rem; border-radius: var(--radius-sm); width: 100%; box-sizing: border-box; justify-content: center; margin-bottom: 2rem;">
+                    <img src="images/logo.webp" alt="Stackly Logo" style="height: 24px; width: auto; object-fit: contain;">
+                </a>
+                
+                <div class="sidebar-section-title">Main</div>
+                <nav class="sidebar-menu">
+                    <a href="studio-portal.html" class="sidebar-link active"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+                </nav>
+
+                <div class="sidebar-section-title">Workout Programs</div>
+                <nav class="sidebar-menu">
+                    <a href="studio-portal.html#weight-room" class="sidebar-link"><i class="fa-solid fa-dumbbell"></i> Weight Room</a>
+                    <a href="studio-portal.html#cardio-turf" class="sidebar-link"><i class="fa-solid fa-person-running"></i> Cardio Turf</a>
+                </nav>
+
+                <div class="sidebar-section-title">Account</div>
+                <nav class="sidebar-menu">
+                    <a href="client-profile-portal.html" class="sidebar-link"><i class="fa-solid fa-user"></i> My Profile</a>
+                    <a href="design-support-portal.html" class="sidebar-link"><i class="fa-solid fa-headset"></i> Support Desk</a>
+                </nav>
+            </div>
             
-            if (bars.length > 0 && tooltip && chartContainer) {
-                bars.forEach(bar => {
-                    const rect = bar.querySelector('rect');
-                    
-                    bar.addEventListener('mouseenter', (e) => {
-                        const val = bar.getAttribute('data-val');
-                        tooltip.textContent = val;
-                        tooltip.style.display = 'block';
-                        rect.style.opacity = '0.85';
-                    });
-                    
-                    bar.addEventListener('mousemove', (e) => {
-                        const containerRect = chartContainer.getBoundingClientRect();
-                        const x = e.clientX - containerRect.left + 10;
-                        const y = e.clientY - containerRect.top - 35;
-                        tooltip.style.left = `${x}px`;
-                        tooltip.style.top = `${y}px`;
-                    });
-                    
-                    bar.addEventListener('mouseleave', () => {
-                        tooltip.style.display = 'none';
-                        rect.style.opacity = '1';
-                    });
-                });
-            }
-        });
+            <a href="login.html" class="signout-btn"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a>
+        </aside>
+
+        <!-- MAIN PANEL -->
+        <main class="db-main">
+            <!-- Top Nav -->
+            <div class="db-top-nav">
+                <h4 class="top-nav-title">Operations Control Board</h4>
+                
+                <div class="user-profile-badge">
+                    <div class="user-info">
+                        <h5 class="user-name">Richard Henderson</h5>
+                        <p class="user-role">Client Member</p>
+                    </div>
+                    <div class="user-avatar">RH</div>
+                </div>
+            </div>
+
+            <!-- Welcome Hero -->
+            <div class="db-welcome-hero" data-aos="fade-right" data-aos-duration="1000">
+                <h1>Hello, <span class="user-name" style="font-size: inherit; font-weight: inherit; color: inherit;">Richard Henderson</span></h1>
+                <p>Access your customized biometric metrics, active training schedules, and fitness performance files.</p>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="db-stats-row" data-aos="fade-up" data-aos-duration="800">
+                <!-- Stat 1 -->
+                <div class="stat-card">
+                    <div>
+                        <div class="stat-label">Active Calories</div>
+                        <h3 class="stat-value">45,280 kcal</h3>
+                    </div>
+                    <div class="stat-icon-wrapper icon-spend"><i class="fa-solid fa-fire"></i></div>
+                </div>
+                <!-- Stat 2 -->
+                <div class="stat-card">
+                    <div>
+                        <div class="stat-label">Workout Sessions</div>
+                        <h3 class="stat-value">128 Sessions</h3>
+                    </div>
+                    <div class="stat-icon-wrapper icon-conv"><i class="fa-solid fa-calendar-check"></i></div>
+                </div>
+                <!-- Stat 3 -->
+                <div class="stat-card">
+                    <div>
+                        <div class="stat-label">Monthly Steps</div>
+                        <h3 class="stat-value">1.42M Steps</h3>
+                    </div>
+                    <div class="stat-icon-wrapper icon-items"><i class="fa-solid fa-shoe-prints"></i></div>
+                </div>
+                <!-- Stat 4 -->
+                <div class="stat-card">
+                    <div>
+                        <div class="stat-label">Compliance Index</div>
+                        <h3 class="stat-value">98.2% Rating</h3>
+                    </div>
+                    <div class="stat-icon-wrapper icon-symmetry"><i class="fa-solid fa-heart-pulse"></i></div>
+                </div>
+            </div>
+
+            <!-- Main Layout Grid -->
+            <div class="db-grid">
+                <!-- Left Column Boxes -->
+                <div class="grid-left">
+                    <!-- Box 1: Active Campaigns -->
+                    <div class="panel-box" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="panel-box-header">
+                            <h3 class="panel-box-title">Active Workout Rooms</h3>
+                            <a href="portfolio.html" class="panel-box-link">View All</a>
+                        </div>
+                        
+                        <table class="db-table">
+                            <thead>
+                                <tr>
+                                    <th>Room</th>
+                                    <th>Trainer</th>
+                                    <th>Weekly Target</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-light-value">Weight Room</td>
+                                    <td>Coach Marcus</td>
+                                    <td>4 Sessions</td>
+                                    <td><span class="badge-status status-active">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-light-value">Cardio Turf</td>
+                                    <td>Coach Sarah</td>
+                                    <td>3 Sessions</td>
+                                    <td><span class="badge-status status-pending">Pending</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Box 2: Operations Logs -->
+                    <div class="panel-box" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                        <div class="panel-box-header">
+                            <h3 class="panel-box-title">Training Logs & Milestone Tracker</h3>
+                        </div>
+                        
+                        <table class="db-table">
+                            <thead>
+                                <tr>
+                                    <th>Milestone</th>
+                                    <th>Program Detail</th>
+                                    <th>Target Date</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-light-value">Body Fat Assessment</td>
+                                    <td>3-point caliper test</td>
+                                    <td>14 Feb 2026</td>
+                                    <td><span class="badge-status status-completed">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-light-value">Vo2 Max Testing</td>
+                                    <td>Treadmill ramp protocol</td>
+                                    <td>08 Dec 2025</td>
+                                    <td><span class="badge-status status-completed">Completed</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Right Column Widgets -->
+                <div class="right-widget">
+                    <!-- Box 3: Performance Metrics -->
+                    <div class="panel-box" data-aos="fade-left" data-aos-duration="1000">
+                        <h3 class="panel-box-title" style="margin-bottom: 1.5rem;">Fitness Standards</h3>
+                        
+                        <div class="widget-metric-row">
+                            <div class="widget-metric-header">
+                                <span>Muscle Symmetry Score</span>
+                                <span class="text-light-value">92/100</span>
+                            </div>
+                            <div class="widget-progress-bar">
+                                <div class="widget-progress-fill" style="width: 92%;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="widget-metric-row">
+                            <div class="widget-metric-header">
+                                <span>Hydration Index</span>
+                                <span class="text-light-value">78/100</span>
+                            </div>
+                            <div class="widget-progress-bar">
+                                <div class="widget-progress-fill" style="width: 78%; background-color: #3b82f6;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Box 4: Top Performing Keywords -->
+                    <div class="panel-box" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100">
+                        <h3 class="panel-box-title" style="margin-bottom: 1.5rem;">Top Performing Exercises</h3>
+                        
+                        <div class="keyword-item">
+                            <span class="keyword-name">"Deadlift"</span>
+                            <span class="keyword-stats">14,200 reps logged</span>
+                        </div>
+                        <div class="keyword-item">
+                            <span class="keyword-name">"Barbell Squat"</span>
+                            <span class="keyword-stats">8,500 reps logged</span>
+                        </div>
+                        <div class="keyword-item">
+                            <span class="keyword-name">"Bench Press"</span>
+                            <span class="keyword-stats">4,100 reps logged</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Theme Switch Button fixed in bottom right -->
+    <div style="position: fixed; bottom: 2rem; right: 2rem; z-index: 100;">
+        <button class="theme-switch" aria-label="Toggle Theme">
+            <i class="fa-solid fa-moon"></i>
+            <i class="fa-solid fa-sun"></i>
+        </button>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 800, easing: 'ease-out-cubic' });
     </script>
+    <script src="js/main.js?v=2.7"></script>
 </body>
 </html>

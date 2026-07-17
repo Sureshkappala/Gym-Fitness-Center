@@ -17,7 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
     initHeroConsole();
     initDashboard();
     init404Game();
-    initFormInputsValidation();
+    initFormInputsValidation()
+    initDashboardMobileSidebar();
+    initDashboardUserCredentials();
+;
 });
 
 /* ==========================================================================
@@ -703,25 +706,40 @@ function initDashboard() {
             const name = document.getElementById('reg-name').value.trim();
             const email = document.getElementById('reg-email').value.trim();
             const pass = document.getElementById('reg-password').value;
+            const role = document.getElementById('reg-role').value;
             
-            if (name && email && pass) {
+            if (name && email && pass && role) {
                 if (!checkPasswordStrength(pass)) {
-                    regPass.setCustomValidity("Password must be at least 8 characters and contain a mix of uppercase, lowercase, digits, and symbols.");
-                    regPass.reportValidity();
+                    showCustomAlert("Password must be at least 8 characters and contain a mix of uppercase, lowercase, digits, and symbols.");
                     return;
                 }
                 if (regConfirmPass && regConfirmPass.value !== pass) {
-                    regConfirmPass.setCustomValidity("Passwords do not match.");
-                    regConfirmPass.reportValidity();
+                    showCustomAlert("Passwords do not match.");
                     return;
                 }
                 
                 localStorage.setItem('loggedInUserName', name);
                 localStorage.setItem('loggedInUserEmail', email);
+                localStorage.setItem('loggedInUserRole', role);
                 localStorage.setItem('workoutStreak', '1');
                 
-                alert('Registration successful! Redirecting to your Apex Dashboard...');
-                window.location.href = 'studio-portal.html';
+                // Show dynamic card success screen like in Screenshot 2
+                const cardSide = document.querySelector('.login-form-side');
+                if (cardSide) {
+                    cardSide.innerHTML = `
+                        <div class="registration-success-content" style="text-align: center; padding: 2rem 0;">
+                            <div style="font-size: 4.5rem; color: #10b981; margin-bottom: 1.5rem;">
+                                <i class="fa-solid fa-circle-check"></i>
+                            </div>
+                            <h2 style="font-size: 1.8rem; font-weight: 700; color: var(--text-light); margin-bottom: 1rem; text-transform: none;">Registration Complete</h2>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2rem;">Your design profile has been created. Redirecting to Login...</p>
+                            <a href="login.html" class="btn btn-primary" style="border-radius: var(--radius-full) !important; padding: 0.8rem 2rem; background: #0b0f19; border: 1px solid rgba(255,255,255,0.08);">Proceed to Login</a>
+                        </div>
+                    `;
+                    setTimeout(() => {
+                        window.location.href = 'login.html';
+                    }, 2500);
+                }
             }
         });
     }
@@ -946,6 +964,125 @@ function initFormInputsValidation() {
             } else {
                 regConfirmPass.setCustomValidity("Passwords do not match.");
             }
+        });
+    }
+}
+
+
+/* ==========================================================================
+   DASHBOARD CUSTOM ALERT MODAL & SIDEBAR FUNCTIONS
+   ========================================================================== */
+function showCustomAlert(message, type = 'error') {
+    if (document.querySelector('.custom-alert-overlay')) return;
+
+    const overlay = document.createElement('div');
+    overlay.className = 'custom-alert-overlay';
+    
+    const modal = document.createElement('div');
+    modal.className = 'custom-alert-modal glass-card';
+    
+    const iconClass = type === 'success' ? 'fa-circle-check' : 'fa-triangle-exclamation';
+    const iconColor = type === 'success' ? '#10b981' : '#ef4444';
+    
+    modal.innerHTML = `
+        <div class="custom-alert-icon" style="color: ${iconColor}; font-size: 3.5rem; margin-bottom: 1.5rem; text-align: center;"><i class="fa-solid ${iconClass}"></i></div>
+        <p class="custom-alert-message" style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem; text-align: center;">${message}</p>
+        <button class="custom-alert-btn btn btn-primary" style="width: 100px; margin: 0 auto; display: block; border-radius: var(--radius-full) !important;">OK</button>
+    `;
+    
+    overlay.appendChild(modal);
+    document.body.appendChild(overlay);
+    
+    setTimeout(() => {
+        overlay.classList.add('active');
+        modal.classList.add('active');
+    }, 10);
+    
+    const closeBtn = modal.querySelector('.custom-alert-btn');
+    const closeAlert = () => {
+        overlay.classList.remove('active');
+        modal.classList.remove('active');
+        setTimeout(() => {
+            overlay.remove();
+        }, 300);
+    };
+    
+    closeBtn.addEventListener('click', closeAlert);
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeAlert();
+    });
+}
+
+function initDashboardMobileSidebar() {
+    const topNav = document.querySelector('.db-top-nav');
+    const sidebar = document.querySelector('.db-sidebar');
+    const overlay = document.querySelector('.db-sidebar-overlay');
+
+    if (topNav && sidebar) {
+        let hamburger = topNav.querySelector('.db-hamburger');
+        if (!hamburger) {
+            hamburger = document.createElement('button');
+            hamburger.className = 'db-hamburger';
+            hamburger.setAttribute('aria-label', 'Toggle Menu');
+            hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            topNav.insertBefore(hamburger, topNav.firstChild);
+        }
+
+        hamburger.addEventListener('click', () => {
+            sidebar.classList.add('active');
+            if (overlay) overlay.classList.add('active');
+            document.documentElement.classList.add('menu-open');
+            document.body.classList.add('menu-open');
+        });
+    }
+
+    const closeSidebar = () => {
+        if (sidebar) sidebar.classList.remove('active');
+        if (overlay) overlay.classList.remove('active');
+        document.documentElement.classList.remove('menu-open');
+        document.body.classList.remove('menu-open');
+    };
+
+    if (overlay) overlay.addEventListener('click', closeSidebar);
+    
+    const closeBtn = document.querySelector('.db-sidebar-close');
+    if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
+}
+
+function initDashboardUserCredentials() {
+    const userNameElements = document.querySelectorAll('.user-name');
+    const userAvatarElements = document.querySelectorAll('.user-avatar');
+    
+    const storedName = localStorage.getItem('loggedInUserName');
+    const storedEmail = localStorage.getItem('loggedInUserEmail');
+    
+    if (storedName) {
+        userNameElements.forEach(elem => {
+            if (elem.tagName === 'INPUT') {
+                elem.value = storedName;
+            } else {
+                elem.textContent = storedName;
+            }
+        });
+        
+        // Generate user initials for avatar block
+        let initials = '';
+        const nameParts = storedName.split(' ');
+        if (nameParts[0]) initials += nameParts[0].charAt(0);
+        if (nameParts.length > 1 && nameParts[1]) initials += nameParts[1].charAt(0);
+        initials = initials.toUpperCase();
+        
+        userAvatarElements.forEach(elem => {
+            if (elem.tagName !== 'IMG') {
+                elem.textContent = initials;
+            }
+        });
+    }
+    
+    if (storedEmail) {
+        const emailInputs = document.querySelectorAll('#profile-email, input[type="email"].db-input');
+        emailInputs.forEach(input => {
+            input.value = storedEmail;
         });
     }
 }
