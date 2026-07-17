@@ -1153,6 +1153,7 @@ body.light .sidebar-link:hover, body.light .sidebar-link.active {
     border-radius: var(--radius-sm);
     padding: 2rem;
     margin-bottom: 2rem;
+    overflow-x: auto;
 }
 
 .panel-box-header {
@@ -1271,6 +1272,11 @@ body.light .sidebar-link:hover, body.light .sidebar-link.active {
     .db-stats-row {
         grid-template-columns: 1fr !important;
         gap: 1.2rem !important;
+    }
+
+    .db-inputs-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
     }
 }
 

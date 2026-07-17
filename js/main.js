@@ -433,6 +433,7 @@ function initFormValidations() {
 
                 // Render Inline Success Panel (Screenshot 4)
                 const cardSide = document.querySelector('.login-form-side');
+                const targetDashboard = (role === 'trainer') ? 'trainer-portal.html' : 'studio-portal.html';
                 if (cardSide) {
                     cardSide.innerHTML = `
                         <div class="login-success-content" style="text-align: center; padding: 2rem 0;">
@@ -440,12 +441,12 @@ function initFormValidations() {
                                 <i class="fa-solid fa-circle-check"></i>
                             </div>
                             <h2 style="font-size: 1.8rem; font-weight: 700; color: var(--text-light); margin-bottom: 1rem; text-transform: none;">Authentication Approved</h2>
-                            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2rem;">Redirecting to your Aurelia Design portal...</p>
-                            <a href="studio-portal.html" class="btn btn-primary" style="border-radius: var(--radius-full) !important; padding: 0.8rem 2rem; background: #0b0f19; border: 1px solid rgba(255,255,255,0.08);">Go to Dashboard</a>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2rem;">Redirecting to your Apex portal...</p>
+                            <a href="${targetDashboard}" class="btn btn-primary" style="border-radius: var(--radius-full) !important; padding: 0.8rem 2rem; background: #0b0f19; border: 1px solid rgba(255,255,255,0.08);">Go to Dashboard</a>
                         </div>
                     `;
                     setTimeout(() => {
-                        window.location.href = 'studio-portal.html';
+                        window.location.href = targetDashboard;
                     }, 2200);
                 }
             }
