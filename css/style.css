@@ -633,20 +633,21 @@ body.light .logo-img {
     width: 38px;
     height: 38px;
     border-radius: 50%;
-    background-color: var(--bg-tertiary);
-    border: 1px solid var(--border-glass);
+    background-color: rgba(225, 29, 72, 0.05);
+    border: 1px solid rgba(225, 29, 72, 0.15);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--text-muted);
+    color: var(--primary);
     transition: all var(--transition-fast);
 }
 
 .footer-social-row a:hover {
     background: var(--gradient-primary);
-    color: #fff;
+    color: #fff !important;
     border-color: var(--primary);
     transform: translateY(-2px);
+    box-shadow: var(--shadow-glow-primary);
 }
 
 .footer h4 {
@@ -1014,8 +1015,20 @@ body.menu-open::before {
 
 .grid-3col {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
+}
+
+@media (max-width: 991px) {
+    .grid-3col {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-3col {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 991px) {
