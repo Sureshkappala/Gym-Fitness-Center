@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact APEX FITNESS. Schedule a free facility tour or dynamic fitness assessment. Map, hours, and contact details.">
+    <meta name="description" content="APEX FITNESS Contacts. Book your free fitness assessment, call us, or find directions to our facility.">
     <title>Contact Us | APEX FITNESS</title>
     
     <!-- CSS Stylesheet -->
@@ -66,14 +66,20 @@
                 </ul>
                 
                 <div class="nav-mobile-cta">
-                    <a href="login.html" class="btn btn-secondary"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+                    <a href="login.html" class="btn btn-secondary">Login</a>
                     <a href="contact.html" class="btn btn-primary">Book Consultation</a>
+                </div>
+                
+                <div class="drawer-contact-info">
+                    <h5>Apex HQ</h5>
+                    <p><i class="fa-solid fa-phone"></i> +1 (800) 555-APEX</p>
+                    <p><i class="fa-solid fa-envelope"></i> elite@apexfitness.com</p>
+                    <p><i class="fa-solid fa-location-dot"></i> 500 Performance Blvd, Sector 7</p>
                 </div>
             </nav>
             
             <div class="nav-controls">
-                
-                <a href="login.html" class="btn btn-secondary btn-sm"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+                <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
                 <a href="contact.html" class="btn btn-primary btn-sm">Book Consultation</a>
                 <button class="menu-toggle" aria-label="Toggle Menu">
                     <i class="fa-solid fa-bars"></i>
@@ -83,138 +89,70 @@
     </header>
 
     <!-- ==========================================
-       PAGE HEADER
+       SUBPAGE HERO
        ========================================== -->
-    <section class="page-banner">
-        <div class="container" style="text-align: center;">
-            <span class="section-tag">Get in Touch</span>
-            <h1 class="page-banner-title">Begin Your <span>Assessment</span></h1>
-            <p class="page-banner-desc">Schedule a private biometric assessment or tour. Connect with our coaching mentors today.</p>
+    <section class="subpage-hero" style="padding: 10rem 0 5rem 0; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.95)), url('images/yoga.webp') no-repeat center center/cover; text-align: center;">
+        <div class="container">
+            <span class="section-tag"><i class="fa-solid fa-phone"></i> Contact</span>
+            <h1 style="font-size: 3rem; margin-top: 0.5rem;">Get in Touch</h1>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 1rem auto 0 auto;">Connect with our admissions desk, request trial passes, or locate the gym grid map.</p>
         </div>
     </section>
 
     <!-- ==========================================
-       CONTACT GRID SECTION
+       CONTACT DETAIL PANELS & FORM
        ========================================== -->
-    <section class="section-padding">
-        <div class="container contact-page-grid">
-            <!-- Left Info & Vector Map -->
-            <div class="contact-info-column">
-                <h2 class="section-title" style="text-align: left; font-size: 2.2rem; margin-bottom: 2rem;">Apex <span>HQ Info</span></h2>
-                
-                <ul class="contact-details-cards-list">
-                    <li class="glass-card hover-glow-card">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <div>
-                            <h4>Facility Location</h4>
-                            <p>500 Performance Blvd, Sector 7</p>
-                        </div>
-                    </li>
-                    <li class="glass-card hover-glow-card">
-                        <i class="fa-solid fa-phone"></i>
-                        <div>
-                            <h4>Phone Inquiries</h4>
-                            <p>+1 (800) 555-APEX</p>
-                        </div>
-                    </li>
-                    <li class="glass-card hover-glow-card">
-                        <i class="fa-solid fa-envelope"></i>
-                        <div>
-                            <h4>Email Assistance</h4>
-                            <p>elite@apexfitness.com</p>
-                        </div>
-                    </li>
-                </ul>
-
-                <!-- High-End Dark Interactive SVG Map Mockup -->
-                <div class="map-mockup-wrapper glass-card">
-                    <div class="map-header">
-                        <div class="map-title font-display"><i class="fa-solid fa-compass"></i> GPS RADAR ACTIVE</div>
-                        <span class="map-coord">LAT: 40.7128° N | LON: 74.0060° W</span>
-                    </div>
-                    <div class="map-canvas-container">
-                        <svg viewBox="0 0 400 200" width="100%" height="100%" class="svg-map">
-                            <!-- Background Map Grids -->
-                            <rect width="400" height="200" fill="var(--bg-tertiary)"></rect>
-                            <defs>
-                                <pattern id="mapGrid" width="20" height="20" patternUnits="userSpaceOnUse">
-                                    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255, 255, 255, 0.02)" stroke-width="1"/>
-                                </pattern>
-                            </defs>
-                            <rect width="400" height="200" fill="url(#mapGrid)"></rect>
-                            
-                            <!-- Fake Vector Streets -->
-                            <path d="M 0 40 L 400 40" stroke="rgba(255,255,255,0.05)" stroke-width="6" fill="none"></path>
-                            <path d="M 0 150 L 400 130" stroke="rgba(255,255,255,0.05)" stroke-width="4" fill="none"></path>
-                            <path d="M 100 0 L 100 200" stroke="rgba(255,255,255,0.05)" stroke-width="8" fill="none"></path>
-                            <path d="M 280 0 L 300 200" stroke="rgba(255,255,255,0.05)" stroke-width="5" fill="none"></path>
-                            
-                            <!-- Fake River -->
-                            <path d="M 0 10 C 120 30, 200 -10, 400 20" stroke="rgba(0,229,255,0.05)" stroke-width="20" fill="none"></path>
-                            
-                            <!-- Radar sweep center circle -->
-                            <circle cx="200" cy="90" r="60" fill="none" stroke="var(--primary)" stroke-width="1" stroke-dasharray="4 4" opacity="0.3"></circle>
-                            <circle cx="200" cy="90" r="30" fill="none" stroke="var(--primary)" stroke-width="1" stroke-dasharray="2 2" opacity="0.2"></circle>
-                            
-                            <!-- Target location coordinates marker -->
-                            <g class="map-pulsing-marker">
-                                <circle cx="200" cy="90" r="16" fill="var(--primary-glow)" opacity="0.7">
-                                    <animate attributeName="r" values="8;20;8" dur="2s" repeatCount="indefinite" />
-                                </circle>
-                                <circle cx="200" cy="90" r="5" fill="var(--primary)"></circle>
-                                <path d="M 200 90 L 220 70 M 220 70 L 260 70" stroke="var(--primary)" stroke-width="1.5" fill="none"></path>
-                                <text x="225" y="64" fill="var(--text-light)" font-family="var(--font-display)" font-size="10" font-weight="700">APEX HQ</text>
-                            </g>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Right Booking Form -->
-            <div class="contact-form-column glass-card">
-                <h2 class="section-title" style="text-align: left; font-size: 2.2rem; margin-bottom: 1rem;">Book A <span>Session</span></h2>
-                <p style="color: var(--text-muted); margin-bottom: 2rem;">Confirm your slot for a free facility tour or a professional training assessment.</p>
-                
-                <form class="assessment-booking-form">
-                    <div class="form-row-two">
-                        <div class="form-group">
-                            <label for="booking-name">Full Name</label>
+    <section>
+        <div class="container" style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: start;">
+            <div class="glass-card" style="padding: 3rem 2.5rem;">
+                <form id="booking-form">
+                    <div class="form-group">
+                        <label for="booking-name">Full Name</label>
+                        <div class="input-with-icon">
+                            <i class="fa-solid fa-user input-icon"></i>
                             <input type="text" id="booking-name" placeholder="John Doe" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="booking-email">Email Address</label>
-                            <input type="email" id="booking-email" placeholder="john@example.com" required>
                         </div>
                     </div>
                     
-                    <div class="form-row-two">
-                        <div class="form-group">
-                            <label for="booking-phone">Phone Number</label>
-                            <input type="tel" id="booking-phone" placeholder="(555) 000-1234" required>
+                    <div class="form-row-two" style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div class="form-group" style="flex: 1; margin-bottom: 0;">
+                            <label for="booking-email">Email Address</label>
+                            <div class="input-with-icon">
+                                <i class="fa-solid fa-envelope input-icon"></i>
+                                <input type="email" id="booking-email" placeholder="john@example.com" required>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="booking-program">Preferred Curation</label>
-                            <select id="booking-program">
-                                <option value="strength">Strength & Power lifting</option>
-                                <option value="cardio">Cardio HIIT Blast</option>
-                                <option value="yoga">Zen Mobility & Yoga</option>
-                                <option value="combat">MMA Striking & Boxing</option>
-                            </select>
+                        <div class="form-group" style="flex: 1; margin-bottom: 0;">
+                            <label for="booking-phone">Phone Number</label>
+                            <div class="input-with-icon">
+                                <i class="fa-solid fa-phone input-icon"></i>
+                                <input type="tel" id="booking-phone" placeholder="1234567890" required>
+                            </div>
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="booking-date">Preferred Date & Time</label>
-                        <input type="datetime-local" id="booking-date" required>
+                        <label for="booking-date">Assessment Date</label>
+                        <input type="date" id="booking-date" required>
                     </div>
                     
-                    <div class="form-group" style="margin-bottom: 2rem;">
-                        <label for="booking-message">Your Goals / Message</label>
-                        <textarea id="booking-message" rows="4" placeholder="Tell us about your fitness targets..."></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Schedule Free Assessment</button>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Inquiry</button>
                 </form>
+            </div>
+            
+            <div>
+                <h4 style="font-size: 1.25rem; margin-bottom: 1.5rem;">Apex HQ Details</h4>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;"><i class="fa-solid fa-location-dot" style="color: var(--primary); margin-right: 0.5rem;"></i> 500 Performance Blvd, Sector 7</p>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;"><i class="fa-solid fa-phone" style="color: var(--primary); margin-right: 0.5rem;"></i> +1 (800) 555-APEX</p>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem;"><i class="fa-solid fa-clock" style="color: var(--primary); margin-right: 0.5rem;"></i> Open 24 Hours, Mon - Sun</p>
+                
+                <!-- Embedded SVG map mock -->
+                <div style="width: 100%; height: 220px; background-color: var(--bg-secondary); border: 1px solid var(--border-glass); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; color: var(--text-muted);">
+                    <div style="text-align: center;">
+                        <i class="fa-solid fa-map-location-dot" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 0.5rem;"></i>
+                        <p style="font-size: 0.85rem; font-weight: 700;">Interactive Radar Grid HQ</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -222,9 +160,8 @@
     <!-- ==========================================
        FOOTER
        ========================================== -->
-        <footer class="footer">
+    <footer class="footer">
         <div class="container footer-grid">
-            <!-- Col 1 -->
             <div class="footer-col-about">
                 <a href="index.html" class="logo" style="margin-bottom: 1.5rem;">
                     <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
@@ -237,8 +174,6 @@
                     <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
-            
-            <!-- Col 2 -->
             <div>
                 <h4>Quick Links</h4>
                 <ul class="footer-links">
@@ -250,8 +185,6 @@
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
-            
-            <!-- Col 3 -->
             <div>
                 <h4>Services</h4>
                 <ul class="footer-links">
@@ -263,8 +196,6 @@
                     <li><a href="services.html">Refuel Juicery</a></li>
                 </ul>
             </div>
-            
-            <!-- Col 4 -->
             <div>
                 <h4>Newsletter</h4>
                 <p style="margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6;">Subscribe to receive style forecasts, custom wood-shop updates, and interior design trend reports from our team.</p>

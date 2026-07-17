@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="APEX FITNESS - Modern, Premium Gym & Fitness Center. Personal Training, Strength Conditioning, Yoga, Cardio Burn, and Elite Athlete programs.">
-    <title>APEX FITNESS | Premium Gym & Fitness Center</title>
+    <meta name="description" content="APEX FITNESS Center. Experience elite training methodologies, state-of-the-art facilities, certified trainers, and premium membership plans.">
+    <title>Temple of Strength | APEX FITNESS</title>
     
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
@@ -41,11 +41,15 @@
        ========================================== -->
     <header class="header">
         <div class="container header-container">
-            <a href="index.html" class="logo"><img src="images/logo.webp" alt="Stackly Logo" class="logo-img"></a>
+            <a href="index.html" class="logo">
+                <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+            </a>
             
             <nav class="navbar">
                 <div class="drawer-header">
-                    <a href="index.html" class="logo"><img src="images/logo.webp" alt="Stackly Logo" class="logo-img"></a>
+                    <a href="index.html" class="logo">
+                        <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
+                    </a>
                     <button class="drawer-close" aria-label="Close Menu"><i class="fa-solid fa-xmark"></i></button>
                 </div>
                 
@@ -66,7 +70,7 @@
                 </ul>
                 
                 <div class="nav-mobile-cta">
-                    <a href="login.html" class="btn btn-secondary"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+                    <a href="login.html" class="btn btn-secondary">Login</a>
                     <a href="contact.html" class="btn btn-primary">Book Consultation</a>
                 </div>
                 
@@ -79,8 +83,7 @@
             </nav>
             
             <div class="nav-controls">
-                
-                <a href="login.html" class="btn btn-secondary btn-sm"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+                <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
                 <a href="contact.html" class="btn btn-primary btn-sm">Book Consultation</a>
                 <button class="menu-toggle" aria-label="Toggle Menu">
                     <i class="fa-solid fa-bars"></i>
@@ -90,134 +93,189 @@
     </header>
 
     <!-- ==========================================
-       HERO SECTION (APEX COMMAND CENTER CONSOLE)
+       1. HERO SECTION (FULL SCREEN FITNESS MOTION)
        ========================================== -->
-    <section class="hero-section" id="hero">
-        <div class="container hero-grid">
-            <!-- Left Side Content -->
-            <div class="hero-content">
-                <span class="section-tag"><i class="fa-solid fa-bolt"></i> Elevate Your Limits</span>
-                <h1 class="hero-title">Pulse of Progress <span>Temple of Strength</span></h1>
-                <p class="hero-desc">Experience training engineered for results. We merge state-of-the-art biomechanical gear, elite coaching methodologies, and a premium atmosphere to unlock your absolute peak potential.</p>
-                
-                <div class="hero-actions">
-                    <a href="contact.html" class="btn btn-primary">Start Free Trial <i class="fa-solid fa-arrow-right"></i></a>
-                    <a href="services.html" class="btn btn-secondary">Explore Plans</a>
-                </div>
-                
-                <div class="hero-stats-row">
-                    <div class="quick-stat-item">
-                        <h3>24/7</h3>
-                        <p>Gym Access</p>
-                    </div>
-                    <div class="quick-stat-item">
-                        <h3>50+</h3>
-                        <p>Elite Coaches</p>
-                    </div>
-                    <div class="quick-stat-item">
-                        <h3>100%</h3>
-                        <p>Result Oriented</p>
-                    </div>
+    <section class="hero-section" id="hero" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)), url('images/cardio.webp') no-repeat center center/cover; padding-top: 10rem;">
+        <div class="container" style="text-align: center; max-width: 900px;">
+            <span class="section-tag" data-aos="fade-down"><i class="fa-solid fa-bolt"></i> Elevate Your Limits</span>
+            <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem); margin-bottom: 1.5rem; text-transform: uppercase;" data-aos="fade-up">Pulse of Progress <span style="background: var(--gradient-hybrid); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Temple of Strength</span></h1>
+            <p style="color: var(--text-muted); font-size: 1.15rem; line-height: 1.8; margin-bottom: 2.5rem;" data-aos="fade-up" data-aos-delay="200">Experience high-performance training engineered for results. We merge state-of-the-art biomechanical gear, elite coaching methodologies, and a premium athletic atmosphere to unlock your peak potential.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;" data-aos="fade-up" data-aos-delay="400">
+                <a href="contact.html" class="btn btn-primary">Start Free Trial <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="services.html" class="btn btn-secondary">Explore Plans</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       2. ABOUT SECTION
+       ========================================== -->
+    <section id="about" style="background-color: var(--bg-secondary);">
+        <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+            <div class="reveal-element" style="position: relative;">
+                <img src="images/weightroom.webp" alt="Training Ground" style="border-radius: var(--radius-md); border: 1px solid var(--border-glass); box-shadow: var(--shadow-md);">
+                <div style="position: absolute; bottom: -2rem; right: -2rem; width: 140px; height: 140px; background: var(--gradient-hybrid); border-radius: var(--radius-md); padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; text-align: center; color: var(--bg-primary); z-index: 2; box-shadow: var(--shadow-glow-primary);">
+                    <h3 style="font-size: 2.25rem; font-weight: 800; line-height: 1; margin: 0;">15+</h3>
+                    <p style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; margin-top: 0.25rem;">Years Gold</p>
                 </div>
             </div>
-            
-            <!-- Right Side Interactive Console -->
-            <div class="hero-console">
-                <div class="console-card glass-card hover-glow-card">
-                    <div class="console-header">
-                        <div class="console-status">
-                            <span class="status-dot-pulse"></span>
-                            <span>APEX MEMBER DASHBOARD</span>
+            <div>
+                <span class="section-tag"><i class="fa-solid fa-dumbbell"></i> Our Legacy</span>
+                <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">We build resilient bodies, focused minds, and athletic zones.</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Founded in 2011, APEX FITNESS stands as a world-class training ground. We reject traditional gym routines, preferring customized training plans, nutritional coaching, and specialized recovery sessions designed to help you accomplish milestones.</p>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem;">
+                    <li><i class="fa-solid fa-circle-check" style="color: var(--accent); margin-right: 0.5rem;"></i> High-performance biomechanical equipment</li>
+                    <li><i class="fa-solid fa-circle-check" style="color: var(--accent); margin-right: 0.5rem;"></i> Nationally certified strength and performance coaches</li>
+                    <li><i class="fa-solid fa-circle-check" style="color: var(--accent); margin-right: 0.5rem;"></i> Premium members dashboard tracking daily goals</li>
+                </ul>
+                <a href="about.html" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       3. FITNESS PROGRAMS (SERVICES)
+       ========================================== -->
+    <section id="programs">
+        <div class="container" style="text-align: center; margin-bottom: 4rem;">
+            <span class="section-tag"><i class="fa-solid fa-bolt"></i> Programs</span>
+            <h2 style="font-size: 2.5rem;">Engineered Workout Disciplines</h2>
+        </div>
+        <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+            <!-- Program 1 -->
+            <div class="glass-card reveal-element">
+                <i class="fa-solid fa-dumbbell" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1.5rem;"></i>
+                <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">Strength Training</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Build absolute power and raw muscle volume utilizing premium barbells, dumbbells, and squat racks.</p>
+            </div>
+            <!-- Program 2 -->
+            <div class="glass-card reveal-element" style="transition-delay: 100ms;">
+                <i class="fa-solid fa-heart-pulse" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1.5rem;"></i>
+                <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">Cardio & Fat Burn</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Elevate heart rate limits and burn calories utilizing treadmills, curved runners, and stationary bikes.</p>
+            </div>
+            <!-- Program 3 -->
+            <div class="glass-card reveal-element" style="transition-delay: 200ms;">
+                <i class="fa-solid fa-fire-flame-curved" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1.5rem;"></i>
+                <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">CrossFit Arena</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">High-intensity workouts combining gymnastics, weightlifting, and metabolic conditioning sequences.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       4. ANIMATED FITNESS COUNTERS
+       ========================================== -->
+    <section style="background-color: var(--bg-secondary); padding: 5rem 0;">
+        <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2.5rem; text-align: center;">
+            <div>
+                <h3 style="font-size: 3rem; font-weight: 800; color: var(--primary);" class="counter-value" data-target="15000">0</h3>
+                <p style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em; margin-top: 0.5rem;">Active Members</p>
+            </div>
+            <div>
+                <h3 style="font-size: 3rem; font-weight: 800; color: var(--primary);" class="counter-value" data-target="50">0</h3>
+                <p style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em; margin-top: 0.5rem;">Certified Coaches</p>
+            </div>
+            <div>
+                <h3 style="font-size: 3rem; font-weight: 800; color: var(--primary);" class="counter-value" data-target="15">0</h3>
+                <p style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em; margin-top: 0.5rem;">Years Experience</p>
+            </div>
+            <div>
+                <h3 style="font-size: 3rem; font-weight: 800; color: var(--primary);" class="counter-value" data-target="1280">0</h3>
+                <p style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em; margin-top: 0.5rem;">Success Stories</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       5. WORKOUT SCHEDULE (WEEKLY TIMETABLE)
+       ========================================== -->
+    <section id="schedule">
+        <div class="container" style="text-align: center; margin-bottom: 4rem;">
+            <span class="section-tag"><i class="fa-solid fa-calendar-days"></i> Time table</span>
+            <h2 style="font-size: 2.5rem;">Weekly Timetable Schedule</h2>
+        </div>
+        <div class="container" style="max-width: 900px;">
+            <!-- Day tabs selector -->
+            <div style="display: flex; gap: 0.5rem; justify-content: space-between; flex-wrap: wrap; margin-bottom: 2rem;">
+                <button class="btn btn-secondary btn-sm" style="flex: 1;" onclick="window.showCustomAlert('Monday workouts: Strength @ 9 AM, MMA @ 6 PM', 'success')">Mon</button>
+                <button class="btn btn-secondary btn-sm" style="flex: 1;" onclick="window.showCustomAlert('Tuesday workouts: HIIT @ 8 AM, CrossFit @ 5 PM', 'success')">Tue</button>
+                <button class="btn btn-secondary btn-sm" style="flex: 1;" onclick="window.showCustomAlert('Wednesday workouts: Yoga @ 10 AM, Power Lifting @ 7 PM', 'success')">Wed</button>
+                <button class="btn btn-secondary btn-sm" style="flex: 1;" onclick="window.showCustomAlert('Thursday workouts: Cardio @ 7 AM, Pilates @ 4 PM', 'success')">Thu</button>
+                <button class="btn btn-secondary btn-sm" style="flex: 1;" onclick="window.showCustomAlert('Friday workouts: Muscle Shred @ 9 AM, recovery @ 6 PM', 'success')">Fri</button>
+            </div>
+            <div class="glass-card" style="padding: 2rem;">
+                <div style="display: flex; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid var(--border-glass);">
+                    <span>08:00 AM - 09:30 AM</span>
+                    <span style="font-weight: 700; color: var(--primary);">Strength conditioning</span>
+                    <span>Coach Marcus</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid var(--border-glass);">
+                    <span>10:00 AM - 11:30 AM</span>
+                    <span style="font-weight: 700; color: var(--primary);">Metcon CrossFit</span>
+                    <span>Coach Sarah</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding: 1rem 0;">
+                    <span>06:00 PM - 07:30 PM</span>
+                    <span style="font-weight: 700; color: var(--primary);">Power lifting Blast</span>
+                    <span>Coach Dave</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       6. BMI CALCULATOR PREVIEW
+       ========================================== -->
+    <section style="background-color: var(--bg-secondary);">
+        <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+            <div>
+                <span class="section-tag"><i class="fa-solid fa-calculator"></i> Biometrics</span>
+                <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Know Your Body Mass Index</h2>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">Calculate your body mass index instantly to find weight targets and adjust calorie targets.</p>
+                <div class="glass-card" style="padding: 2rem;">
+                    <div class="form-row-two" style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div class="form-group" style="flex: 1; margin-bottom: 0;">
+                            <label for="bmi-weight">Weight (kg)</label>
+                            <input type="number" id="bmi-weight" placeholder="e.g. 75" required>
                         </div>
-                        <i class="fa-solid fa-chart-line console-icon-glow"></i>
+                        <div class="form-group" style="flex: 1; margin-bottom: 0;">
+                            <label for="bmi-height">Height (cm)</label>
+                            <input type="number" id="bmi-height" placeholder="e.g. 175" required>
+                        </div>
                     </div>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="const w=parseFloat(document.getElementById('bmi-weight').value); const h=parseFloat(document.getElementById('bmi-height').value)/100; if(w&&h){const bmi=(w/(h*h)).toFixed(1); window.showCustomAlert('Your BMI is '+bmi, 'success')}else{window.showCustomAlert('Please input valid height and weight.')}">Calculate BMI</button>
+                </div>
+            </div>
+            <div>
+                <img src="images/yoga.webp" alt="Fitness metrics" style="border-radius: var(--radius-md); border: 1px solid var(--border-glass);">
+            </div>
+        </div>
+    </section>
 
-                    <!-- Heart Rate Box -->
-                    <div class="console-row">
-                        <div class="console-subcard">
-                            <div class="console-subcard-label">Live Heart Rate</div>
-                            <div class="console-hr-container">
-                                <span class="console-hr-num" id="console-hr-value">75</span>
-                                <span class="console-hr-unit">BPM</span>
-                            </div>
-                            <div class="console-svg-chart">
-                                <svg width="200" height="60" viewBox="0 0 200 60">
-                                    <path id="hr-chart-path" d="M 0 30 L 200 30" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </div>
-                        </div>
-
-                        <!-- Target Activity Calculator -->
-                        <div class="console-subcard">
-                            <div class="console-subcard-label">Target Burn Rate</div>
-                            <div class="console-selector-wrap">
-                                <select id="console-activity">
-                                    <option value="cardio">Cardio Burn (HIIT)</option>
-                                    <option value="strength" selected>Heavy Weightlifting</option>
-                                    <option value="yoga">Vinyasa Yoga Flow</option>
-                                    <option value="combat">Combat Training</option>
-                                </select>
-                            </div>
-                            <div class="console-hr-container" style="margin-top: 0.5rem;">
-                                <span class="console-hr-num" id="console-est-calories" style="color: var(--primary);">450</span>
-                                <span class="console-hr-unit">CAL/HR</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Calorie Burn Ticker & Goal Circle -->
-                    <div class="console-row">
-                        <!-- Weight Loader -->
-                        <div class="console-subcard wide">
-                            <div class="console-subcard-label">Apex Barbell Weight Simulator</div>
-                            <div class="barbell-visual">
-                                <div class="barbell-bar-shaft"></div>
-                                <div class="barbell-graphic-plates"></div>
-                            </div>
-                            <div class="barbell-selection-row">
-                                <label class="checkbox-container">
-                                    <input type="checkbox" class="console-weight-plate" data-weight="45" data-muscles="Chest,Triceps,Shoulders" checked>
-                                    <span class="checkmark"></span> 45 lb Plate
-                                </label>
-                                <label class="checkbox-container">
-                                    <input type="checkbox" class="console-weight-plate" data-weight="25" data-muscles="Quads,Glutes,Hamstrings">
-                                    <span class="checkmark"></span> 25 lb Plate
-                                </label>
-                                <label class="checkbox-container">
-                                    <input type="checkbox" class="console-weight-plate" data-weight="10" data-muscles="Biceps,Forearms,Back">
-                                    <span class="checkmark"></span> 10 lb Plate
-                                </label>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; margin-top: 0.8rem; font-size: 0.85rem; color: var(--text-muted);">
-                                <span>Active Weight: <strong id="console-weight-value" style="color: var(--text-light);">135 lbs</strong></span>
-                                <span>Target: <strong id="console-target-muscles" style="color: var(--primary);">Chest, Triceps, Shoulders</strong></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="console-row" style="margin-bottom: 0;">
-                        <!-- Calorie Burn Ticker -->
-                        <div class="console-subcard">
-                            <div class="console-subcard-label">Daily Calories Burned</div>
-                            <div class="console-hr-container" style="margin: 0.5rem 0;">
-                                <span class="console-hr-num" id="console-calories-burn" style="font-family: monospace;">385</span>
-                                <span class="console-hr-unit">KCAL</span>
-                            </div>
-                            <span style="font-size: 0.75rem; color: var(--text-muted);"><i class="fa-solid fa-fire" style="color: var(--accent);"></i> Real-time tracking</span>
-                        </div>
-
-                        <!-- Goal circle progress -->
-                        <div class="console-subcard" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                            <div class="console-subcard-label" style="align-self: flex-start; margin-bottom: 0.5rem;">Daily Goal Limit</div>
-                            <div style="position: relative; width: 64px; height: 64px; margin-bottom: 0.5rem;">
-                                <svg width="64" height="64" id="console-goal-circle">
-                                    <circle class="progress-circle-bg" cx="32" cy="32" r="28" fill="transparent" stroke="var(--bg-tertiary)" stroke-width="4"/>
-                                    <circle class="progress-circle-fill" cx="32" cy="32" r="28" fill="transparent" stroke="var(--primary)" stroke-width="4" stroke-dasharray="175.9" stroke-dashoffset="131.9" stroke-linecap="round"/>
-                                </svg>
-                                <span id="console-goal-percent" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 0.8rem; font-weight: 700;">25%</span>
-                            </div>
-                            <button id="console-log-workout-btn" class="btn btn-secondary btn-sm" style="width: 100%; padding: 0.35rem 0.5rem; font-size: 0.75rem;"><i class="fa-solid fa-plus"></i> Log Workout</button>
-                        </div>
+    <!-- ==========================================
+       7. TRANSFORMATION STORIES (PORTFOLIO)
+       ========================================== -->
+    <section id="transformations">
+        <div class="container" style="text-align: center; margin-bottom: 4rem;">
+            <span class="section-tag"><i class="fa-solid fa-arrows-spin"></i> Achievements</span>
+            <h2 style="font-size: 2.5rem;">Transformation Success Stories</h2>
+        </div>
+        <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+            <div>
+                <img src="images/cardio.webp" alt="Before and After" style="border-radius: var(--radius-md); border: 1px solid var(--border-glass);">
+            </div>
+            <div class="glass-card">
+                <div style="font-size: 1.5rem; color: #f59e0b; margin-bottom: 1rem;">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <h3 style="font-size: 1.35rem; margin-bottom: 1rem;">"Lost 22 kg and built real strength!"</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">"Entering APEX FITNESS completely revolutionized my training mindset. The certified coaches customized my workout schedule and macros, helping me crush milestones I thought were impossible."</p>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <div style="width: 44px; height: 44px; border-radius: 50%; background-color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 800;">JC</div>
+                    <div>
+                        <h4 style="font-size: 1rem; text-transform: none; color: var(--text-light);">Jacob Cooper</h4>
+                        <p style="font-size: 0.8rem; color: var(--text-muted);">Member for 1 Year</p>
                     </div>
                 </div>
             </div>
@@ -225,315 +283,154 @@
     </section>
 
     <!-- ==========================================
-       QUICK CARDS SECTION
+       8. MEET OUR TRAINERS
        ========================================== -->
-    <section class="section-padding bg-alternate" id="quick-cards">
-        <div class="container">
-            <div class="quick-cards-grid">
-                <!-- Card 1 -->
-                <div class="glass-card hover-glow-card quick-card" data-aos="fade-up">
-                    <div class="quick-card-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
-                    <h3>24/7 Access</h3>
-                    <p>Train whenever inspiration strikes. Our biometric scanners unlock full gym access 365 days a year, day or night.</p>
+    <section id="trainers" style="background-color: var(--bg-secondary);">
+        <div class="container" style="text-align: center; margin-bottom: 4rem;">
+            <span class="section-tag"><i class="fa-solid fa-users"></i> Elite Team</span>
+            <h2 style="font-size: 2.5rem;">Certified Coach Specialists</h2>
+        </div>
+        <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem;">
+            <!-- Trainer 1 -->
+            <div class="glass-card reveal-element" style="text-align: center; padding: 2rem;">
+                <div style="width: 120px; height: 120px; border-radius: 50%; background-color: var(--bg-tertiary); margin: 0 auto 1.5rem auto; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: var(--primary); border: 2px solid var(--border-glass);"><i class="fa-solid fa-user-ninja"></i></div>
+                <h3 style="font-size: 1.2rem; text-transform: none;">Coach Marcus</h3>
+                <p style="color: var(--accent); font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5rem;">Strength Conditioning</p>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">CSCS, 8+ Years Coaching</p>
+                <div style="display: flex; gap: 0.5rem; justify-content: center;">
+                    <a href="404.html" style="color: var(--text-muted);"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="404.html" style="color: var(--text-muted);"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
-                <!-- Card 2 -->
-                <div class="glass-card hover-glow-card quick-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="quick-card-icon"><i class="fa-solid fa-award"></i></div>
-                    <h3>Expert Coaching</h3>
-                    <p>Work with standard-certified personal trainers to curate a bespoke workout and nutritional roadmap built for results.</p>
-                </div>
-                <!-- Card 3 -->
-                <div class="glass-card hover-glow-card quick-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="quick-card-icon"><i class="fa-solid fa-gears"></i></div>
-                    <h3>Premium Equipment</h3>
-                    <p>Sculpt your body using world-renowned biomechanical weight platforms, custom dumbbell blocks, and interactive cardio bays.</p>
+            </div>
+            <!-- Trainer 2 -->
+            <div class="glass-card reveal-element" style="text-align: center; padding: 2rem; transition-delay: 100ms;">
+                <div style="width: 120px; height: 120px; border-radius: 50%; background-color: var(--bg-tertiary); margin: 0 auto 1.5rem auto; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: var(--primary); border: 2px solid var(--border-glass);"><i class="fa-solid fa-user-tie"></i></div>
+                <h3 style="font-size: 1.2rem; text-transform: none;">Coach Sarah</h3>
+                <p style="color: var(--accent); font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5rem;">Functional & Cardio</p>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">CrossFit L2, 6+ Years Coaching</p>
+                <div style="display: flex; gap: 0.5rem; justify-content: center;">
+                    <a href="404.html" style="color: var(--text-muted);"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="404.html" style="color: var(--text-muted);"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ==========================================
-       FEATURED CLASS COLLECTIONS
+       9. MEMBERSHIP PLANS (PRICING)
        ========================================== -->
-    <section class="section-padding" id="showroom-collections">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Apex Training</span>
-                <h2 class="section-title">Engineered <span>Workout Programs</span></h2>
-                <p class="section-desc">Choose your focus and challenge your boundaries. We offer group and private classes led by master coaches.</p>
-            </div>
-            
-            <div class="filter-controls">
-                <button class="filter-btn active" data-filter="all">All programs</button>
-                <button class="filter-btn" data-filter="strength">Strength</button>
-                <button class="filter-btn" data-filter="cardio">Cardio</button>
-                <button class="filter-btn" data-filter="yoga">Yoga</button>
-                <button class="filter-btn" data-filter="combat">Combat</button>
-            </div>
-            
-            <div class="classes-grid">
-                <!-- Class 1 -->
-                <div class="filter-item class-card glass-card hover-glow-card" data-category="strength">
-                    <div class="class-header-row">
-                        <span class="class-category-tag"><i class="fa-solid fa-dumbbell"></i> Strength</span>
-                        <div class="class-difficulty font-display"><i class="fa-solid fa-gauge-high"></i> Advanced</div>
-                    </div>
-                    <h3>Power Lifting & Hypertrophy</h3>
-                    <p>Master barbell fundamentals, increase raw power output, and trigger hypertrophy with safe compound training methods.</p>
-                    <div class="class-meta-metrics">
-                        <div>
-                            <span>Duration</span>
-                            <strong>60 Mins</strong>
-                        </div>
-                        <div>
-                            <span>Est. Burn</span>
-                            <strong style="color: var(--accent);">550 kcal</strong>
-                        </div>
-                    </div>
-                    <div class="class-intensity-bar">
-                        <span>Intensity: 90%</span>
-                        <div class="intensity-progress"><div class="intensity-fill" style="width: 90%; background-color: var(--accent);"></div></div>
-                    </div>
-                </div>
-
-                <!-- Class 2 -->
-                <div class="filter-item class-card glass-card hover-glow-card" data-category="cardio">
-                    <div class="class-header-row">
-                        <span class="class-category-tag"><i class="fa-solid fa-heart-circle-bolt"></i> Cardio</span>
-                        <div class="class-difficulty font-display"><i class="fa-solid fa-gauge-simple-high"></i> Intermediate</div>
-                    </div>
-                    <h3>Apex HIIT Blast</h3>
-                    <p>Burn calories at near-terminal velocities. An athletic training style focusing on short interval sprint drills and core work.</p>
-                    <div class="class-meta-metrics">
-                        <div>
-                            <span>Duration</span>
-                            <strong>45 Mins</strong>
-                        </div>
-                        <div>
-                            <span>Est. Burn</span>
-                            <strong style="color: var(--accent);">720 kcal</strong>
-                        </div>
-                    </div>
-                    <div class="class-intensity-bar">
-                        <span>Intensity: 85%</span>
-                        <div class="intensity-progress"><div class="intensity-fill" style="width: 85%; background-color: var(--primary);"></div></div>
-                    </div>
-                </div>
-
-                <!-- Class 3 -->
-                <div class="filter-item class-card glass-card hover-glow-card" data-category="yoga">
-                    <div class="class-header-row">
-                        <span class="class-category-tag"><i class="fa-solid fa-spa"></i> Yoga</span>
-                        <div class="class-difficulty font-display"><i class="fa-solid fa-gauge-simple"></i> Beginner</div>
-                    </div>
-                    <h3>Vinyasa Flow Studio</h3>
-                    <p>Integrate breathwork with movement. Enhances deep mobility, core stability, alignment, and speeds up post-workout recovery.</p>
-                    <div class="class-meta-metrics">
-                        <div>
-                            <span>Duration</span>
-                            <strong>75 Mins</strong>
-                        </div>
-                        <div>
-                            <span>Est. Burn</span>
-                            <strong style="color: var(--accent);">280 kcal</strong>
-                        </div>
-                    </div>
-                    <div class="class-intensity-bar">
-                        <span>Intensity: 45%</span>
-                        <div class="intensity-progress"><div class="intensity-fill" style="width: 45%; background-color: var(--primary);"></div></div>
-                    </div>
-                </div>
-
-                <!-- Class 4 -->
-                <div class="filter-item class-card glass-card hover-glow-card" data-category="combat">
-                    <div class="class-header-row">
-                        <span class="class-category-tag"><i class="fa-solid fa-user-ninja"></i> Combat</span>
-                        <div class="class-difficulty font-display"><i class="fa-solid fa-gauge-high"></i> Advanced</div>
-                    </div>
-                    <h3>MMA Striking & Boxing</h3>
-                    <p>Unleash raw agility. Learn striking combos, pad work drills, heavy bag targets, and dynamic defensive footwork.</p>
-                    <div class="class-meta-metrics">
-                        <div>
-                            <span>Duration</span>
-                            <strong>60 Mins</strong>
-                        </div>
-                        <div>
-                            <span>Est. Burn</span>
-                            <strong style="color: var(--accent);">800 kcal</strong>
-                        </div>
-                    </div>
-                    <div class="class-intensity-bar">
-                        <span>Intensity: 95%</span>
-                        <div class="intensity-progress"><div class="intensity-fill" style="width: 95%; background-color: var(--accent);"></div></div>
-                    </div>
-                </div>
-            </div>
+    <section id="pricing">
+        <div class="container" style="text-align: center; margin-bottom: 4rem;">
+            <span class="section-tag"><i class="fa-solid fa-tags"></i> Membership</span>
+            <h2 style="font-size: 2.5rem;">Tier Membership Plans</h2>
         </div>
-    </section>
-
-    <!-- ==========================================
-       LOOKBOOK GALLERY SECTION
-       ========================================== -->
-    <section class="section-padding bg-alternate" id="inspiration-lookbook">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Visual Lookbook</span>
-                <h2 class="section-title">The Apex <span>Showroom</span></h2>
-                <p class="section-desc">Peer inside our performance-driven training spaces. Every zone is engineered to eliminate distractions and inspire effort.</p>
-            </div>
-            
-            <div class="filter-controls">
-                <button class="filter-btn active" data-filter="all">All Zones</button>
-                <button class="filter-btn" data-filter="cardio">Cardio</button>
-                <button class="filter-btn" data-filter="weights">Weightroom</button>
-                <button class="filter-btn" data-filter="studio">Studio</button>
-            </div>
-            
-            <div class="gallery-grid">
-                <!-- Gallery 1 -->
-                <div class="filter-item filter-item-gallery gallery-card lookbook-item" data-category="cardio">
-                    <img src="images/cardio.webp" alt="Cardio Zone" loading="lazy">
-                    <div class="lookbook-overlay">
-                        <h4>Apex Cardio Zone</h4>
-                        <p>Fitted with premium speed treadmills and performance monitors.</p>
-                    </div>
-                </div>
-                <!-- Gallery 2 -->
-                <div class="filter-item filter-item-gallery gallery-card lookbook-item" data-category="weights">
-                    <img src="images/weightroom.webp" alt="Weightroom Zone" loading="lazy">
-                    <div class="lookbook-overlay">
-                        <h4>Olympic Weightroom</h4>
-                        <p>Loaded with custom barbell sets, iron plates, and solid lifting cages.</p>
-                    </div>
-                </div>
-                <!-- Gallery 3 -->
-                <div class="filter-item filter-item-gallery gallery-card lookbook-item" data-category="studio">
-                    <img src="images/yoga.webp" alt="Yoga Studio" loading="lazy">
-                    <div class="lookbook-overlay">
-                        <h4>Mind & Body Studio</h4>
-                        <p>An acoustically isolated studio offering soft ambient neon lighting.</p>
-                    </div>
-                </div>
-                <!-- Gallery 4 -->
-                <div class="filter-item filter-item-gallery gallery-card lookbook-item" data-category="weights">
-                    <img src="images/turf.webp" alt="Functional Turf" loading="lazy">
-                    <div class="lookbook-overlay">
-                        <h4>Speed & Agility Turf</h4>
-                        <p>Designed for weighted sled runs, battle ropes, and speed ladders.</p>
-                    </div>
-                </div>
-                <!-- Gallery 5 -->
-                <div class="filter-item filter-item-gallery gallery-card lookbook-item" data-category="studio">
-                    <img src="images/recovery.webp" alt="Recovery Studio" loading="lazy">
-                    <div class="lookbook-overlay">
-                        <h4>Apex Cryo & Recovery</h4>
-                        <p>Equipped with cold plunges and customized red light boxes.</p>
-                    </div>
-                </div>
-                <!-- Gallery 6 -->
-                <div class="filter-item filter-item-gallery gallery-card lookbook-item" data-category="cardio">
-                    <img src="images/juice_bar.webp" alt="Juice Bar" loading="lazy">
-                    <div class="lookbook-overlay">
-                        <h4>Refuel Juice Bar</h4>
-                        <p>Enjoy recovery shakes, protein feeds, and high-electrolyte coolers.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-       BRAND ADVANTAGE & METRIC SCROLLS
-       ========================================== -->
-    <section class="section-padding" id="brand-advantage">
-        <div class="container">
-            <div class="brand-advantage-grid">
-                <!-- Left Details -->
-                <div class="brand-adv-content">
-                    <span class="section-tag"><i class="fa-solid fa-shield"></i> Apex Advantage</span>
-                    <h2 class="section-title" style="text-align: left;">Why Athletes <span>Choose Apex</span></h2>
-                    <p style="color: var(--text-muted); margin-bottom: 2rem;">We do not offer simple access. We offer a high-performance system designed to streamline your results, track every biometric milestone, and keep you motivated every step of the journey.</p>
-                    
-                    <ul class="advantage-features-list">
-                        <li>
-                            <i class="fa-solid fa-circle-check"></i>
-                            <div>
-                                <h4>Biometric Activity Tracking</h4>
-                                <p>Sync your wearables with our smart ecosystem to visual progress charts dynamically in your portal.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-circle-check"></i>
-                            <div>
-                                <h4>Certified Strength Mentors</h4>
-                                <p>Our personal coaches undergo specialized strength academy certification before leading our turf.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-circle-check"></i>
-                            <div>
-                                <h4>Curated Recovery Suites</h4>
-                                <p>Soothe deep hypertrophy soreness inside custom dry saunas and ice tubs.</p>
-                            </div>
-                        </li>
+        <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+            <!-- Plan 1 -->
+            <div class="glass-card reveal-element" style="display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Basic Plan</h3>
+                    <h2 style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1.5rem;">$29 <span style="font-size: 1rem; color: var(--text-muted);">/ mo</span></h2>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem;">
+                        <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 0.5rem;"></i> 24/7 Gym access</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 0.5rem;"></i> Locker room privileges</li>
+                        <li style="color: var(--text-muted); text-decoration: line-through;"><i class="fa-solid fa-xmark" style="color: var(--primary); margin-right: 0.5rem;"></i> Personal trainer sessions</li>
                     </ul>
                 </div>
-                
-                <!-- Right Circles Radial Bars -->
-                <div class="brand-adv-visuals">
-                    <div class="radial-grid">
-                        <!-- Ring 1 -->
-                        <div class="radial-card glass-card hover-glow-card">
-                            <div class="radial-progress-ring" data-percentage="95">
-                                <svg width="120" height="120" viewBox="0 0 120 120">
-                                    <circle class="progress-circle-bg" cx="60" cy="60" r="50" fill="transparent" stroke="var(--bg-tertiary)" stroke-width="8"/>
-                                    <circle class="progress-circle-fill" cx="60" cy="60" r="50" fill="transparent" stroke="var(--primary)" stroke-width="8" stroke-dasharray="314.1" stroke-dashoffset="314.1" stroke-linecap="round"/>
-                                </svg>
-                                <span class="radial-percent">95%</span>
-                            </div>
-                            <h4>Fat Loss Success</h4>
-                            <p>Proven member reduction metrics</p>
-                        </div>
-                        <!-- Ring 2 -->
-                        <div class="radial-card glass-card hover-glow-card">
-                            <div class="radial-progress-ring" data-percentage="99">
-                                <svg width="120" height="120" viewBox="0 0 120 120">
-                                    <circle class="progress-circle-bg" cx="60" cy="60" r="50" fill="transparent" stroke="var(--bg-tertiary)" stroke-width="8"/>
-                                    <circle class="progress-circle-fill" cx="60" cy="60" r="50" fill="transparent" stroke="var(--accent)" stroke-width="8" stroke-dasharray="314.1" stroke-dashoffset="314.1" stroke-linecap="round"/>
-                                </svg>
-                                <span class="radial-percent">99%</span>
-                            </div>
-                            <h4>Goal Achievement</h4>
-                            <p>Members hitting set targets</p>
-                        </div>
-                        <!-- Ring 3 -->
-                        <div class="radial-card glass-card hover-glow-card">
-                            <div class="radial-progress-ring" data-percentage="90">
-                                <svg width="120" height="120" viewBox="0 0 120 120">
-                                    <circle class="progress-circle-bg" cx="60" cy="60" r="50" fill="transparent" stroke="var(--bg-tertiary)" stroke-width="8"/>
-                                    <circle class="progress-circle-fill" cx="60" cy="60" r="50" fill="transparent" stroke="var(--primary)" stroke-width="8" stroke-dasharray="314.1" stroke-dashoffset="314.1" stroke-linecap="round"/>
-                                </svg>
-                                <span class="radial-percent">90%</span>
-                            </div>
-                            <h4>Member Retention</h4>
-                            <p>Athletes renewing their cycles</p>
+                <a href="contact.html" class="btn btn-secondary" style="width: 100%;">Select Plan</a>
+            </div>
+            <!-- Plan 2 -->
+            <div class="glass-card reveal-element" style="border-color: var(--primary); box-shadow: var(--shadow-glow-primary); display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div style="display: inline-block; background: var(--gradient-primary); color: #fff; padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1rem;">Most Popular</div>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Standard Plan</h3>
+                    <h2 style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1.5rem;">$59 <span style="font-size: 1rem; color: var(--text-muted);">/ mo</span></h2>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem;">
+                        <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 0.5rem;"></i> 24/7 Gym access</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 0.5rem;"></i> 2 Personal trainer hours</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 0.5rem;"></i> Custom Nutrition log</li>
+                    </ul>
+                </div>
+                <a href="contact.html" class="btn btn-primary" style="width: 100%;">Select Plan</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       10. ACCORDION FAQs
+       ========================================== -->
+    <section style="background-color: var(--bg-secondary);">
+        <div class="container" style="text-align: center; margin-bottom: 4rem;">
+            <span class="section-tag"><i class="fa-solid fa-question"></i> Help Desk</span>
+            <h2 style="font-size: 2.5rem;">Frequently Asked Questions</h2>
+        </div>
+        <div class="container" style="max-width: 800px; display: flex; flex-direction: column; gap: 1rem;">
+            <!-- FAQ 1 -->
+            <div class="glass-card" style="padding: 1.5rem 2rem; cursor: pointer;" onclick="window.showCustomAlert('Yes, standard and premium memberships include CSCS trainer sessions.', 'success')">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h4 style="font-size: 1.05rem; text-transform: none;">Are personal trainer hours included in plans?</h4>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+            </div>
+            <!-- FAQ 2 -->
+            <div class="glass-card" style="padding: 1.5rem 2rem; cursor: pointer;" onclick="window.showCustomAlert('Absolutely! You can upgrade or downgrade membership plans in settings.', 'success')">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h4 style="font-size: 1.05rem; text-transform: none;">Can I change my membership tier later?</h4>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       11. CONTACT & RADAR MAP
+       ========================================== -->
+    <section id="contact">
+        <div class="container" style="text-align: center; margin-bottom: 4rem;">
+            <span class="section-tag"><i class="fa-solid fa-envelope"></i> Contact Us</span>
+            <h2 style="font-size: 2.5rem;">Book Free Training Assessment</h2>
+        </div>
+        <div class="container" style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: start;">
+            <div class="glass-card" style="padding: 3rem 2.5rem;">
+                <form id="booking-form">
+                    <div class="form-group">
+                        <label for="booking-name">Full Name</label>
+                        <div class="input-with-icon">
+                            <i class="fa-solid fa-user input-icon"></i>
+                            <input type="text" id="booking-name" placeholder="John Doe" required>
                         </div>
                     </div>
-                    
-                    <!-- Dynamic Counters List -->
-                    <div class="counters-strip glass-card">
-                        <div class="counter-item">
-                            <span class="counter-number" data-target="5000" data-suffix="+">0</span>
-                            <p>Active Athletes</p>
+                    <div class="form-row-two" style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div class="form-group" style="flex: 1; margin-bottom: 0;">
+                            <label for="booking-email">Email Address</label>
+                            <div class="input-with-icon">
+                                <i class="fa-solid fa-envelope input-icon"></i>
+                                <input type="email" id="booking-email" placeholder="john@example.com" required>
+                            </div>
                         </div>
-                        <div class="counter-item">
-                            <span class="counter-number" data-target="150" data-suffix="+">0</span>
-                            <p>Weekly Classes</p>
+                        <div class="form-group" style="flex: 1; margin-bottom: 0;">
+                            <label for="booking-phone">Phone Number</label>
+                            <div class="input-with-icon">
+                                <i class="fa-solid fa-phone input-icon"></i>
+                                <input type="tel" id="booking-phone" placeholder="1234567890" required>
+                            </div>
                         </div>
-                        <div class="counter-item">
-                            <span class="counter-number" data-target="25" data-suffix="+">0</span>
-                            <p>Coaching Awards</p>
-                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="booking-date">Assessment Date</label>
+                        <input type="date" id="booking-date" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Book Session</button>
+                </form>
+            </div>
+            <div>
+                <h4 style="font-size: 1.2rem; margin-bottom: 1.5rem;">Apex HQ Location</h4>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;"><i class="fa-solid fa-location-dot" style="color: var(--primary); margin-right: 0.5rem;"></i> 500 Performance Blvd, Sector 7</p>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem;"><i class="fa-solid fa-clock" style="color: var(--primary); margin-right: 0.5rem;"></i> Open 24 Hours, Mon - Sun</p>
+                <!-- Embedded SVG map mock -->
+                <div style="width: 100%; height: 200px; background-color: var(--bg-secondary); border: 1px solid var(--border-glass); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; color: var(--text-muted);">
+                    <div style="text-align: center;">
+                        <i class="fa-solid fa-map-location-dot" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 0.5rem;"></i>
+                        <p style="font-size: 0.85rem; font-weight: 700;">Interactive Radar Grid HQ</p>
                     </div>
                 </div>
             </div>
@@ -541,128 +438,9 @@
     </section>
 
     <!-- ==========================================
-       INTEGRATION STRIP (APES & FITNESS CONNECTIVITY)
+       FOOTER & PARTNERS
        ========================================== -->
-    <section class="section-padding bg-alternate" id="integration-strip" style="padding: 4rem 0;">
-        <div class="container">
-            <div class="integration-wrapper">
-                <span class="integration-label font-display">Syncs Seamlessly With</span>
-                <div class="integration-logos">
-                    <div class="integration-logo-item"><i class="fa-brands fa-apple"></i> Apple Health</div>
-                    <div class="integration-logo-item"><i class="fa-solid fa-heart-pulse"></i> Garmin Fit</div>
-                    <div class="integration-logo-item"><i class="fa-brands fa-google"></i> Google Fit</div>
-                    <div class="integration-logo-item"><i class="fa-solid fa-mobile-screen-button"></i> MyFitnessPal</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-       TESTIMONIALS (MEMBER BEFORE/AFTER TRANSFORMS)
-       ========================================== -->
-    <section class="section-padding" id="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Apex Stories</span>
-                <h2 class="section-title">Proven <span>Transformations</span></h2>
-                <p class="section-desc">Listen to how our specialized support structures helped local athletes break boundaries and achieve physical breakthroughs.</p>
-            </div>
-            
-            <div class="slider-wrapper">
-                <div class="testimonials-slider">
-                    <!-- Slide 1 -->
-                    <div class="testimonial-slide active">
-                        <div class="testimonial-card glass-card">
-                            <div class="testimonial-header">
-                                <div class="testimonial-user">
-                                    <div class="avatar-fallback">DC</div>
-                                    <div>
-                                        <h4>David Carter</h4>
-                                        <p>Software Engineer</p>
-                                    </div>
-                                </div>
-                                <div class="testimonial-ratings"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                            </div>
-                            <p class="testimonial-text">"Apex Fitness completely changed my perception of fitness. The strength coaches customized a barbell routine that fits around my tech startup schedule. I've gained 15 lbs of muscle and dropped my body fat percentage by 10%!"</p>
-                            <div class="testimonial-before-after">
-                                <div class="metric-badge before">Before: 185 lbs (25% BF)</div>
-                                <div class="metric-badge after">After: 195 lbs (14% BF)</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Slide 2 -->
-                    <div class="testimonial-slide">
-                        <div class="testimonial-card glass-card">
-                            <div class="testimonial-header">
-                                <div class="testimonial-user">
-                                    <div class="avatar-fallback">SW</div>
-                                    <div>
-                                        <h4>Sarah Williams</h4>
-                                        <p>Marathon Runner</p>
-                                    </div>
-                                </div>
-                                <div class="testimonial-ratings"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                            </div>
-                            <p class="testimonial-text">"I came here to boost my joint durability for marathons. The mobility coaches at Apex helped correct my running gait and built deep knee stability. My recovery times are shorter and I slashed my running records."</p>
-                            <div class="testimonial-before-after">
-                                <div class="metric-badge before">Before: Chronic Knee Soreness</div>
-                                <div class="metric-badge after">After: PR Slid 12 Mins</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="slider-controls">
-                    <button class="slider-btn prev" aria-label="Previous Slide"><i class="fa-solid fa-arrow-left"></i></button>
-                    <div class="slider-dots"></div>
-                    <button class="slider-btn next" aria-label="Next Slide"><i class="fa-solid fa-arrow-right"></i></button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-       BLOG SECTION
-       ========================================== -->
-    <section class="section-padding bg-alternate" id="blog">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Apex Intelligence</span>
-                <h2 class="section-title">Knowledge <span>Is Power</span></h2>
-                <p class="section-desc">Access training advice, science-backed nutrition roadmap suggestions, and community articles compiled by our coaching circle.</p>
-            </div>
-            
-            <div class="blog-grid">
-                <!-- Blog 1 -->
-                <article class="blog-card glass-card hover-glow-card">
-                    <div class="blog-meta"><i class="fa-solid fa-calendar"></i> July 12, 2026 &nbsp;&bull;&nbsp; <i class="fa-solid fa-user"></i> Coach Marcus</div>
-                    <h3>Optimal Post-Workout Nutrition Strategies</h3>
-                    <p>Unpack the metabolic window myth. Discover the exact ratio of fast-digesting carbohydrates and proteins needed to optimize deep myofibrillar recovery.</p>
-                    <a href="404.html" class="blog-read-more">Read Article <i class="fa-solid fa-chevron-right"></i></a>
-                </article>
-                <!-- Blog 2 -->
-                <article class="blog-card glass-card hover-glow-card">
-                    <div class="blog-meta"><i class="fa-solid fa-calendar"></i> June 30, 2026 &nbsp;&bull;&nbsp; <i class="fa-solid fa-user"></i> Coach Elena</div>
-                    <h3>Hypertrophy vs. Raw Strength Training</h3>
-                    <p>Stuck in a training plateau? We dissect load percentages, rep sets, dynamic speeds, and rest durations to help you align routines with physiological goals.</p>
-                    <a href="404.html" class="blog-read-more">Read Article <i class="fa-solid fa-chevron-right"></i></a>
-                </article>
-                <!-- Blog 3 -->
-                <article class="blog-card glass-card hover-glow-card">
-                    <div class="blog-meta"><i class="fa-solid fa-calendar"></i> June 15, 2026 &nbsp;&bull;&nbsp; <i class="fa-solid fa-user"></i> Coach Sean</div>
-                    <h3>Active Mobility for Athletic Longevity</h3>
-                    <p>Unlock joint stiffness. We map a quick 10-minute active mobility blueprint targeting hips and shoulders that you can trigger before every session.</p>
-                    <a href="404.html" class="blog-read-more">Read Article <i class="fa-solid fa-chevron-right"></i></a>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-       FOOTER
-       ========================================== -->
-        <footer class="footer">
+    <footer class="footer">
         <div class="container footer-grid">
             <!-- Col 1 -->
             <div class="footer-col-about">

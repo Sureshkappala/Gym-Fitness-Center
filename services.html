@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="APEX FITNESS Training Programs & Pricing. Choose from Base, Pro Athlete, or Apex Champion memberships.">
-    <title>Classes & Pricing | APEX FITNESS</title>
+    <meta name="description" content="APEX FITNESS Classes. Choose from strength training, HIIT conditioning, CrossFit battles, and vinyasa flows.">
+    <title>Our Classes | APEX FITNESS</title>
     
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
@@ -66,14 +66,20 @@
                 </ul>
                 
                 <div class="nav-mobile-cta">
-                    <a href="login.html" class="btn btn-secondary"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+                    <a href="login.html" class="btn btn-secondary">Login</a>
                     <a href="contact.html" class="btn btn-primary">Book Consultation</a>
+                </div>
+                
+                <div class="drawer-contact-info">
+                    <h5>Apex HQ</h5>
+                    <p><i class="fa-solid fa-phone"></i> +1 (800) 555-APEX</p>
+                    <p><i class="fa-solid fa-envelope"></i> elite@apexfitness.com</p>
+                    <p><i class="fa-solid fa-location-dot"></i> 500 Performance Blvd, Sector 7</p>
                 </div>
             </nav>
             
             <div class="nav-controls">
-                
-                <a href="login.html" class="btn btn-secondary btn-sm"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+                <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
                 <a href="contact.html" class="btn btn-primary btn-sm">Book Consultation</a>
                 <button class="menu-toggle" aria-label="Toggle Menu">
                     <i class="fa-solid fa-bars"></i>
@@ -83,161 +89,40 @@
     </header>
 
     <!-- ==========================================
-       PAGE HEADER
+       SUBPAGE HERO
        ========================================== -->
-    <section class="page-banner">
-        <div class="container" style="text-align: center;">
-            <span class="section-tag">Programs & Plans</span>
-            <h1 class="page-banner-title">Choose Your <span>Apex Plan</span></h1>
-            <p class="page-banner-desc">Explore our custom performance classes and select a billing plan engineered for your routine.</p>
+    <section class="subpage-hero" style="padding: 10rem 0 5rem 0; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.95)), url('images/cardio.webp') no-repeat center center/cover; text-align: center;">
+        <div class="container">
+            <span class="section-tag"><i class="fa-solid fa-bolt"></i> Elite Classes</span>
+            <h1 style="font-size: 3rem; margin-top: 0.5rem;">Workout Disciplines</h1>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 1rem auto 0 auto;">Select from specialized fitness regimes, powerlifting routines, and expert-guided recovery cycles.</p>
         </div>
     </section>
 
     <!-- ==========================================
-       DETAILED PROGRAM CARDS
+       DETAILED CLASSES LIST
        ========================================== -->
-    <section class="section-padding bg-alternate">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Workouts</span>
-                <h2 class="section-title">Apex Class <span>Showcase</span></h2>
-                <p class="section-desc">We offer modular training spaces tailored to raw heavy lifts, heart rate conditioning, flexibility, or combat speed.</p>
+    <section>
+        <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem;">
+            <!-- Service 1 -->
+            <div class="glass-card">
+                <h3 style="font-size: 1.35rem; color: var(--primary); margin-bottom: 1rem;"><i class="fa-solid fa-dumbbell"></i> Strength conditioning</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">A class built entirely around compound lifts, hypertrophic volume mapping, and target muscle breakdown for raw mass gains.</p>
+                <div style="font-size: 0.85rem; color: var(--text-light); font-weight: 700;">Target: Muscle Hypertrophy | Frequency: 4x / Week</div>
             </div>
             
-            <div class="programs-detailed-grid">
-                <!-- Program 1 -->
-                <div class="program-detail-card glass-card hover-glow-card">
-                    <div class="program-icon-badge"><i class="fa-solid fa-dumbbell"></i></div>
-                    <h3>Strength & Power Curation</h3>
-                    <p>Develop raw strength, trigger hypertrophy, and master clean barbell setups. Instructed by Coach Marcus, this program walks you through progressive load techniques and muscle safety roadmaps.</p>
-                    <ul class="program-features">
-                        <li><i class="fa-solid fa-check"></i> Olympic Lifting Platforms</li>
-                        <li><i class="fa-solid fa-check"></i> Biomechanical Bench Systems</li>
-                        <li><i class="fa-solid fa-check"></i> Hypertrophy Specific Routines</li>
-                    </ul>
-                </div>
-                
-                <!-- Program 2 -->
-                <div class="program-detail-card glass-card hover-glow-card">
-                    <div class="program-icon-badge"><i class="fa-solid fa-heart-pulse"></i></div>
-                    <h3>High-Velocity Cardio HIIT</h3>
-                    <p>Accelerate your heart rate, spike your metabolism, and trigger fat reduction at rapid velocities. Combines high-velocity treadmill interval runs with kettlebell sets and core workouts.</p>
-                    <ul class="program-features">
-                        <li><i class="fa-solid fa-check"></i> Garmin Heart Rate Tracking</li>
-                        <li><i class="fa-solid fa-check"></i> Active Metabolic Boosts</li>
-                        <li><i class="fa-solid fa-check"></i> Core Agility Turf Integration</li>
-                    </ul>
-                </div>
-
-                <!-- Program 3 -->
-                <div class="program-detail-card glass-card hover-glow-card">
-                    <div class="program-icon-badge"><i class="fa-solid fa-person-praying"></i></div>
-                    <h3>Zen Mobility & Recovery Flow</h3>
-                    <p>Relieve myofibrillar stress, expand joint range of motion, and optimize post-workout decompression. A soothing, isolated space running infrared heat loops and soft ambient music.</p>
-                    <ul class="program-features">
-                        <li><i class="fa-solid fa-check"></i> Vinyasa Breathing Sync</li>
-                        <li><i class="fa-solid fa-check"></i> Deep Joint Mobilisations</li>
-                        <li><i class="fa-solid fa-check"></i> Infrared recovery suites</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-       PRICING MEMBERSHIPS
-       ========================================== -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="section-header" style="margin-bottom: 3rem;">
-                <span class="section-tag">Memberships</span>
-                <h2 class="section-title">Flexible <span>Pricing Tiers</span></h2>
-                <p class="section-desc">Unlock full biometric portal access, saunas, and custom coaching routines. No hidden contracts.</p>
+            <!-- Service 2 -->
+            <div class="glass-card">
+                <h3 style="font-size: 1.35rem; color: var(--primary); margin-bottom: 1rem;"><i class="fa-solid fa-fire"></i> Apex HIIT Blast</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">A cardiovascular and metabolic conditioning storm designed to burn calories and maximize aerobic thresholds.</p>
+                <div style="font-size: 0.85rem; color: var(--text-light); font-weight: 700;">Target: Calorie Burning | Frequency: 3x / Week</div>
             </div>
             
-            <!-- Pricing Toggle Switcher -->
-            <div class="pricing-toggle-container">
-                <span class="toggle-label active" id="label-weekly">Weekly</span>
-                <button class="pricing-toggle-switch" aria-label="Toggle Billing Frequency">
-                    <span class="toggle-slider"></span>
-                </button>
-                <span class="toggle-label" id="label-monthly">Monthly</span>
-                <button class="pricing-toggle-switch-annual" aria-label="Toggle Annual Billing" style="display:none;"></button> <!-- internal switch placeholder -->
-            </div>
-            
-            <div class="billing-frequency-selector font-display">
-                <button class="billing-freq-btn active" data-freq="weekly">Weekly Billing</button>
-                <button class="billing-freq-btn" data-freq="monthly">Monthly Billing</button>
-                <button class="billing-freq-btn" data-freq="annual">Annual Billing <span class="badge-discount">Save 15%</span></button>
-            </div>
-            
-            <div class="pricing-grid">
-                <!-- Tier 1 -->
-                <div class="pricing-card glass-card hover-glow-card">
-                    <span class="pricing-tier-tag">Base Athlete</span>
-                    <div class="price-wrap">
-                        <span class="currency">$</span>
-                        <span class="price-value" id="price-base">15</span>
-                        <span class="billing-period" id="period-base">/ week</span>
-                    </div>
-                    <p style="color: var(--text-muted); margin-bottom: 2rem;">Essential gym access for independent training routines.</p>
-                    
-                    <ul class="pricing-features-list">
-                        <li><i class="fa-solid fa-circle-check"></i> 24/7 Biometric Gym Access</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Standard Barbell Cages & Turf</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Free Basic Locker & Showers</li>
-                        <li class="disabled"><i class="fa-solid fa-circle-xmark"></i> Personal Coach Consulting</li>
-                        <li class="disabled"><i class="fa-solid fa-circle-xmark"></i> Cryotherapy & Recovery Suites</li>
-                        <li class="disabled"><i class="fa-solid fa-circle-xmark"></i> Biometric Dashboard sync</li>
-                    </ul>
-                    
-                    <a href="contact.html" class="btn btn-secondary" style="width: 100%; margin-top: auto;">Select Base Plan</a>
-                </div>
-
-                <!-- Tier 2 - POPULAR PRO HIGHLIGHT -->
-                <div class="pricing-card glass-card hover-glow-card popular-highlight">
-                    <span class="popular-tag">Most Popular</span>
-                    <span class="pricing-tier-tag" style="color: var(--primary);">Pro Athlete</span>
-                    <div class="price-wrap">
-                        <span class="currency">$</span>
-                        <span class="price-value" id="price-pro">25</span>
-                        <span class="billing-period" id="period-pro">/ week</span>
-                    </div>
-                    <p style="color: var(--text-muted); margin-bottom: 2rem;">Designed for athletes targeting specific milestone achievements.</p>
-                    
-                    <ul class="pricing-features-list">
-                        <li><i class="fa-solid fa-circle-check"></i> 24/7 Biometric Gym Access</li>
-                        <li><i class="fa-solid fa-circle-check"></i> 3 Coach Consultations / Mo</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Cryotherapy & Infrared Saunas</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Complete Member Portal Sync</li>
-                        <li class="disabled"><i class="fa-solid fa-circle-xmark"></i> Unlimited Group HIIT Classes</li>
-                        <li class="disabled"><i class="fa-solid fa-circle-xmark"></i> Dedicated Sports Physiotherapist</li>
-                    </ul>
-                    
-                    <a href="contact.html" class="btn btn-primary" style="width: 100%; margin-top: auto; box-shadow: var(--shadow-glow-primary);">Select Pro Plan</a>
-                </div>
-
-                <!-- Tier 3 -->
-                <div class="pricing-card glass-card hover-glow-card">
-                    <span class="pricing-tier-tag" style="color: var(--accent);">Apex Champion</span>
-                    <div class="price-wrap">
-                        <span class="currency">$</span>
-                        <span class="price-value" id="price-champ">50</span>
-                        <span class="billing-period" id="period-champ">/ week</span>
-                    </div>
-                    <p style="color: var(--text-muted); margin-bottom: 2rem;">Ultimate performance support with daily refuel inclusions.</p>
-                    
-                    <ul class="pricing-features-list">
-                        <li><i class="fa-solid fa-circle-check"></i> 24/7 Biometric Gym Access</li>
-                        <li><i class="fa-solid fa-circle-check"></i> 8 Coach Consultations / Mo</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Unlimited Saunas & Ice Baths</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Refuel Shake Bar Voucher Daily</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Dedicated Sports Physiotherapist</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Portal Dashboard sync</li>
-                    </ul>
-                    
-                    <a href="contact.html" class="btn btn-secondary" style="width: 100%; margin-top: auto;">Select Champion Plan</a>
-                </div>
+            <!-- Service 3 -->
+            <div class="glass-card">
+                <h3 style="font-size: 1.35rem; color: var(--primary); margin-bottom: 1rem;"><i class="fa-solid fa-heart-pulse"></i> Vinyasa Yoga Flow</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">Connect breath with fluid motion to increase body flexibility, core stability, and mindful decompression.</p>
+                <div style="font-size: 0.85rem; color: var(--text-light); font-weight: 700;">Target: Core & Flexibility | Frequency: 2x / Week</div>
             </div>
         </div>
     </section>
@@ -245,9 +130,8 @@
     <!-- ==========================================
        FOOTER
        ========================================== -->
-        <footer class="footer">
+    <footer class="footer">
         <div class="container footer-grid">
-            <!-- Col 1 -->
             <div class="footer-col-about">
                 <a href="index.html" class="logo" style="margin-bottom: 1.5rem;">
                     <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
@@ -260,8 +144,6 @@
                     <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
-            
-            <!-- Col 2 -->
             <div>
                 <h4>Quick Links</h4>
                 <ul class="footer-links">
@@ -273,8 +155,6 @@
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
-            
-            <!-- Col 3 -->
             <div>
                 <h4>Services</h4>
                 <ul class="footer-links">
@@ -286,8 +166,6 @@
                     <li><a href="services.html">Refuel Juicery</a></li>
                 </ul>
             </div>
-            
-            <!-- Col 4 -->
             <div>
                 <h4>Newsletter</h4>
                 <p style="margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6;">Subscribe to receive style forecasts, custom wood-shop updates, and interior design trend reports from our team.</p>
@@ -313,55 +191,5 @@
 
     <!-- JavaScript Script -->
     <script src="js/main.js"></script>
-    
-    <!-- Local Page Script for Pricing Toggle Dynamic Changes -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const freqButtons = document.querySelectorAll('.billing-freq-btn');
-            
-            // Prices mapping
-            const basePrices = { weekly: 15, monthly: 49, annual: 399 };
-            const proPrices = { weekly: 25, monthly: 79, annual: 699 };
-            const champPrices = { weekly: 50, monthly: 149, annual: 1299 };
-            
-            const periods = { weekly: '/ week', monthly: '/ month', annual: '/ year' };
-            
-            const priceBase = document.getElementById('price-base');
-            const pricePro = document.getElementById('price-pro');
-            const priceChamp = document.getElementById('price-champ');
-            
-            const periodBase = document.getElementById('period-base');
-            const periodPro = document.getElementById('period-pro');
-            const periodChamp = document.getElementById('period-champ');
-            
-            freqButtons.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    freqButtons.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    
-                    const freq = btn.getAttribute('data-freq');
-                    
-                    // Animate transition
-                    animatePriceChange(priceBase, basePrices[freq]);
-                    animatePriceChange(pricePro, proPrices[freq]);
-                    animatePriceChange(priceChamp, champPrices[freq]);
-                    
-                    periodBase.textContent = periods[freq];
-                    periodPro.textContent = periods[freq];
-                    periodChamp.textContent = periods[freq];
-                });
-            });
-            
-            function animatePriceChange(element, newValue) {
-                element.style.transform = 'scale(0.8)';
-                element.style.opacity = '0';
-                setTimeout(() => {
-                    element.textContent = newValue;
-                    element.style.transform = 'scale(1)';
-                    element.style.opacity = '1';
-                }, 200);
-            }
-        });
-    </script>
 </body>
 </html>

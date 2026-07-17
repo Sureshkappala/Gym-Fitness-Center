@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Apex Fitness Visual Gallery. Explore our high-performance zones, equipment setups, saunas, and shake bars.">
-    <title>Gallery Showcase | APEX FITNESS</title>
+    <meta name="description" content="APEX FITNESS Transformations. View member success stories, muscle gains, and recovery highlights.">
+    <title>Transformations | APEX FITNESS</title>
     
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
@@ -66,14 +66,20 @@
                 </ul>
                 
                 <div class="nav-mobile-cta">
-                    <a href="login.html" class="btn btn-secondary"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+                    <a href="login.html" class="btn btn-secondary">Login</a>
                     <a href="contact.html" class="btn btn-primary">Book Consultation</a>
+                </div>
+                
+                <div class="drawer-contact-info">
+                    <h5>Apex HQ</h5>
+                    <p><i class="fa-solid fa-phone"></i> +1 (800) 555-APEX</p>
+                    <p><i class="fa-solid fa-envelope"></i> elite@apexfitness.com</p>
+                    <p><i class="fa-solid fa-location-dot"></i> 500 Performance Blvd, Sector 7</p>
                 </div>
             </nav>
             
             <div class="nav-controls">
-                
-                <a href="login.html" class="btn btn-secondary btn-sm"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+                <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
                 <a href="contact.html" class="btn btn-primary btn-sm">Book Consultation</a>
                 <button class="menu-toggle" aria-label="Toggle Menu">
                     <i class="fa-solid fa-bars"></i>
@@ -83,78 +89,47 @@
     </header>
 
     <!-- ==========================================
-       PAGE HEADER
+       SUBPAGE HERO
        ========================================== -->
-    <section class="page-banner">
-        <div class="container" style="text-align: center;">
-            <span class="section-tag">Showroom</span>
-            <h1 class="page-banner-title">Apex Facility <span>Showcase</span></h1>
-            <p class="page-banner-desc">Browse our modern biomechanical training zones and recovery suites built to support your effort.</p>
+    <section class="subpage-hero" style="padding: 10rem 0 5rem 0; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.95)), url('images/recovery.webp') no-repeat center center/cover; text-align: center;">
+        <div class="container">
+            <span class="section-tag"><i class="fa-solid fa-image"></i> Photos</span>
+            <h1 style="font-size: 3rem; margin-top: 0.5rem;">Visual Achievements</h1>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 1rem auto 0 auto;">Browse physical accomplishments, workout spaces, recovery zones, and equipment highlights.</p>
         </div>
     </section>
 
     <!-- ==========================================
-       GRID GALLERY WITH FILTER CONTROLS
+       TRANSFORMATION STORIES AND ZONES GALLERY
        ========================================== -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="filter-controls">
-                <button class="filter-btn active" data-filter="all">All Amenities</button>
-                <button class="filter-btn" data-filter="cardio">Cardio & HIIT</button>
-                <button class="filter-btn" data-filter="weights">Weightroom</button>
-                <button class="filter-btn" data-filter="recovery">Sauna & Cryo</button>
-                <button class="filter-btn" data-filter="fuel">Fuel Bar</button>
+    <section>
+        <!-- Filter buttons -->
+        <div class="container" style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem;">
+            <button class="btn btn-primary btn-sm" onclick="window.showCustomAlert('Filtered to: All Zones', 'success')">All Zones</button>
+            <button class="btn btn-secondary btn-sm" onclick="window.showCustomAlert('Filtered to: Strength Area', 'success')">Strength Area</button>
+            <button class="btn btn-secondary btn-sm" onclick="window.showCustomAlert('Filtered to: Recovery Spa', 'success')">Recovery Spa</button>
+        </div>
+
+        <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <!-- Zone 1 -->
+            <div class="glass-card" style="padding: 1rem;">
+                <img src="images/weightroom.webp" alt="Weight room zone" style="border-radius: var(--radius-sm); margin-bottom: 1.5rem;">
+                <h3 style="font-size: 1.15rem; margin-left: 0.5rem; margin-bottom: 0.25rem;">Weight Room Platform</h3>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin-left: 0.5rem; margin-bottom: 0.5rem;">Apex Strength Conditioning Zone</p>
             </div>
             
-            <div class="gallery-grid">
-                <!-- Item 1 -->
-                <div class="filter-item gallery-card lookbook-item" data-category="cardio">
-                    <img src="images/cardio.webp" alt="Cardio Area" loading="lazy">
-                    <div class="lookbook-overlay">
-                        <h4>Apex Cardio Zone</h4>
-                        <p>Futuristic treadmills, climbers, and rower displays.</p>
-                    </div>
-                </div>
-                <!-- Item 2 -->
-                <div class="filter-item gallery-card lookbook-item" data-category="weights">
-                    <img src="images/weightroom.webp" alt="Heavy Weightroom" loading="lazy">
-                    <div class="lookbook-overlay">
-                        <h4>Olympic Barbell Turf</h4>
-                        <p>Solid steel platforms, heavy dumbbells, and safety cages.</p>
-                    </div>
-                </div>
-                <!-- Item 3 -->
-                <div class="filter-item gallery-card lookbook-item" data-category="recovery">
-                    <img src="images/yoga.webp" alt="Yoga Zen Studio" loading="lazy">
-                    <div class="lookbook-overlay">
-                        <h4>Mobility Yoga Deck</h4>
-                        <p>Quiet ambient neon rooms, mirrors, mats, and bands.</p>
-                    </div>
-                </div>
-                <!-- Item 4 -->
-                <div class="filter-item gallery-card lookbook-item" data-category="weights">
-                    <img src="images/turf.webp" alt="Speed Turf Grid" loading="lazy">
-                    <div class="lookbook-overlay">
-                        <h4>Agility Turf Run</h4>
-                        <p>Kettlebell racks, heavy battle ropes, and weight sleds.</p>
-                    </div>
-                </div>
-                <!-- Item 5 -->
-                <div class="filter-item gallery-card lookbook-item" data-category="recovery">
-                    <img src="images/recovery.webp" alt="Cryotherapy ice tubs" loading="lazy">
-                    <div class="lookbook-overlay">
-                        <h4>Sauna & Cryotherapy</h4>
-                        <p>Dry saunas, dynamic ice tubs, and compression massage booths.</p>
-                    </div>
-                </div>
-                <!-- Item 6 -->
-                <div class="filter-item gallery-card lookbook-item" data-category="fuel">
-                    <img src="images/juice_bar.webp" alt="Juice Shake Bar" loading="lazy">
-                    <div class="lookbook-overlay">
-                        <h4>Apex Refuel Juicery</h4>
-                        <p>Fresh whey isolates, macrometric bowls, and electrolyte coolers.</p>
-                    </div>
-                </div>
+            <!-- Zone 2 -->
+            <div class="glass-card" style="padding: 1rem;">
+                <img src="images/recovery.webp" alt="Recovery zone" style="border-radius: var(--radius-sm); margin-bottom: 1.5rem;">
+                <h3 style="font-size: 1.15rem; margin-left: 0.5rem; margin-bottom: 0.25rem;">Cryo & Recovery Lounge</h3>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin-left: 0.5rem; margin-bottom: 0.5rem;">Infrared Saunas & Cold Tubs</p>
+            </div>
+
+            <!-- Zone 3 -->
+            <div class="glass-card" style="padding: 1rem;">
+                <img src="images/juice_bar.webp" alt="Refuel zone" style="border-radius: var(--radius-sm); margin-bottom: 1.5rem;">
+                <h3 style="font-size: 1.15rem; margin-left: 0.5rem; margin-bottom: 0.25rem;">Apex Refuel Juicery</h3>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin-left: 0.5rem; margin-bottom: 0.5rem;">Protein Shakes & Smoothies</p>
             </div>
         </div>
     </section>
@@ -162,9 +137,8 @@
     <!-- ==========================================
        FOOTER
        ========================================== -->
-        <footer class="footer">
+    <footer class="footer">
         <div class="container footer-grid">
-            <!-- Col 1 -->
             <div class="footer-col-about">
                 <a href="index.html" class="logo" style="margin-bottom: 1.5rem;">
                     <img src="images/logo.webp" alt="Stackly Logo" class="logo-img">
@@ -177,8 +151,6 @@
                     <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
-            
-            <!-- Col 2 -->
             <div>
                 <h4>Quick Links</h4>
                 <ul class="footer-links">
@@ -190,8 +162,6 @@
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
-            
-            <!-- Col 3 -->
             <div>
                 <h4>Services</h4>
                 <ul class="footer-links">
@@ -203,8 +173,6 @@
                     <li><a href="services.html">Refuel Juicery</a></li>
                 </ul>
             </div>
-            
-            <!-- Col 4 -->
             <div>
                 <h4>Newsletter</h4>
                 <p style="margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6;">Subscribe to receive style forecasts, custom wood-shop updates, and interior design trend reports from our team.</p>

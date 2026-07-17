@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="APEX FITNESS Member Registration. Register to access your customized biometric dashboard, streaks, and training programs.">
+    <meta name="description" content="APEX FITNESS Member Registration. Register to access your customized dashboard and training metrics.">
     <title>Create Account | APEX FITNESS</title>
     
     <!-- CSS Stylesheet -->
@@ -44,10 +44,10 @@
     <!-- ==========================================
        PORTAL CONTENT CARD
        ========================================== -->
-    <section class="portal-section">
+    <section class="portal-section" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #05070a 0%, #111622 100%); padding: 2rem 0;">
         <div class="container portal-container">
-            <div class="login-card-outer glass-card" style="max-width: 520px; margin: 0 auto;">
-                <div class="login-form-side" style="width: 100%; padding: 3rem 2.5rem;">
+            <div class="glass-card" style="max-width: 520px; margin: 0 auto; padding: 3rem 2.5rem;">
+                <div class="login-form-side">
                     <!-- Logo at top of card -->
                     <div style="text-align: center; margin-bottom: 2rem;">
                         <img src="images/logo.webp" alt="Stackly Logo" class="logo-img" style="height: 38px; margin-bottom: 1rem;">
@@ -66,15 +66,15 @@
                         </div>
                         
                         <!-- Row: Email and Phone -->
-                        <div class="form-row-two">
-                            <div class="form-group">
+                        <div class="form-row-two" style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                            <div class="form-group" style="flex: 1; margin-bottom: 0;">
                                 <label for="reg-email">Email Address</label>
                                 <div class="input-with-icon">
                                     <i class="fa-solid fa-envelope input-icon"></i>
                                     <input type="email" id="reg-email" placeholder="john@example.com" required>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" style="flex: 1; margin-bottom: 0;">
                                 <label for="reg-phone">Phone Number</label>
                                 <div class="input-with-icon">
                                     <i class="fa-solid fa-phone input-icon"></i>
@@ -84,8 +84,8 @@
                         </div>
                         
                         <!-- Row: Password and Confirm Password -->
-                        <div class="form-row-two">
-                            <div class="form-group">
+                        <div class="form-row-two" style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                            <div class="form-group" style="flex: 1; margin-bottom: 0;">
                                 <label for="reg-password">Password</label>
                                 <div class="input-with-icon" style="position: relative;">
                                     <i class="fa-solid fa-lock input-icon"></i>
@@ -95,7 +95,7 @@
                                     </button>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" style="flex: 1; margin-bottom: 0;">
                                 <label for="reg-confirm-password">Confirm Password</label>
                                 <div class="input-with-icon" style="position: relative;">
                                     <i class="fa-solid fa-lock input-icon"></i>
@@ -138,13 +138,6 @@
             </div>
         </div>
     </section>
-
-    <!-- ==========================================
-       FOOTER
-       ========================================== -->
-    
-
-    
 
     <!-- JavaScript Script -->
     <script src="js/main.js"></script>

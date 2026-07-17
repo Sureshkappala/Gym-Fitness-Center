@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="APEX FITNESS Member Portal. Login to access your customized biometric dashboard, streak records, and training programs.">
+    <meta name="description" content="APEX FITNESS Member Portal. Login to access your customized dashboard and training programs.">
     <title>Client Login | APEX FITNESS</title>
     
     <!-- CSS Stylesheet -->
@@ -44,10 +44,10 @@
     <!-- ==========================================
        PORTAL CONTENT CARD
        ========================================== -->
-    <section class="portal-section">
+    <section class="portal-section" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #05070a 0%, #111622 100%); padding: 2rem 0;">
         <div class="container portal-container">
-            <div class="login-card-outer glass-card" style="max-width: 450px; margin: 0 auto;">
-                <div class="login-form-side" style="width: 100%; padding: 3rem 2.5rem;">
+            <div class="glass-card" style="max-width: 450px; margin: 0 auto; padding: 3rem 2.5rem;">
+                <div class="login-form-side">
                     <!-- Logo at top of card -->
                     <div style="text-align: center; margin-bottom: 2rem;">
                         <img src="images/logo.webp" alt="Stackly Logo" class="logo-img" style="height: 38px; margin-bottom: 1rem;">
@@ -61,7 +61,7 @@
                             <label for="login-email">Email Address</label>
                             <div class="input-with-icon">
                                 <i class="fa-solid fa-envelope input-icon"></i>
-                                <input type="email" id="login-email" placeholder="John@example.com" required>
+                                <input type="email" id="login-email" placeholder="john@example.com" required>
                             </div>
                         </div>
                         
@@ -96,7 +96,7 @@
                                 <input type="checkbox" id="login-remember">
                                 <span class="checkmark"></span> Remember Me
                             </label>
-                            <a href="404.html" style="color: var(--primary); font-weight: 700;">Forgot Password?</a>
+                            <a href="forgot-password.html" style="color: var(--primary); font-weight: 700;">Forgot Password?</a>
                         </div>
                         
                         <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 2rem; border-radius: var(--radius-sm);">Access Portal</button>
@@ -109,13 +109,6 @@
             </div>
         </div>
     </section>
-
-    <!-- ==========================================
-       FOOTER
-       ========================================== -->
-    
-
-    
 
     <!-- JavaScript Script -->
     <script src="js/main.js"></script>
