@@ -582,12 +582,12 @@ select option {
 }
 
 .checkbox-container:hover input ~ .checkmark {
-    border-color: var(--primary);
+    border-color: #22c55e !important;
 }
 
 .checkbox-container input:checked ~ .checkmark {
-    background-color: var(--primary);
-    border-color: var(--primary);
+    background-color: #22c55e !important;
+    border-color: #22c55e !important;
 }
 
 .checkmark::after {
