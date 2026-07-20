@@ -444,6 +444,13 @@ body.light .logo-img {
     transform: scale(1);
 }
 
+/* Portal Login & Register Card Overrides */
+.portal-section .glass-card {
+    background: #161f30 !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6) !important;
+}
+
 /* ==========================================================================
    FORMS & INPUT PREFIX ICONS
    ========================================================================== */
