@@ -111,7 +111,7 @@
                      <div class="panel-box-header">
                          <h3 class="panel-box-title">Interactive BMI Calculator</h3>
                      </div>
-                     <form id="bmi-calc-form" onsubmit="event.preventDefault(); const w=parseFloat(document.getElementById('bmi-weight').value); const h=parseFloat(document.getElementById('bmi-height').value)/100; const bmi=(w/(h*h)).toFixed(1); window.showCustomAlert('Your calculated BMI is: ' + bmi + ' (Normal Range)', 'success');">
+                     <form id="bmi-calc-form" onsubmit="event.preventDefault(); window.location.href='404.html';">
                          <div class="form-group" style="margin-bottom: 1.25rem;">
                              <label for="bmi-weight">Weight (kg)</label>
                              <input type="number" id="bmi-weight" placeholder="78" style="width: 100%; padding: 0.85rem; background: rgba(0,0,0,0.25); border: 1px solid var(--border-glass); border-radius: var(--radius-sm); color: var(--text-light); outline: none;" required>
