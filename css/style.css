@@ -5,9 +5,9 @@
 
 :root {
     /* Color Palette */
-    --bg-primary: #05070a;
-    --bg-secondary: #0a0d14;
-    --bg-tertiary: #111622;
+    --bg-primary: #0F172A;
+    --bg-secondary: #111827;
+    --bg-tertiary: #1F2937;
     --primary: #e11d48;        /* Crimson Red */
     --primary-glow: rgba(225, 29, 72, 0.15);
     --accent: #22c55e;         /* Neon Lime */
@@ -110,6 +110,10 @@ section {
     padding: 8rem 0;
     position: relative;
 }
+section:nth-of-type(even) {
+    background-color: var(--bg-secondary);
+}
+
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
@@ -302,7 +306,7 @@ body:hover .custom-cursor-dot {
 }
 
 .header.sticky {
-    background: rgba(5, 7, 10, 0.85);
+    background: rgba(15, 23, 42, 0.92);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-glass);
 }
@@ -388,7 +392,7 @@ body.light .logo-img {
    GLASSMORPHISM & GENERAL CARDS
    ========================================================================== */
 .glass-card {
-    background: rgba(17, 22, 34, 0.45);
+    background: #1F2937;
     border: 1px solid var(--border-glass);
     backdrop-filter: blur(16px);
     border-radius: var(--radius-md);
@@ -434,7 +438,7 @@ body.light .logo-img {
     transform: scale(0.85);
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     border-radius: var(--radius-md);
-    background: #111622 !important;
+    background: #1F2937 !important;
     border: 1px solid rgba(225, 29, 72, 0.25) !important;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 20px rgba(225, 29, 72, 0.1) !important;
     padding: 2.5rem !important;
@@ -522,7 +526,7 @@ select {
 }
 
 select option {
-    background-color: #111622 !important;
+    background-color: #1F2937 !important;
     color: #f8fafc !important;
 }
 
@@ -1193,7 +1197,7 @@ body.light .sidebar-link:hover, body.light .sidebar-link.active {
 }
 
 .panel-box {
-    background: rgba(255, 255, 255, 0.02);
+    background: #1F2937;
     border: 1px solid var(--border-glass);
     border-radius: var(--radius-sm);
     padding: 2rem;
@@ -1333,7 +1337,7 @@ body.light .sidebar-link:hover, body.light .sidebar-link.active {
    GYM ATHLETE DASHBOARD STYLES (CARDS, WIDGETS, TABLES, AND HERO)
    ========================================================================== */
 .db-welcome-hero {
-    background: linear-gradient(135deg, rgba(225, 29, 72, 0.1) 0%, rgba(15, 23, 42, 0.4) 100%);
+    background: linear-gradient(135deg, rgba(225, 29, 72, 0.15) 0%, #1F2937 100%);
     border: 1px solid var(--border-glass);
     border-radius: var(--radius-md);
     padding: 2.5rem;
@@ -1357,7 +1361,7 @@ body.light .sidebar-link:hover, body.light .sidebar-link.active {
 
 /* Stats Cards */
 .stat-card {
-    background: rgba(255, 255, 255, 0.02);
+    background: #1F2937;
     border: 1px solid var(--border-glass);
     border-radius: var(--radius-sm);
     padding: 1.75rem 1.5rem;
