@@ -1242,7 +1242,13 @@ body.light .sidebar-link:hover, body.light .sidebar-link.active {
 
 @media (max-width: 480px) {
     .portal-container .glass-card {
-        padding: 2rem 1.25rem !important;
+        padding: 2rem 0.85rem !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .login-remember-row {
+        font-size: 0.74rem !important;
     }
 }
 
