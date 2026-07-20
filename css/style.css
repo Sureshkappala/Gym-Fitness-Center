@@ -1099,8 +1099,31 @@ body.menu-open::before {
 }
 
 .sidebar-logo {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     margin-bottom: 2rem;
+}
+
+.sidebar-logo img {
+    height: 42px !important;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+.db-mobile-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.db-mobile-logo img {
+    height: 36px !important;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
 }
 
 .sidebar-section-title {
