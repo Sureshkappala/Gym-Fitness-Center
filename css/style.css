@@ -582,7 +582,7 @@ select option {
 }
 
 .checkbox-container:hover input ~ .checkmark {
-    border-color: #22c55e !important;
+    border-color: rgba(255, 255, 255, 0.25) !important;
 }
 
 .checkbox-container input:checked ~ .checkmark {
