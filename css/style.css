@@ -499,7 +499,7 @@ body.light .logo-img {
     -webkit-appearance: none;
 }
 
-.input-with-icon::after {
+.input-with-icon:has(select)::after {
     content: '\f078';
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
@@ -513,8 +513,9 @@ body.light .logo-img {
     z-index: 1;
 }
 
-.input-with-icon:has(.pass-toggle-btn)::after {
-    display: none;
+select option {
+    background-color: #111622 !important;
+    color: #f8fafc !important;
 }
 
 .input-with-icon input:focus,
