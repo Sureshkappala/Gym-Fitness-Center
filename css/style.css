@@ -1042,6 +1042,10 @@ body.menu-open::before {
 
 
 @media (max-width: 768px) {
+    .form-row-two {
+        flex-direction: column !important;
+    }
+
     h2 {
         font-size: 1.8rem !important;
     }
